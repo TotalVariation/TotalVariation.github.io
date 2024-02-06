@@ -67,11 +67,11 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 # Social integration
 # -----------------------------------------------------------------------------
 
-github_username: https://github.com/TotalVariation # your GitHub user name
+github_username: TotalVariation # your GitHub user name
 gitlab_username: # your GitLab user name
-x_username: https://twitter.com/XinCai92 # your X handle
+x_username: XinCai92 # your X handle
 mastodon_username: # your mastodon instance+username in the format instance.tld/@username
-linkedin_username: https://linkedin.com/in/xin-cai-0332b824b # your LinkedIn user name
+linkedin_username: xin-cai-0332b824b # your LinkedIn user name
 telegram_username: # your Telegram user name
 scholar_userid: https://scholar.google.com/citations?user=maQC2foAAAAJ&hl=en # your Google Scholar ID
 semanticscholar_id: # your Semantic Scholar ID
