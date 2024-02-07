@@ -11,7 +11,7 @@ authors:
   - name: Xin Cai
     url: "https://totalvariation.github.io/"
 
-bibliography: 2024-02-01-open-world-vision.bib
+bibliography: 2024-02-01-open-world-vision-systems.bib
 
 # Optionally, you can add a table of contents to your post.
 # NOTES:
