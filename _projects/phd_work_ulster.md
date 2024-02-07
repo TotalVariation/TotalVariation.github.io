@@ -19,8 +19,8 @@ Photo by <a href="https://unsplash.com/@neom?utm_content=creditCopyText&utm_medi
 </div>
 
 <ol>
-  <li><a href="assets/pdf/communication.pdf"><b>Communication</b></a></li>
-  <li><a href="assets/pdf/research_proposal_earth_observation_uu.pdf"><b>Research Proposal Earth Observation</b></a></li>
-  <li><a href="assets/pdf/initial_assessment_uu.pdf"><b>Initial Assessment</b></a></li>
-  <li><a href="assets/pdf/confirmation_assessment_uu.pdf"><b>Confirmation Assessment</b></a></li>
+  <li><a href="../assets/pdf/communication.pdf"><b>Communication</b></a></li>
+  <li><a href="../assets/pdf/research_proposal_earth_observation_uu.pdf"><b>Research Proposal Earth Observation</b></a></li>
+  <li><a href="../assets/pdf/initial_assessment_uu.pdf"><b>Initial Assessment</b></a></li>
+  <li><a href="../assets/pdf/confirmation_assessment_uu.pdf"><b>Confirmation Assessment</b></a></li>
 </ol>
