@@ -10,7 +10,7 @@ giscus_comments: true
 
 ## PhD Work at AIRC UU
 
-I had the opportunity to begin my PhD journey at the Artificial Intelligence Research Centre (<a href="https://www.ulster.ac.uk/research/topic/computer-science/artificial-intelligence">AIRC</a>), Ulster University (UU), Belfast, UK, with the support of a fully-funded Department for the Economy (DfE) international studentship. While my path led me to discontinue the program after two years, I've chosen to share some of the research I conducted at AIRC, UU, particularly in the areas of Deep Generative Models and Satellite Image Time Series (SITS) analysis. I hope these findings may serve as a reference for fellow researchers in the field.
+I had the opportunity to begin my PhD journey in Sept. 2021 at the Artificial Intelligence Research Centre (<a href="https://www.ulster.ac.uk/research/topic/computer-science/artificial-intelligence">AIRC</a>), Ulster University (UU), Belfast, UK, with the support of a fully-funded Department for the Economy (DfE) international studentship. While my path led me to discontinue the program after two years (30 Nov. 2023), I've chosen to share some of the research I conducted at AIRC, UU, particularly in the areas of Deep Generative Models and Satellite Image Time Series (SITS) analysis. I hope these findings may serve as a reference for fellow researchers in the field.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -18,7 +18,7 @@ I had the opportunity to begin my PhD journey at the Artificial Intelligence Res
     </div>
 </div>
 <div>
-Photo by <a href="https://unsplash.com/@neom?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">NEOM</a> on <a href="https://unsplash.com/photos/a-man-climbing-up-the-side-of-a-mountain-HegvNcZXWTE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+    Photo by <a href="https://unsplash.com/@neom?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">NEOM</a> on <a href="https://unsplash.com/photos/a-man-climbing-up-the-side-of-a-mountain-HegvNcZXWTE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 </div>
 
 ---
@@ -26,8 +26,8 @@ Photo by <a href="https://unsplash.com/@neom?utm_content=creditCopyText&utm_medi
 <ol>
   <li><a href="/assets/pdf/communication.pdf"><b>Communication</b></a></li>
   <li><a href="/assets/pdf/research_proposal_earth_observation_uu.pdf"><b>Research Proposal Earth Observation</b></a></li>
-  <li><a href="/assets/pdf/initial_assessment_uu.pdf"><b>Initial Assessment</b></a></li>
-  <li><a href="/assets/pdf/confirmation_assessment_uu.pdf"><b>Confirmation Assessment</b></a></li>
+  <li><a href="/assets/pdf/initial_assessment_uu.pdf"><b>Initial Assessment</b></a> <a href="/assets/pdf/100_day_viva_uu_slides.pdf"><b>Slides</b></a></li>
+  <li><a href="/assets/pdf/confirmation_assessment_uu.pdf"><b>Confirmation Assessment</b></a> <a href="/assets/pdf/confirmation_assessment_uu_slides.pdf"><b>Slides</b></a></li>
 </ol>
 
 ---
