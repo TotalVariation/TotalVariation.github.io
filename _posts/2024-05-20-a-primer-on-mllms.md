@@ -35,10 +35,9 @@ bibliography: 2024-05-20-a-primer-on-mllms.bib
 toc:
   - name: Background
   - name: Technical Overview
-      subsections:
-        - name: Architectures
-        - name: Training Strategies and Data
-        - name: Evaluation
+    - name: Architectures
+    - name: Training Strategies and Data
+    - name: Evaluation
   - name: Concluding Remarks
   - name: Acknowledgement
 
