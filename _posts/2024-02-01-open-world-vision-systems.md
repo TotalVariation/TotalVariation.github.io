@@ -50,9 +50,10 @@ _styles: >
     font-size: 16px;
   }
 ---
+
 <blockquote>
-    "It is not the strongest of the species that survives, nor the most intelligent that survives. It is the one that is most adaptable to change." 
-    - Charles Darwin
+    <p><b>It is not the strongest of the species that survives, nor the most intelligent that survives. It is the one that is most adaptable to change.</b></p> 
+    <footer>- Charles Darwin</footer>
 </blockquote>
 
 <div class="row mt-3">
