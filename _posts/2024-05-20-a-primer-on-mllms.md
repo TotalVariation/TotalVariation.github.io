@@ -63,11 +63,32 @@ _styles: >
     text-align: center;
     font-size: 16px;
   }
+
+```scss
+/* Tips, warnings, and dangers */
+.post .post-content blockquote {
+  &.block-tip {
+    border-color: var(--global-tip-block);
+    background-color: var(--global-tip-block-bg);
+
+    p {
+      color: var(--global-tip-block-text);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--global-tip-block-title);
+    }
+  }
+}
 ---
-<blockquote>
-    "The best material model of a cat is another, or preferably the same, cat."
-    - Norbert Wiener
-</blockquote>
+> #### "The best material model of a cat is another, or preferably the same, cat."
+> #### - Norbert Wiener
+{: .block-tip }
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0" id="figure-1">
@@ -75,7 +96,7 @@ _styles: >
     </div>
 </div>
 <div class="caption">
-    Fig-1 A sketch of general purpose AI assistants. Image Source: [Stable Diffusion XL](https://huggingface.co/docs/diffusers/en/using-diffusers/sdxl).
+    Fig-1 A sketch of general purpose AI assistants. Image Source: <a href="https://huggingface.co/docs/diffusers/en/using-diffusers/sdxl" target="_blank">Stable Diffusion XL</a>.
 </div>
 
 ## Background
@@ -84,7 +105,7 @@ Large Language Models (LLMs) <d-cite key="zhao2023survey"></d-cite> have achieve
 
 Recent work <d-cite key="li2023multimodal"></d-cite> has demonstrated that the development of MLLMs signifies a transition from specialist models to general-purpose visual assistants. This transition is regarded as a crucial step towards realizing the grand vision of a general-purpose multimodal AI agent, akin to bringing the beloved Japanese cartoon character Doraemon to life. It is further unveiled in <d-cite key="li2023multimodal"></d-cite> that a converging point for many development trajectories of vision-language/multimodal foundation models is *"the creation of general-purpose models and systems capable of following human intents and effortlessly executing a diverse array of vision and vision-language tasks in the wild."*
 
-The key features that markedly differentiate MLLMs from deep learning models developed beforehand are condensed into the name itself: ==General Purpose Assistants==, which include **versatility**, **interactivity**, and **controllability**. Specifically, the quest for a unified architecture capable of accomplishing a diverse range of discriminative and generative tasks has witnessed great success in Natural Language Processing (NLP), as exemplified by GPT-3, inspiring similar research endeavours in the field of computer vision. However, as pointed out in <d-cite key="li2023multimodal"></d-cite>, the development of unified vision systems significantly lags behind due to fragmented vision tasks and the difficulty of scaling up visual data. Furthermore, to enable seamless communication between machines and humans, natural language serves as a core component in building a general interactive interface, which can be further complemented by multimodal prompts such as clicks or scribbles provided by users. Additionally, researchers have made strides in steering the output behaviour of MLLMs by instruction tuning or aligning with human preferences, marking a hallmark in elevating machine intelligence to the next level as humans begin to positively intervene in the machine learning process. By leveraging human feedback and rich experience, machines can evolve more effectively and efficiently, leading to better outcomes for both machines and humans. Inspired by the interactions between Doraemon and Nobita, the ultimate goal of general-purpose AI assistants is to establish a **symbiotic relationship** between humans and AI systems, where AI systems not only enhance the overall well-being and quality of human life but also evolve by engaging in humans' daily activities.
+The key features that markedly differentiate MLLMs from deep learning models developed beforehand are condensed into the name itself: <mark>General Purpose Assistants</mark>, which include **versatility**, **interactivity**, and **controllability**. Specifically, the quest for a unified architecture capable of accomplishing a diverse range of discriminative and generative tasks has witnessed great success in Natural Language Processing (NLP), as exemplified by GPT-3, inspiring similar research endeavours in the field of computer vision. However, as pointed out in <d-cite key="li2023multimodal"></d-cite>, the development of unified vision systems significantly lags behind due to fragmented vision tasks and the difficulty of scaling up visual data. Furthermore, to enable seamless communication between machines and humans, natural language serves as a core component in building a general interactive interface, which can be further complemented by multimodal prompts such as clicks or scribbles provided by users. Additionally, researchers have made strides in steering the output behaviour of MLLMs by instruction tuning or aligning with human preferences, marking a hallmark in elevating machine intelligence to the next level as humans begin to positively intervene in the machine learning process. By leveraging human feedback and rich experience, machines can evolve more effectively and efficiently, leading to better outcomes for both machines and humans. Inspired by the interactions between Doraemon and Nobita, the ultimate goal of general-purpose AI assistants is to establish a **symbiotic relationship** between humans and AI systems, where AI systems not only enhance the overall well-being and quality of human life but also evolve by engaging in humans' daily activities.
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0" id="figure-2">
@@ -92,7 +113,7 @@ The key features that markedly differentiate MLLMs from deep learning models dev
     </div>
 </div>
 <div class="caption">
-    Fig-2 The general architecture of GenAISys. Image Source: [Jakub Tomczak](https://jmtomczak.github.io/blog/21/21_genaisys.html).
+    Fig-2 The general architecture of GenAISys. Image Source: <a href="https://jmtomczak.github.io/blog/21/21_genaisys.html" target="_blank">Jakub Tomczak</a>.
 </div>
 
 Before delving into the technical aspects of MLLMs, I would like to introduce an intriguing and inspiring concept called Generative AI Systems (GenAISys), recently introduced in a [blog post](https://jmtomczak.github.io/blog/21/21_genaisys.html) by Jakub Tomczak, which offers a novel perspective on MLLMs. In essence, GenAISys can be considered as end-to-end trainable MLLMs enhanced by external tools or databases, resonating with a similar idea proposed in Chapter 6 of the work <d-cite key="li2023multimodal"></d-cite>, where the authors indicate the possibility of combining strengths from two existing modelling paradigms of MLLMs: training or chaining tools with LLMs. For more insights into GenAISys and its future directions, I encourage you to refer to the original post by Jakub Tomczak.
@@ -124,7 +145,7 @@ Another critical factor in enriching visual embeddings in MLLMs and mitigating m
     </div>
 </div>
 <div class="caption">
-    Fig-4 An illustration of workings of Analog-to-Digital Converters (ADC). Image Source: [DOEEET](https://www.doeeet.com/content/eee-components/actives/analog-to-digital-converters-the-resolution-dilemma/).
+    Fig-4 An illustration of workings of Analog-to-Digital Converters (ADC). Image Source: <a href="https://www.doeeet.com/content/eee-components/actives/analog-to-digital-converters-the-resolution-dilemma/" target="_blank">DOEEET</a>.
 </div>
 
 Finally, I would like to highlight an intriguing perspective by drawing a parallel between the modality encoder in MLLMs and the Analog-to-Digital Converter (ADC), which converts continuous analog signals into discrete digital signals through sampling and quantization. By establishing such a rough equivalence, we can gain deeper insights into the design rationale of the modality encoder. Specifically, bandwidth and Signal-to-Noise Ratio (SNR) play a crucial role in determining the overall performance and quality of an ADC. Analogously, the range of frequencies in input signals that can be captured by the modality encoder contributes to the overall performance of MLLMs, justifying the utilization of dual vision encoders, e.g., in Mini-Gemini <d-cite key="li2024mini"></d-cite>. As demonstrated in <d-cite key="park2022vision"></d-cite>, multi-head self-attention (MSAs) in Vision Transformers (ViT) <d-cite key="dosovitskiy2020image"></d-cite> function as a low-pass filter, while convolution operations act oppositely as a high-pass filter. Therefore, the convolutional branch supplements the ViT with high-frequency information, expanding the bandwidth of the modality encoder. Furthermore, image-text contrastive pre-training can be seen as a quantization process, where discrete codes (i.e., vocabulary indices) are allocated to encoded visual signals by filtering out noise and low-level information while maximally preserving mutual information. By analogy with a higher SNR leading to finer resolution of an ADC, the ability to discern the smallest semantic variation of the modality encoder can be improved by adopting fine-grained contrastive loss <d-cite key="li2022grounded"></d-cite> or detailed captioning <d-cite key="yu2022coca"></d-cite>.
@@ -137,7 +158,7 @@ Finally, I would like to highlight an intriguing perspective by drawing a parall
     </div>
 </div>
 <div class="caption">
-    Fig-5 A schematic diagram of microcontrollers, where the central unit CPU interacts with various components to process data, control and communicate with other devices. Image Source: [The Major Factors On Which The Microcontrollers Are Differentiated](https://www.hnhcart.com/blogs/microcontrollers/what-are-the-major-factors-on-which-microcontrollers-are-differentiated).
+    Fig-5 A schematic diagram of microcontrollers, where the central unit CPU interacts with various components to process data, control and communicate with other devices. Image Source: <a href="https://www.hnhcart.com/blogs/microcontrollers/what-are-the-major-factors-on-which-microcontrollers-are-differentiated" target="_blank">The Major Factors On Which The Microcontrollers Are Differentiated</a>.
 </div>
 
 Compared to human-like text generation, the emergent capabilities of LLMs, such as ICL and CoT reasoning, unlock the vast potential of machines in handling complex and flexible human instructions. When LLMs are extended with interfaces to sense and interact with the physical world, i.e., MLLMs, they can be analogized to microcontrollers, provided disregarding differences in energy consumption and application scenarios. A microcontroller is essentially a small computer, comprising a processor core, memory, and input/output (I/O) peripherals. Similarly, LLMs act as the processor core, executing human instructions rather than pre-programmed commands. Modality encoders and decoders enable LLMs to interact with the external world, analogous to ADCs or Digital-to-Analog Converters (DACs). The key distinction between microcontrollers and MLLMs lies in the latter's capability for learning and adaptation, ushering in a new era where machines can continuously evolve through direct interaction with humans. Human language is distinguished by its complexity, generativity, and ability to convey abstract and displaced concepts, which supports the language-centric design pattern of MLLMs. However, this design is yet to be definitively validated, as discussed in Chapter 4 of <d-cite key="li2023multimodal"></d-cite>, particularly considering the distinct differences between vision and language.
@@ -156,7 +177,7 @@ The difficulty in multimodal alignment may stem from the next-token prediction l
     </div>
 </div>
 <div class="caption">
-    Fig 6 An overview of an Any-to-Any multimodal system NExT-GPT that can perceive inputs and generate outputs in arbitrary combinations of text, images, videos, and audio. Image Source: [NExT-GPT: Any-to-Any Multimodal LLM](https://arxiv.org/abs/2309.05519).
+    Fig 6 An overview of an Any-to-Any multimodal system NExT-GPT that can perceive inputs and generate outputs in arbitrary combinations of text, images, videos, and audio. Image Source: <a href="https://arxiv.org/abs/2309.05519" target="_blank">NExT-GPT: Any-to-Any Multimodal LLM</a>.
 </div>
 
 MLLMs with multimodal responsive capabilities have recently spurred a surge of interest in the area of Generative AI, regarded as a significant step towards Artificial General Intelligence (AGI). For image generation, recent works such as Emu <d-cite key="sun2023generative"></d-cite> and Mini-Gemini <d-cite key="li2024mini"></d-cite> default to using diffusion-based generative models <d-cite key="luo2022understanding"></d-cite> <d-cite key="ribeiro2024demystifying"></d-cite> <d-cite key="chan2024tutorial"></d-cite>, such as the Stable Diffusion family <d-cite key="rombach2022high"></d-cite>, due to their unparalleled text-to-image generation performance. The work NExT-GPT <d-cite key="wu2023next"></d-cite> further extends LLMs to include image, audio, and video diffusion models, enabling content creation in arbitrary combinations of image, text, audio, and video. Similar to the modality connectors used in the encoding phase, it is reasonable to bridge the gap between textual embeddings generated by LLMs and those used as conditional guidance in diffusion models, which can be achieved through decoder-side alignment.
@@ -175,7 +196,7 @@ The training process of MLLMs can be decomposed into three stages: 1) pre-alignm
     </div>
 </div>
 <div class="caption">
-    Fig 7 An illustration of the overall process of Self-Instruct. Image Source: [SELF-INSTRUCT: Aligning Language Models with Self-Generated Instructions](https://arxiv.org/abs/2212.10560).
+    Fig 7 An illustration of the overall process of Self-Instruct. Image Source: <a href="https://arxiv.org/abs/2212.10560" target="_blank">SELF-INSTRUCT: Aligning Language Models with Self-Generated Instructions</a>.
 </div>
 
 The current trend in scaling up IT data involves leveraging semi-automatic data engines to minimize human intervention. Specifically, the majority of IT datasets are constructed using a paradigm known as Self-Instruct <d-cite key="wang2022self"></d-cite>, where a few manually-crafted seed examples serve as demonstrations for LLMs, such as GPT-4, to generate additional similar samples by harnessing the ICL capability. This approach can be extended to generate multimodal IT data. For instance, in the pioneering work LLaVA <d-cite key="liu2024visual"></d-cite>, images are converted into text descriptions and bounding box coordinates, thereby endowing the text-only GPT-4 with an imaginary vision capability, which are then combined with diverse task prompts to create visual instruction-following datasets. However, IT data built on top of GPT-4 (text-only LLMs) often suffer from multimodal hallucination, compromising the quality of the generated samples, which can be remedied with the advent of powerful MLLMs. For instance, in the work ALLaVA <d-cite key="chen2024allava"></d-cite>, GPT-4V, a multimodal variant of GPT-4, is utilized to create high-quality IT data by following a captioning-questioning-answering pipeline. Moreover, recent works, such as ALLaVA <d-cite key="chen2024allava"></d-cite> and Lynx <d-cite key="zeng2023matters"></d-cite>, emphasize that the quality of IT datasets—specifically the complexity and diversity of instructions and the detail of responses—is more crucial than their quantity. 
