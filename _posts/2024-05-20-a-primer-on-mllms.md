@@ -63,33 +63,11 @@ _styles: >
     text-align: center;
     font-size: 16px;
   }
-
-```scss
-/* Tips, warnings, and dangers */
-.post .post-content blockquote {
-  &.block-tip {
-    border-color: var(--global-tip-block);
-    background-color: var(--global-tip-block-bg);
-
-    p {
-      color: var(--global-tip-block-text);
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: var(--global-tip-block-title);
-    }
-  }
-}
-```
 ---
-> #### "The best material model of a cat is another, or preferably the same, cat."
-> #### - Norbert Wiener
-{: .block-tip }
+<blockquote>
+<p>The best material model of a cat is another, or preferably the same, cat.</p>
+<footer>- Norbert Wiener</footer>
+</blockquote>
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0" id="figure-1">
