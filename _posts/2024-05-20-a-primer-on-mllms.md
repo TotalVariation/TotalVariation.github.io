@@ -6,6 +6,10 @@ tags: MLLMs, LVLMs, General Purpose Visual Assistants, GenAI
 giscus_comments: true
 date: 2024-05-20
 featured: true
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
 
 authors:
   - name: Xin Cai
@@ -35,9 +39,10 @@ bibliography: 2024-05-20-a-primer-on-mllms.bib
 toc:
   - name: Background
   - name: Technical Overview
-    - name: Architectures
-    - name: Training Strategies and Data
-    - name: Evaluation
+    subsections:
+      - name: Architectures
+      - name: Training Strategies and Data
+      - name: Evaluation
   - name: Concluding Remarks
   - name: Acknowledgement
 
