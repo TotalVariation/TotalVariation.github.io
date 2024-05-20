@@ -66,7 +66,7 @@ _styles: >
 ---
 
 <blockquote>
-    <p>The best material model of a cat is another, or preferably the same, cat.</p>
+    <p><b>The best material model of a cat is another, or preferably the same, cat.</b></p>
     <footer>- Norbert Wiener</footer>
 </blockquote>
 
