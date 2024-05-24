@@ -5,6 +5,8 @@ description:
 img: assets/img/hughdillon1-2x.jpg
 importance: 1
 category: work
+images:
+  slider: true
 giscus_comments: true
 ---
 
@@ -12,6 +14,13 @@ giscus_comments: true
     <p><b>A man can be destroyed but not defeated.</b></p>
     <footer>- Ernest Hemingway, The Old Man and The Sea</footer>
 </blockquote>
+
+<swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true">
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/gary-meulemans-J8sh37XZ8ww-unsplash.jpg" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/neom-HegvNcZXWTE-unsplash.jpg" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/tweet-xcai-25-10-2023.png" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+  <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/fab-lentz-mRMQwK513hY-unsplash.jpg" class="img-fluid rounded z-depth-1" %}</swiper-slide>
+</swiper-container>
 
 ## PhD Work at AIRC UU
 
