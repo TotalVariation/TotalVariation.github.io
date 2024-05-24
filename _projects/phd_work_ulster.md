@@ -1,16 +1,21 @@
 ---
 layout: page
-title: Research Work Done at UU as A PhD Candidate
+title: An Unfinished PhD Career at Ulster University
 description: 
-img: assets/img/brett-jordan-tAkvZgRYE9U-unsplash.jpg 
+img: assets/img/hughdillon1-2x.jpg
 importance: 1
 category: work
 giscus_comments: true
 ---
 
+<blockquote>
+    <p><b>A man can be destroyed but not defeated.</b></p>
+    <footer>- Ernest Hemingway, The Old Man and The Sea</footer>
+</blockquote>
+
 ## PhD Work at AIRC UU
 
-I had the opportunity to begin my PhD journey in Sept. 2021 at the Artificial Intelligence Research Centre (<a href="https://www.ulster.ac.uk/research/topic/computer-science/artificial-intelligence">AIRC</a>), Ulster University (UU), Belfast, UK, with the support of a fully-funded Department for the Economy (DfE) international studentship. While my path led me to discontinue the program after two years (30 Nov. 2023), I've chosen to share some of the research I conducted at AIRC, UU, particularly in the areas of Deep Generative Models and Satellite Image Time Series (SITS) analysis. I hope these findings may serve as a reference for fellow researchers in the field.
+I embarked on my PhD journey in September 2021 at the Artificial Intelligence Research Centre (<a href="https://www.ulster.ac.uk/research/topic/computer-science/artificial-intelligence">AIRC</a>), Ulster University (UU), Belfast, UK, as a recipient of a fully-funded international studentship from the Department for the Economy (DfE). Persistent harassment from the very beginning of my studies led me to leave the program prematurely, despite multiple formal reports to various levels of UU. After two harrowing years, I decided to discontinue my PhD on November 30, 2023. In this blog post, I want to share some of the research I conducted at AIRC, particularly in the areas of Deep Generative Models and Satellite Image Time Series (SITS) analysis. I hope these findings may serve as reference for fellow researchers in the field.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
