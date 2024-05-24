@@ -26,15 +26,6 @@ giscus_comments: true
 
 I embarked on my PhD journey in September 2021 at the Artificial Intelligence Research Centre (<a href="https://www.ulster.ac.uk/research/topic/computer-science/artificial-intelligence">AIRC</a>), Ulster University (UU), Belfast, UK, as a recipient of a fully-funded international studentship from the Department for the Economy (DfE). Persistent harassment from the very beginning of my studies led me to leave the program prematurely, despite multiple formal reports to various levels of UU. After two harrowing years, I decided to discontinue my PhD on November 30, 2023. In this blog post, I want to share some of the research I conducted at AIRC, particularly in the areas of Deep Generative Models and Satellite Image Time Series (SITS) analysis. I hope these findings may serve as reference for fellow researchers in the field.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/neom-HegvNcZXWTE-unsplash.jpg" title="climbing image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div>
-    Photo by <a href="https://unsplash.com/@neom?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">NEOM</a> on <a href="https://unsplash.com/photos/a-man-climbing-up-the-side-of-a-mountain-HegvNcZXWTE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-</div>
-
 ---
 
 <ol>
