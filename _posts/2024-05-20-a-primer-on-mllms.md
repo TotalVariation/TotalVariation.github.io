@@ -6,7 +6,7 @@ output:
     toc_depth: 2
 title: A Primer on Multimodal Large Language Models
 description: Towards Building Doraemon-like AI Assistants
-tags: MLLMs, LVLMs, General Purpose Visual Assistants, GenAI
+tags: MLLMs, LVLMs, General-Purpose-Assistants, GenAI
 giscus_comments: true
 date: 2024-05-20
 featured: true
