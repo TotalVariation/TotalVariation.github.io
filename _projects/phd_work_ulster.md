@@ -37,7 +37,7 @@ I embarked on my PhD journey in September 2021 at the Artificial Intelligence Re
 
 ---
 
-## Other Research Proposals
+### Other Research Proposals
 
 Additionally, I would like to share two research proposals that played a significant role in securing two fully-funded PhD opportunities, with the hope that they may offer some reference value to you as well.
 
@@ -46,15 +46,50 @@ Additionally, I would like to share two research proposals that played a signifi
   <li><a href="/assets/pdf/research_proposal_time_series_analysis_xcai.pdf"><b>Fruit Ripeness Prediction</b></a></li>
 </ol>
 
-## Remarks
+<hr>
 
-Rejection is a common part of the PhD application process. If you encounter setbacks, don't be discouraged. Make sure to prioritize self-care, make an informed decision and find the best match.
+## Manipulative Tactics Used by Some PhD Supervisors
+
+While many academic staff are dedicated to teaching, research, or entrepreneurial endeavors, some are pathetically more focused on manipulative tactics, creating unhealthy and dangerous supervisor-student relationships. By exposing these dark psychological tricks, I hope to help you recognize patterns of manipulation and safeguard your mental well-being.
+
+- **Imposter Syndrome Induction** One common tactic is to diminish and devalue the individual, undermining self-esteem and deepening self-doubt, a strategy known as imposter syndrome induction. This can cause students to overcompensate and strive excessively to prove their worth. Your abilities and accomplishments were evaluated judiciously during the competitive selection process, so if your supervisors actively seek chances to convey explicitly or implicitly that you are incompetent, it is important to be aware that the motive is to make you feel vulnerable and gain more control over you.
+
+- **Withdrawal of Communication** Manipulative supervisors may punish students who do not conform to their wishes by withdrawing communication and being unresponsive, forcing the student to comply to restore normalcy. For instance, a supervisor might ignore emails for weeks, especially time-sensitive ones like visa status checks. In worse cases, they might sabotage your work by setting artificial hurdles or imposing unrealistic demands, signaling that non-compliant students are doomed to failure.
+
+- **Fearmongering** Manipulators often use fear to control their victims by exaggerating potential dangers or negative outcomes, a tactic known as fearmongering. Supervisors might make implicit or explicit threats regarding key evaluation milestones, potential extensions of your PhD study, funding cuts, or project terminations. Some might even investigate your background and social relationships to identify weaknesses for more effective manipulation.
+
+- **Other Manipulative Tactics** Other common manipulative tricks include triangulation, gaslighting, guilt-tripping, and blame-shifting. These tactics are often insidious, disguised as concern for your professional growth, making them difficult for universities to monitor or regulate. Students with shallow social experience or introverted personalities may fall into these traps without noticing, leading to mental health issues or worse.
+
+### Prioritize Your Well-being
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/ram-kishor-aLNFCw44XqA-unsplash.jpg" title="honeybee image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/dakota-corbin-xh4mG4cqHGg-unsplash.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div>
-Photo by <a href="https://unsplash.com/@kishor1176?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Ram Kishor</a> on <a href="https://unsplash.com/photos/a-bee-sitting-on-top-of-a-white-flower-aLNFCw44XqA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+    Photo by <a href="https://unsplash.com/@thedakotacorbin?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Dakota Corbin</a> on <a href="https://unsplash.com/photos/woman-walking-beside-wall-with-the-best-gift-is-you-graffiti-xh4mG4cqHGg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+</div>
+
+**It's crucial to prioritize your physical and mental well-being above all else.** If your relationship with your supervisor is draining your energy or affecting your health, please seek professional help immediately, such as from the student well-being team, take a pause, and reevaluate your situation. 
+
+While there are manipulative individuals in academia, there are also many upright and supportive staff members who can offer help. **Don't lose faith in humanity, and always seek out those who uphold moral principles and research integrity.**
+
+<hr>
+
+## Concluding Thoughts and Career Advice
+
+{% twitter https://x.com/Michael_J_Black/status/1784820223276712042 maxwidth=500 limit=3 %}
+
+Undertaking a PhD program is a significant commitment, and it's essential to make an informed decision. I've often pondered what constitutes the "perfect" career option. Inspired by esteemed scientist Michael Black's insightful tweet, I would like to share some of my thoughts on career development:
+
+When you find joy in your work, excellence follows naturally, and the sense of fulfillment becomes a reward in itself. Plus, working in an environment where you're surrounded by good people who share your excitement can be incredibly fulfilling. Finding the right career path may require some searching and possibly some trial and error. However, prioritizing your enjoyment and fulfillment in your career is an investment in your overall well-being and long-term satisfaction.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/steve-jobs-quotes-love-what-you-do.png" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div>
+    Image Source: <a href="https://themotivationmentalist.wordpress.com/motivational-quotes-and-images-compilation/steve-jobs-motivational-quotes/">Motivation Mentalist</a>
 </div>
