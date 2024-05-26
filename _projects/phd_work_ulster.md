@@ -67,7 +67,7 @@ While many academic staff are dedicated to teaching, research, or entrepreneuria
         {% include figure.liquid path="assets/img/dakota-corbin-xh4mG4cqHGg-unsplash.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
-<div>
+<div class="caption">
     Photo by <a href="https://unsplash.com/@thedakotacorbin?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Dakota Corbin</a> on <a href="https://unsplash.com/photos/woman-walking-beside-wall-with-the-best-gift-is-you-graffiti-xh4mG4cqHGg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 </div>
 
@@ -90,6 +90,6 @@ When you find joy in your work, excellence follows naturally, and the sense of f
         {% include figure.liquid path="assets/img/steve-jobs-quotes-love-what-you-do.png" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
-<div>
+<div class="caption">
     Image Source: <a href="https://themotivationmentalist.wordpress.com/motivational-quotes-and-images-compilation/steve-jobs-motivational-quotes/">Motivation Mentalist</a>
 </div>
