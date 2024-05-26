@@ -54,7 +54,7 @@ While many academic staff are dedicated to teaching, research, or entrepreneuria
 
 - **Imposter Syndrome Induction** One common tactic is to diminish and devalue the individual, undermining self-esteem and deepening self-doubt, a strategy known as imposter syndrome induction. This can cause students to overcompensate and strive excessively to prove their worth. Your abilities and accomplishments were evaluated judiciously during the competitive selection process, so if your supervisors actively seek chances to convey explicitly or implicitly that you are incompetent, it is important to be aware that the motive is to make you feel vulnerable and gain more control over you.
 
-- **Withdrawal of Communication** Manipulative supervisors may punish students who do not conform to their wishes by withdrawing communication and being unresponsive, forcing the student to comply to restore normalcy. For instance, a supervisor might ignore emails for weeks, especially time-sensitive ones like visa status checks. In worse cases, they might sabotage your work by setting artificial hurdles or imposing unrealistic demands, signaling that non-compliant students are doomed to failure.
+- **Silent Treatment** Manipulative supervisors may punish students who do not conform to their wishes by withdrawing communication and being unresponsive, forcing the student to comply to restore normalcy. For instance, a supervisor might ignore emails for weeks, especially time-sensitive ones like visa status checks. In worse cases, they might sabotage your work by setting artificial hurdles or imposing unrealistic demands, signaling that non-compliant students are doomed to failure.
 
 - **Fearmongering** Manipulators often use fear to control their victims by exaggerating potential dangers or negative outcomes, a tactic known as fearmongering. Supervisors might make implicit or explicit threats regarding key evaluation milestones, potential extensions of your PhD study, funding cuts, or project terminations. Some might even investigate your background and social relationships to identify weaknesses for more effective manipulation.
 
@@ -79,7 +79,7 @@ While there are manipulative individuals in academia, there are also many uprigh
 
 ## Concluding Thoughts and Career Advice
 
-{% twitter https://x.com/Michael_J_Black/status/1784820223276712042 maxwidth=500 limit=3 %}
+{% twitter https://x.com/Michael_J_Black/status/1784820223276712042 %}
 
 Undertaking a PhD program is a significant commitment, and it's essential to make an informed decision. I've often pondered what constitutes the "perfect" career option. Inspired by esteemed scientist Michael Black's insightful tweet, I would like to share some of my thoughts on career development:
 
