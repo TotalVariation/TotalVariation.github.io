@@ -48,15 +48,41 @@ Additionally, I would like to share two research proposals that played a signifi
 
 <hr>
 
-## Manipulative Tactics Used by Some PhD Supervisors
+## Safeguarding Your Career & Well-Being: Identifying Manipulative Behaviour in Academic Supervision
 
-While many academic staff are dedicated to teaching, research, or entrepreneurial endeavors, some are pathetically more focused on manipulative tactics, creating unhealthy and dangerous supervisor-student relationships. By exposing these dark psychological tricks, I hope to help you recognize patterns of manipulation and safeguard your mental well-being.
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/Quotefancy-446493-3840x2160.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Photo by <a href="https://quotefancy.com/quote/772108/Benjamin-Franklin-An-ounce-of-prevention-is-worth-a-pound-of-cure">quotefancy</a>
+</div>
 
-- **Imposter Syndrome Induction** One common tactic is to diminish and devalue the individual, undermining self-esteem and deepening self-doubt, a strategy known as imposter syndrome induction. This can cause students to overcompensate and strive excessively to prove their worth. Your abilities and accomplishments were evaluated judiciously during the competitive selection process, so if your supervisors actively seek chances to convey explicitly or implicitly that you are incompetent, it is important to be aware that the motive is to make you feel vulnerable and gain more control over you.
+Supervisors hold significant influence over the career development of students and junior researchers. In today's academic community, being a professor does not necessarily imply positive correlation with professional ethics. Being manipulative is, however, a strong negative indicator, especially in supervisory roles where there is an inherent power imbalance. When supervisors manipulate those under them, they exploit this power to their advantage, often at the expense of the mentees’ well-being or professional growth. 
 
-- **Silent Treatment** Manipulative supervisors may punish students who do not conform to their wishes by withdrawing communication and being unresponsive, forcing the student to comply to restore normalcy. For instance, a supervisor might ignore emails for weeks, especially time-sensitive ones like visa status checks. In worse cases, they might sabotage your work by setting artificial hurdles or imposing unrealistic demands, signaling that non-compliant students are doomed to failure.
+Such behavior can foster a toxic work environment, shifting the focus from learning and collaboration to a downward spiral where moral standards are lowered, or even human values are disregarded. Additionally, it can harm students' long-term attitudes toward academia and research careers, or distort their understanding of what it means to achieve academic success. This may perpetuate unethical practices in the next generation of researchers, further undermining the ethical foundation of the research community.
 
-- **Fearmongering** Manipulators often use fear to control their victims by exaggerating potential dangers or negative outcomes, a tactic known as fearmongering. Supervisors might make implicit or explicit threats regarding key evaluation milestones, potential extensions of your PhD study, funding cuts, or project terminations. Some might even investigate your background and social relationships to identify weaknesses for more effective manipulation.
+Navigating unethical behaviour by senior supervisors can be particularly challenging for early-career researchers, as those affected may fear retaliation or potential career risks involved. As prevention is better than cure, in the following, I aim to help you recognize manipulation by academic supervisors by exposing those dark psychological tricks.
+
+- **Imposter Syndrome Induction** One common tactic used by manipulative supervisors is to diminish and devalue students, undermining their self-esteem and deepening self-doubt, known as imposter syndrome induction. Such tactics can push students to overcompensate and strive excessively to prove their worth. It's important to remember that your abilities and accomplishments were thoroughly assessed during the competitive selection process. If your supervisor actively seeks opportunities to make you feel inadequate or incapable, they may be trying to make you feel vulnerable to gain more control over you.
+
+- **Silent Treatment** Manipulative supervisors may punish students who do not conform to their wishes by withdrawing communication and being unresponsive, forcing the student to comply in order to restore normalcy. For examples, they might ignore your emails, refuse to meet with you, or withhold support and feedback on your research for extended periods after a disagreement or their opinions being questioned.
+
+- **Fearmongering** Manipulative supervisors often use fear to control their victims by exaggerating potential dangers or negative outcomes, implying that disobedient students are doomed to failure, a tactic known as fearmongering. They might make explicit or implicit threats regarding key evaluation milestones, potential extensions of your PhD study, funding cuts, project terminations, or damage to your career prospects. In extreme cases, some may even investigate your social background to identify weaknesses they can exploit more effectively.
+
+- **Gaslighting** Gaslighting is a manipulative tactic where a person distorts the victim's perception of reality, causing self-doubt about their own experiences or sanity. In the supervisor-student relationship, examples of gaslighting include denying that certain instructions were ever given to avoid accountability, trivializing reasonable concerns by accusing you of "overreacting" or being "too sensitive," downplaying your contributions to research work, or even claiming credit for your ideas.
+
+- **Isolation** 
+Cutting students off from potential support networks to ensure control and dependency is a common tactic of manipulative supervisors. They may go to great lengths to restrict your access to activities where you could gain external perspectives or advice, such as discouraging you from collaborating with other research groups, limiting your interactions with other faculty members, or making you feel unwelcome in the work environment by spreading rumors.
+
+- **Unreasonable Expectations with Moving Goalposts** Rather than setting clear and well-established evaluation criteria, manipulative supervisors often impose unrealistic goals and change them arbitrarily to assert authority. For example, they may require multiple drafts of a paper, with approval criteria shifting each time, or delay signing off on your thesis under the pretext that more work is needed, without providing concrete feedback—or with demands that contradict previous guidance.
+
+- **Favoritism** Manipulative supervisors may use favoritism as a divide-and-conquer tactic to prevent the formation of a united network of students such that collective actions may be taken to challenge their unethical practices. They may cause friction or resentment among students by giving preferential treatment to some while making disparaging comments about others.
+
+- **Micromanagement** Instead of guiding students to develop skills essential for their career growth, manipulative supervisors tend to exert excessive control and limit autonomy to serve their own agendas, e.g., overly dictating the direction of research without transparent discussion, insisting on approving every minor detail of the student's work, or depriving students of opportunities to make independent decisions.
+
+- **Guilt-Tripping** Manipulative supervisors often use guilt-tripping to coerce compliance by making students feel unjustifiably indebted. This tactic is often subtle, framed as "for your own good." For instance, they might pressure you to work on weekends or skip holidays, implying that otherwise, you would be seen as "ungrateful."
 
 - **Other Manipulative Tactics** Other common manipulative tricks include triangulation, gaslighting, guilt-tripping, and blame-shifting. These tactics are often insidious, disguised as concern for your professional growth, making them difficult for universities to monitor or regulate. Students with shallow social experience or introverted personalities may fall into these traps without noticing, leading to mental health issues or worse.
 
@@ -71,9 +97,9 @@ While many academic staff are dedicated to teaching, research, or entrepreneuria
     Photo by <a href="https://unsplash.com/@thedakotacorbin?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Dakota Corbin</a> on <a href="https://unsplash.com/photos/woman-walking-beside-wall-with-the-best-gift-is-you-graffiti-xh4mG4cqHGg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 </div>
 
-**It's crucial to prioritize your physical and mental well-being above all else.** If your relationship with your supervisor is draining your energy or affecting your health, please seek professional help immediately, such as from the student well-being team, take a pause, and reevaluate your situation. 
+These dark psychology tactics are often employed by individuals who exhibit personality traits of Machiavellianism, narcissism, or psychopathy. Given the power dynamics in academia and the risk of retaliation, confronting your supervisor or addressing the issue openly is generally not advisable. The best protective measure is to recognize manipulation as early as possible, seek professional help from trusted colleagues, faculty members, or specialized committees for academic misconduct, and plan a safe exit if necessary.
 
-While there are manipulative individuals in academia, there are also many upright and supportive staff members who can offer help. **Don't lose faith in humanity, and always seek out those who uphold moral principles and research integrity.**
+Please bear in mind that **It's crucial to prioritize your physical and mental well-being above all else.** While there are manipulative individuals in academia, many upright and supportive staff members can offer help. **Don't lose faith in humanity, and always seek out those who uphold moral principles and research integrity.**
 
 <hr>
 
