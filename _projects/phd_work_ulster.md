@@ -84,8 +84,6 @@ Cutting students off from potential support networks to ensure control and depen
 
 - **Guilt-Tripping** Manipulative supervisors often use guilt-tripping to coerce compliance by making students feel unjustifiably indebted. This tactic is often subtle, framed as "for your own good." For instance, they might pressure you to work on weekends or skip holidays, implying that otherwise, you would be seen as "ungrateful."
 
-- **Other Manipulative Tactics** Other common manipulative tricks include triangulation, gaslighting, guilt-tripping, and blame-shifting. These tactics are often insidious, disguised as concern for your professional growth, making them difficult for universities to monitor or regulate. Students with shallow social experience or introverted personalities may fall into these traps without noticing, leading to mental health issues or worse.
-
 ### Prioritize Your Well-being
 
 <div class="row">
