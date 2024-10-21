@@ -107,7 +107,7 @@ Please bear in mind that **It's crucial to prioritize your physical and mental w
 
 Undertaking a PhD program is a significant commitment, and it's essential to make an informed decision. I've often pondered what constitutes the "perfect" career option. Inspired by esteemed scientist Michael Black's insightful tweet, I would like to share some of my thoughts on career development:
 
-When you find joy in your work, excellence follows naturally, and the sense of fulfillment becomes a reward in itself. Plus, working in an environment where you're surrounded by good people who share your excitement can be incredibly fulfilling. Finding the right career path may require some searching and possibly some trial and error. However, prioritizing your enjoyment and fulfillment in your career is an investment in your overall well-being and long-term satisfaction.
+When you find joy in your work, excellence follows naturally, and the sense of fulfillment becomes a reward in itself. Plus, working in an environment where you're surrounded by good people who share your excitement can be incredibly fulfilling. Finding the right career path may require some searching and possibly some trial and error. However, **prioritizing your enjoyment and fulfillment in your career is an investment in your overall well-being and long-term satisfaction.**
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
