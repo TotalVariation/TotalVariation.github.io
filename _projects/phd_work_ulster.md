@@ -37,17 +37,6 @@ I embarked on my PhD journey in September 2021 at the Artificial Intelligence Re
 
 ---
 
-### Other Research Proposals
-
-Additionally, I would like to share two research proposals that played a significant role in securing two fully-funded PhD opportunities, with the hope that they may offer some reference value to you as well.
-
-<ol>
-  <li><a href="/assets/pdf/research_proposal_person_reid_xcai.pdf"><b>Person Re-ID</b></a></li>
-  <li><a href="/assets/pdf/research_proposal_time_series_analysis_xcai.pdf"><b>Fruit Ripeness Prediction</b></a></li>
-</ol>
-
-<hr>
-
 ## Safeguarding Your Career & Well-Being: Identifying Manipulative Behaviour in Academic Supervision
 
 <div class="row">
