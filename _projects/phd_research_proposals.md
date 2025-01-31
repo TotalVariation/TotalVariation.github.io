@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Behind the Applications: Sharing My PhD Research Proposals
+title: PhD Research Proposals That Got Me Noticed
 description:
 img: assets/img/prateek-katyal-FcdtuGf7TEc-unsplash.jpg
 importance: 1
