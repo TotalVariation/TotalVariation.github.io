@@ -1,6 +1,6 @@
 ---
 layout: page
-title: An Unfinished PhD Career at Ulster University
+title: An Aborted PhD Career at Ulster University
 description: 
 img: assets/img/hughdillon1-2x.jpg
 importance: 1
