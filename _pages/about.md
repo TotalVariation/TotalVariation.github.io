@@ -22,6 +22,6 @@ social: true # includes social icons at the bottom of the page
 </blockquote>
 
 <p>I am actively seeking research internships or funded PhD opportunities that align with my passion and expertise, and a healthy environment where I can work alongside like-minded individuals who value integrity, knowledge, and creativity.</p>
-<p>My research interests include computer vision, deep generative models, multimodal learning.</p>
+<p>My research interests include computer vision, deep generative models, multimodal large language models.</p>
 <p>I obtained my M.Sc. at <a href="https://en.scu.edu.cn/" target="_blank" rel="noopener"><span>Sichuan University</span></a>, Chengdu, China, advised by <a href='https://ieeexplore.ieee.org/author/37269178400' target="_blank" rel="noopener"><span>Professor Yifei Pu</span></a>. Prior to that, I obtained my B.Eng. degree from <a href="https://english.shnu.edu.cn/" target="_blank" rel="noopener"><span>Shanghai Normal University</span></a>, Shanghai, China, and was fortunate to be advised in the fourth year by <a href='https://scholar.google.com/citations?user=dR3syukAAAAJ&hl=en&oi=ao' target="_blank" rel="noopener"><span>Professor Yanhua Long</span></a>.</p>
 
