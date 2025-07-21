@@ -237,7 +237,7 @@ Proof:
 To prove $$ (I \otimes B) \text{vec}(C) = \text{vec}(BC) $$, assume $$ B \in \mathbb{R}^{n \times m} $$ and $$ C \in \mathbb{R}^{m \times k} $$,
 
 $$ 
-BC = B \left[ \overrightarrow{c_1}, \overrightarrow{c_2}, \dots, \overrightarrow{c_k} \right] $ = $ \left[ B\overrightarrow{c_1}, B\overrightarrow{c_2}, \dots, B\overrightarrow{c_k} \right] 
+BC = B \left[ \overrightarrow{c_1}, \overrightarrow{c_2}, \dots, \overrightarrow{c_k} \right] = \left[ B\overrightarrow{c_1}, B\overrightarrow{c_2}, \dots, B\overrightarrow{c_k} \right] 
 $$
 
 $$ 

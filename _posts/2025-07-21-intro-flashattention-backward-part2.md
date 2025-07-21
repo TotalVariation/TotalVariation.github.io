@@ -11,7 +11,7 @@ authors:
   - name: Xin Cai
     url: "https://totalvariation.github.io/"
 
-bibliography:
+bibliography: 2025-07-21-intro-flashattention-backward-part2.bib
 
 # Optionally, you can add a table of contents to your post.
 # NOTES:
@@ -50,15 +50,6 @@ _styles: >
     font-size: 16px;
   }
 ---
-
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/Quotefancy-2016666-3840x2160.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
-    </div>
-</div>
-<div class="caption">
-    Photo by <a href="https://quotefancy.com/quote/757737/Sydney-J-Harris-The-whole-purpose-of-education-is-to-turn-mirrors-into-windows">quotefancy</a>
-</div>
 
 ## Recap Forward and Backward Passes of Standard Attention
 
@@ -158,49 +149,50 @@ Instead of using `block pointer` defined by `make_block_ptr`, I find that direct
 In the following, I will give some visual illustrations to facilitate your understanding of how `tl.load()` works, as there is no difference in read (`tl.load()`) and write (`tl.store()`) operations as long as their indexes are specified correctly.
 
 <d-code block language="python">
-import numpy as np
+  import numpy as np
 
-N = 8
-# Here, the content of the array is made intentionally to be the exact same as offsets relative to the base pointer.
-# Please note that in Triton language, all Pytorch tensors are implicitly converted to base pointers.
+  N = 8
+  # Here, the content of the array is made intentionally to be the exact same as offsets relative to the base pointer.
+  # Please note that in Triton language, all Pytorch tensors are implicitly converted to base pointers.
 
-A = np.arange(N * N).reshape(N, N)
-print(A)
+  A = np.arange(N * N).reshape(N, N)
+  print(A)
 
-BLOCK_M = 2
-col_dim = N
+  BLOCK_M = 2
+  col_dim = N
 
-stride_row = N
-stride_col = 1
+  stride_row = N
+  stride_col = 1
 
-offs_m = np.arange(BLOCK_M)[:, None] * stride_row + np.arange(col_dim)[None, :] * stride_col
+  offs_m = np.arange(BLOCK_M)[:, None] * stride_row + np.arange(col_dim)[None, :] * stride_col
 
-# N-dimensional tensors are stored contiguously in memory. 
-# Otherwise, it would be recommended to call x.contiguous() before taking any tensor operations. 
-# Here, we mimic this feature with np.ndarray.flatten.
+  # N-dimensional tensors are stored contiguously in memory. 
+  # Otherwise, it would be recommended to call x.contiguous() before taking any tensor operations. 
+  # Here, we mimic this feature with np.ndarray.flatten.
 
-# illustrate loading tensors from memory
-print(A.flatten()[offs_m])
+  # illustrate loading tensors from memory
+  print(A.flatten()[offs_m])
+
 </d-code>
 
 <d-code block language="python">
-[[ 0  1  2  3  4  5  6  7]
- [ 8  9 10 11 12 13 14 15]
- [16 17 18 19 20 21 22 23]
- [24 25 26 27 28 29 30 31]
- [32 33 34 35 36 37 38 39]
- [40 41 42 43 44 45 46 47]
- [48 49 50 51 52 53 54 55]
- [56 57 58 59 60 61 62 63]]
-[[ 0  1  2  3  4  5  6  7]
- [ 8  9 10 11 12 13 14 15]]
+  [[ 0  1  2  3  4  5  6  7]
+   [ 8  9 10 11 12 13 14 15]
+   [16 17 18 19 20 21 22 23]
+   [24 25 26 27 28 29 30 31]
+   [32 33 34 35 36 37 38 39]
+   [40 41 42 43 44 45 46 47]
+   [48 49 50 51 52 53 54 55]
+   [56 57 58 59 60 61 62 63]]
+  [[ 0  1  2  3  4  5  6  7]
+   [ 8  9 10 11 12 13 14 15]]
 </d-code>
 
 <d-code block language="python">
-# illustrate moving blocks step_size rows down, which will be used in the for loop to 
-# traverse over one dimension of a tensor.
-step_size = 2
-print(A.flatten()[offs_m + step_size * N])
+  # illustrate moving blocks step_size rows down, which will be used in the for loop to 
+  # traverse over one dimension of a tensor.
+  step_size = 2
+  print(A.flatten()[offs_m + step_size * N])
 </d-code>
 
 <d-code block language="python">
