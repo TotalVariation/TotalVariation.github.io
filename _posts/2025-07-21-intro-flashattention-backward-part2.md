@@ -283,14 +283,18 @@ For the non-causal case, it is straightforward,
 
 For the causal case (please note that causal modelling is only used in self-attention), the procedure is split into two steps:
 
-1. Calculate the non-masked blocks (yellow squares in the <a href="#figure-1">Fig-1</a>) by only changing `start_m = start_n + BLOCK_N1`.
-2. Calculate the diagonal block (the green square in the <a href="#figure-1">Fig-1</a>) by setting
+<ol>
+<li> Calculate the non-masked blocks (yellow squares in the <a href="#figure-1">Fig-1</a>) by only changing `start_m = start_n + BLOCK_N1`. </li>
+<li> Calculate the diagonal block (the green square in the <a href="#figure-1">Fig-1</a>) by setting
 
    ```python
      start_m = start_n
      MASK_BLOCK_M1: tl.constexpr = BLOCK_M1 // BLK_SLICE_FACTOR
      num_steps = BLOCK_N1 // MASK_BLOCK_M1
    ```
+
+</li>
+</ol>
 
 ```python
   # The main inner-loop logic for computing dK and dV.
@@ -392,8 +396,9 @@ $$ dQ $$ is calculated similarly: a block of elements of `q` is first loaded (se
 
 For the causal case, the procedure is split into two steps:
 
-1. Calculate the non-masked blocks (yellow squares in the <a href="#figure-2">Fig-2</a>) by setting `end_n, num_steps = start_m, end_n // BLOCK_N2`. So in the inner loop over `k, v`, the start and end indexes are `0` and `start_m`, respectively.
-2. Calculate the diagonal block (the green square in the <a href="#figure-2">Fig-2</a>) by setting
+<ol>
+<li> Calculate the non-masked blocks (yellow squares in the <a href="#figure-2">Fig-2</a>) by setting `end_n, num_steps = start_m, end_n // BLOCK_N2`. So in the inner loop over `k, v`, the start and end indexes are `0` and `start_m`, respectively. </li>
+<li> Calculate the diagonal block (the green square in the <a href="#figure-2">Fig-2</a>) by setting
 
    ```python
      MASK_BLOCK_N2: tl.constexpr = BLOCK_N2 // BLK_SLICE_FACTOR
@@ -401,7 +406,8 @@ For the causal case, the procedure is split into two steps:
    ```
 
    And the start and end indexes are `start_m` and `start_m + BLOCK_M2` respectively.
-
+</li>
+</ol>
 
 For the non-causal case, in the inner loop over `k, v`, the start and end indexes are simply `0` and `N_CTX`, respectively. However, in my implementation, it is also split into two steps: 1) from `0` to `start_m`, and 2) from `start_m` to `N_CTX`.
 
