@@ -365,7 +365,12 @@ This part of code recomputes $$ S = QK^T $$ and $$ P = \operatorname{softmax}(S)
 
 `dpT = tl.dot(v, tl.trans(do)).to(tl.float32)` implements the equation $$ dP = dO V^T $$ (its transposed version).
 
-`dsT = pT * (dpT - Di[None, :])` implements the equation $$ dS = \operatorname{dsoftmax}(dP) \in \mathbb{R}^{N\times N} $$, which is further simplified to $$ dS_{i,:} = \operatorname{dsoftmax}dP_{i,:} = (\text{diag}(P_{i,:}) - P_{i,:}P_{i,:}^T)dP_{i,:} = P_{i,:} \circ dP_{i,:} - \left( P_{i,:}^T dP_{i,:} \right) P_{i,:} = P_{i,:} \circ dP_{i,:} - D_i P_{i,:} $$ as discussed above (its transposed version).
+`dsT = pT * (dpT - Di[None, :])` implements the equation $$ dS = \operatorname{dsoftmax}(dP) \in \mathbb{R}^{N\times N} $$, which is further simplified to 
+
+$$ dS_{i,:} = \operatorname{dsoftmax}dP_{i,:} = (\text{diag}(P_{i,:}) - P_{i,:}P_{i,:}^T)dP_{i,:} = P_{i,:} \circ dP_{i,:} - \left( P_{i,:}^T dP_{i,:} \right) P_{i,:} = P_{i,:} \circ dP_{i,:} - D_i P_{i,:} 
+$$ 
+
+as discussed above (its transposed version).
 
 `dk += tl.dot(dsT, tl.trans(qT))` implements the equation $$ dK = dS^T Q $$.
 
