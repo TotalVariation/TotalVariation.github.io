@@ -148,7 +148,8 @@ Instead of using `block pointer` defined by `make_block_ptr`, I find that direct
 
 In the following, I will give some visual illustrations to facilitate your understanding of how `tl.load()` works, as there is no difference in read (`tl.load()`) and write (`tl.store()`) operations as long as their indexes are specified correctly.
 
-<d-code block language="python">
+<pre>
+<code>
   import numpy as np
 
   N = 8
@@ -172,8 +173,8 @@ In the following, I will give some visual illustrations to facilitate your under
 
   # illustrate loading tensors from memory
   print(A.flatten()[offs_m])
-
-</d-code>
+</code>
+</pre>
 
 <d-code block language="python">
   [[ 0  1  2  3  4  5  6  7]
