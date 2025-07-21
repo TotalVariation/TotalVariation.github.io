@@ -397,7 +397,7 @@ $$ dQ $$ is calculated similarly: a block of elements of `q` is first loaded (se
 
 For the causal case, the procedure is split into two steps:
 
-1. Calculate the non-masked blocks (yellow squares in the <a href="#figure-2">Fig-2</a>) by setting <code>end_n, num_steps = start_m, end_n // BLOCK_N2</code>. So in the inner loop over <code>k, v</code>, the start and end indexes are <code>0</code> and <code>start_m</code>, respectively.
+1. Calculate the non-masked blocks (yellow squares in the <a href="#figure-2">Fig-2</a>) by setting <code>end_n = start_m</code> <code>num_steps = end_n // BLOCK_N2</code> . So in the inner loop over <code>k, v</code>, the start and end indexes are <code>0</code> and <code>start_m</code>, respectively.
 2. Calculate the diagonal block (the green square in the <a href="#figure-2">Fig-2</a>) by setting
 
    ```python
@@ -473,7 +473,7 @@ This part of code recomputes $$ S = QK^T $$ and $$ P = \operatorname{softmax}(S)
 
 ## Concluding Remarks
 
-Voila! We have walked through the core implementation of the backward pass of FlashAttention, where the Triton code shares a high similarity with matrix calculus equations. You can check the Github repo containing an IPython notebook which is supposed to offer a more enhanced interactive experience and another notebook where a more flexible implementation of FlashAttention2 is given, which can handle both self-attention and cross-attention with arbitrary lengths. However, for practical usage, I recommend using the official [FlashAttention Repo](https://github.com/Dao-AILab/flash-attention) written in CUDA. Furthermore, I believe this post will facilitate your understanding of the Triton implementation given in the official [FlashAttention Repo](https://github.com/Dao-AILab/flash-attention).
+Voila! We have walked through the core implementation of the backward pass of FlashAttention, where the Triton code shares a high similarity with matrix calculus equations. You can check out the Github repo [Learning-to-Learn-DL](https://github.com/TotalVariation/Learning-to-Learn-DL/tree/main/flash_attention) containing an IPython notebook which is supposed to offer a more enhanced interactive experience and another notebook where a more flexible implementation of FlashAttention2 is given, which can handle both self-attention and cross-attention with arbitrary lengths. However, for practical usage, I recommend using the official [FlashAttention Repo](https://github.com/Dao-AILab/flash-attention) written in CUDA. Furthermore, I believe this post will facilitate your understanding of the Triton implementation given in the official [FlashAttention Repo](https://github.com/Dao-AILab/flash-attention).
 
 
 {% raw %}
