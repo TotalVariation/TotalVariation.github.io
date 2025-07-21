@@ -15,7 +15,7 @@ authors:
   - name: Xin Cai
     url: "https://totalvariation.github.io/"
 
-bibliography:
+bibliography: 2025-07-21-intro-flashattention-backward-part1.bib
 
 # Optionally, you can add a table of contents to your post.
 # NOTES:
