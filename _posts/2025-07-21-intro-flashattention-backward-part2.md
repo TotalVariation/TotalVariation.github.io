@@ -284,14 +284,14 @@ For the non-causal case, it is straightforward,
 For the causal case (please note that causal modelling is only used in self-attention), the procedure is split into two steps:
 
 <ol>
-<li> Calculate the non-masked blocks (yellow squares in the <a href="#figure-1">Fig-1</a>) by only changing `start_m = start_n + BLOCK_N1`. </li>
+<li> Calculate the non-masked blocks (yellow squares in the <a href="#figure-1">Fig-1</a>) by only changing <code>start_m = start_n + BLOCK_N1</code>. </li>
 <li> Calculate the diagonal block (the green square in the <a href="#figure-1">Fig-1</a>) by setting
 
-   ```python
-     start_m = start_n
-     MASK_BLOCK_M1: tl.constexpr = BLOCK_M1 // BLK_SLICE_FACTOR
-     num_steps = BLOCK_N1 // MASK_BLOCK_M1
-   ```
+    ```python
+      start_m = start_n
+      MASK_BLOCK_M1: tl.constexpr = BLOCK_M1 // BLK_SLICE_FACTOR
+      num_steps = BLOCK_N1 // MASK_BLOCK_M1
+    ```
 
 </li>
 </ol>
@@ -402,15 +402,15 @@ $$ dQ $$ is calculated similarly: a block of elements of `q` is first loaded (se
 For the causal case, the procedure is split into two steps:
 
 <ol>
-<li> Calculate the non-masked blocks (yellow squares in the <a href="#figure-2">Fig-2</a>) by setting `end_n, num_steps = start_m, end_n // BLOCK_N2`. So in the inner loop over `k, v`, the start and end indexes are `0` and `start_m`, respectively. </li>
+<li> Calculate the non-masked blocks (yellow squares in the <a href="#figure-2">Fig-2</a>) by setting <code>end_n, num_steps = start_m, end_n // BLOCK_N2</code>. So in the inner loop over <code>k, v</code>, the start and end indexes are <code>0</code> and <code>start_m</code>, respectively. </li>
 <li> Calculate the diagonal block (the green square in the <a href="#figure-2">Fig-2</a>) by setting
 
-   ```python
-     MASK_BLOCK_N2: tl.constexpr = BLOCK_N2 // BLK_SLICE_FACTOR
-     num_steps = BLOCK_M2 // MASK_BLOCK_N2
-   ```
+    ```python
+      MASK_BLOCK_N2: tl.constexpr = BLOCK_N2 // BLK_SLICE_FACTOR
+      num_steps = BLOCK_M2 // MASK_BLOCK_N2
+    ```
 
-   And the start and end indexes are `start_m` and `start_m + BLOCK_M2` respectively.
+   And the start and end indexes are <code>start_m</code> and <code>start_m + BLOCK_M2</code> respectively.
 </li>
 </ol>
 
