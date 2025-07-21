@@ -138,7 +138,7 @@ $$
 
 then $$ dS_{i,:} = P_{i,:} \circ dP_{i,:} - D_i P_{i,:} $$.
 
-Readers seeking a comprehensive treatment (e.g., the online-softmax trick in the forward pass) of FlashAttention are encouraged to refer to the original papers <d-cite key="dao2022flashattention"></d-cite> <d-cite key="dao2023flashattention"></d-cite> or the [YouTube video by Umar Jamil](https://www.youtube.com/watch?v=zy8ChVd_oTM&t=22388s).
+Readers seeking a comprehensive treatment (e.g., the online-softmax trick in the forward pass) of FlashAttention are encouraged to refer to the original papers <d-cite key="dao2022flashattention"></d-cite> <d-cite key="dao2023flashattention"></d-cite> or other tutorials available online focusing on the forward pass.
 
 Now, we are in a position to dive into the Triton implementation of the backward pass of FlashAttention2.
 
