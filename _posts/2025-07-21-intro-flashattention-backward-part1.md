@@ -169,9 +169,9 @@ Therefore, we arrive at $$ \frac{\partial L}{\partial S_{i, :}} = \operatorname{
 
 ### By Two Alternative Methods
 
-**Component-wise**
-
 Next, we will resort to two alternative methods to verify the correctness of our previous derivations. Yet you will find them a bit more cumbersome.
+
+**Component-wise**
 
 Recall that in multivariable calculus, Let $$ U \subseteq \mathbb{R}^n $$ and $$ V \subseteq \mathbb{R}^m $$ be open and $$ f:\: U \to \mathbb{R}^m,\: g:\: V \to \mathbb{R}^k $$ with $$ f(U) \subseteq V $$. Let $$ f $$ be differentiable on $$ U $$ and $$ g $$ differentiable on $$ V $$. Set $$ y = f(x) $$ and $$ z = (g \circ f)(x) = g(y) $$. Then the chain rule $$ (g \circ f)^\prime(x) = g^\prime(y)f^\prime(x) $$ can be written in its matrix form: 
 
@@ -199,7 +199,7 @@ Applying the chain rule, we get
 $$ 
 \frac{\partial L}{\partial V_{ij}} = \sum_{k=1}^N \frac{\partial L}{\partial O_{kj}} \frac{\partial O_{kj}}{\partial V_{ij}} = \sum_{k=1}^N \frac{\partial L}{\partial O_{kj}} P_{ki} = (P^T \frac{\partial L}{\partial O})_{ij}$$
 
-Similarly, we can prove $$ \frac{\partial L}{\partial P} = \frac{\partial L}{\partial O} V^T \in \mathbb{R}^{N\times N} $$ by treating each row $$ P_{i,:} $$ independently which shares the same Jacobian matrix $$ V^T $$ ($$ O^T = V^T P^T $$): $$ O_{ik} = \sum_{m=1}^N P_{im} V_{mk} $, so $ \frac{\partial O_{ik}}{\partial P_{ij}} = V_{jk} $$. Or, it can be read off from the Jacobian matrix $$ V^T $$ as the k-th row and j-th column element $$ V^T_{kj} $$ ($$ \frac{\partial O[i, :]_{k}}{\partial P[i, :]_{j}} $$).
+Similarly, we can prove $$ \frac{\partial L}{\partial P} = \frac{\partial L}{\partial O} V^T \in \mathbb{R}^{N\times N} $$ by treating each row $$ P_{i,:} $$ independently which shares the same Jacobian matrix $$ V^T $$ ($$ O^T = V^T P^T $$): $$ O_{ik} = \sum_{m=1}^N P_{im} V_{mk} $$, so $$ \frac{\partial O_{ik}}{\partial P_{ij}} = V_{jk} $$. Or, it can be read off from the Jacobian matrix $$ V^T $$ as the k-th row and j-th column element $$ V^T_{kj} $$ ($$ \frac{\partial O[i, :]_{k}}{\partial P[i, :]_{j}} $$).
 
 $$ 
 \frac{\partial L}{\partial P_{ij}} = \sum_{k=1}^d \frac{\partial L}{\partial O_{ik}} \frac{\partial O_{ik}}{\partial P_{ij}} = \sum_{k=1}^d \frac{\partial L}{\partial O_{ik}} V_{jk} = \left( \frac{\partial L}{\partial O} V^T \right)_{ij} 
@@ -234,7 +234,7 @@ $$
 {% details Click here to know more %}
 Proof:
 
-To prove $$ (I \otimes B) \text{vec}(C) = \text{vec}(BC) $, assume $ B \in \mathbb{R}^{n \times m} $$ and $$ C \in \mathbb{R}^{m \times k} $$,
+To prove $$ (I \otimes B) \text{vec}(C) = \text{vec}(BC) $$, assume $$ B \in \mathbb{R}^{n \times m} $$ and $$ C \in \mathbb{R}^{m \times k} $$,
 
 $$ 
 BC = B \left[ \overrightarrow{c_1}, \overrightarrow{c_2}, \dots, \overrightarrow{c_k} \right] $ = $ \left[ B\overrightarrow{c_1}, B\overrightarrow{c_2}, \dots, B\overrightarrow{c_k} \right] 
