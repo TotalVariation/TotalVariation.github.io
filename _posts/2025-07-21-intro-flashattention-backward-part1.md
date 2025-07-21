@@ -157,13 +157,15 @@ $$
 dL = \left( \frac{\partial L}{\partial P_{i, :}} \right)^T dP_{i, :} = \left( \frac{\partial L}{\partial P_{i, :}} \right)^T \operatorname{dsoftmax}(dS_{i, :}) 
 $$
 
-The derivative $$ df_x $$ of a function $$ f $$ mapping vectors from $$ \mathbb{R}^n \to \mathbb{R}^n $$ is a linear transformation $$ df_x \in \mathcal{L}(\mathbb{R}^n, \mathbb{R}^n) $$, which can be expressed in its matrix form (Jacobian matrix). The Jocobian matrix (i.e., the derivative) of $$ y = \operatorname{softmax}(x) $, where $ x \in \mathbb{R}^n $$ is a column vector, is an $$ n \times n $$ symmetric matrix, $$ \operatorname{dsoftmax}=\text{diag}(y) - yy^T=\operatorname{dsoftmax}^T $$.
+The derivative $$ df_x $$ of a function $$ f $$ mapping vectors from $$ \mathbb{R}^n \to \mathbb{R}^n $$ is a linear transformation $$ df_x \in \mathcal{L}(\mathbb{R}^n, \mathbb{R}^n) $$, which can be expressed in its matrix form (Jacobian matrix). The Jocobian matrix (i.e., the derivative) of $$ y = \operatorname{softmax}(x) $$, where $$ x \in \mathbb{R}^n $$ is a column vector, is an $$ n \times n $$ symmetric matrix, $$ \operatorname{dsoftmax}=\text{diag}(y) - yy^T=\operatorname{dsoftmax}^T $$.
 
 With the above derivation, we can proceed as follows:
 
 $$ 
-dL = \left( \frac{\partial L}{\partial P_{i, :}} \right)^T \operatorname{dsoftmax}(dS_{i, :}) = \left( \operatorname{dsoftmax}^T \frac{\partial L}{\partial P_{i, :}} \right)^T dS_{i, :} = \left( \operatorname{dsoftmax} \frac{\partial L}{\partial P_{i, :}} \right)^T dS_{i, :} $. Therefore, we arrive at $ \frac{\partial L}{\partial S_{i, :}} = \operatorname{dsoftmax}(\frac{\partial L}{\partial P_{i, :}}) $. With a slight abuse of notation, it can be compactly written as $ \frac{\partial L}{\partial S} = \operatorname{dsoftmax}(\frac{\partial L}{\partial P}) \in \mathbb{R}^{N \times N}
-$$
+dL = \left( \frac{\partial L}{\partial P_{i, :}} \right)^T \operatorname{dsoftmax}(dS_{i, :}) = \left( \operatorname{dsoftmax}^T \frac{\partial L}{\partial P_{i, :}} \right)^T dS_{i, :} = \left( \operatorname{dsoftmax} \frac{\partial L}{\partial P_{i, :}} \right)^T dS_{i, :} 
+$$ 
+
+Therefore, we arrive at $$ \frac{\partial L}{\partial S_{i, :}} = \operatorname{dsoftmax}(\frac{\partial L}{\partial P_{i, :}}) $$. With a slight abuse of notation, it can be compactly written as $$ \frac{\partial L}{\partial S} = \operatorname{dsoftmax}(\frac{\partial L}{\partial P}) \in \mathbb{R}^{N \times N} $$.
 
 ### By Two Alternative Methods
 
