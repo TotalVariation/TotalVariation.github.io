@@ -234,9 +234,7 @@ The implementation of the backward pass of FlashAttention can be generally group
 
 3. Calculate $$ dQ $$ via the function `_attn_bwd_dq()`.
 
-
-<pre>
-<code>
+```python
   @triton.jit
   def _attn_bwd_preprocess(O, DO,  #
                            Delta,  #
@@ -252,29 +250,26 @@ The implementation of the backward pass of FlashAttention can be generally group
       delta = tl.sum(o * do, axis=1)  
       tl.store(Delta + off_hz * N_CTX + off_m, delta)
 
-</code>
-</pre>
+```
 
 where `delta = tl.sum(o * do, axis=1)` implements the equation $$ D_i = do_i^T o_i $$.
 
 To calculate $$ dV, dK $$, a block of elements of `k, v` is first loaded (sequence parallelisation), and then carries out a loop over the length dimension of `q`. 
 
-<d-code block language="python">
-
-    start_n = pid * BLOCK_N1
-    offs_n = start_n + tl.arange(0, BLOCK_N1)
-    # load K and V: they stay in SRAM throughout the inner loop.
-    k = tl.load(K + offs_n[:, None] * stride_tok + offs_k[None, :] * stride_d)
-    v = tl.load(V + offs_n[:, None] * stride_tok + offs_k[None, :] * stride_d)
-
-</d-code>
+```python
+  start_n = pid * BLOCK_N1
+  offs_n = start_n + tl.arange(0, BLOCK_N1)
+  # load K and V: they stay in SRAM throughout the inner loop.
+  k = tl.load(K + offs_n[:, None] * stride_tok + offs_k[None, :] * stride_d)
+  v = tl.load(V + offs_n[:, None] * stride_tok + offs_k[None, :] * stride_d)
+```
 
 For the non-causal case, it is straightforward, 
 
-<d-code block language="python">
-start_m = 0
-num_steps = (N_CTX - start_m) // BLOCK_M1
-</d-code>
+```python
+  start_m = 0
+  num_steps = (N_CTX - start_m) // BLOCK_M1
+```
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0" id="figure-1">
@@ -288,78 +283,80 @@ num_steps = (N_CTX - start_m) // BLOCK_M1
 
 For the causal case (please note that causal modelling is only used in self-attention), the procedure is split into two steps:
 
+````markdown
 1. Calculate the non-masked blocks (yellow squares in the <a href="#figure-1">Fig-1</a>) by only changing `start_m = start_n + BLOCK_N1`.
 2. Calculate the diagonal block (the green square in the <a href="#figure-1">Fig-1</a>) by setting
 
-<d-code block language="python">
-    start_m = start_n
-    MASK_BLOCK_M1: tl.constexpr = BLOCK_M1 // BLK_SLICE_FACTOR
-    num_steps = BLOCK_N1 // MASK_BLOCK_M1
-</d-code>
+   ```python
+     start_m = start_n
+     MASK_BLOCK_M1: tl.constexpr = BLOCK_M1 // BLK_SLICE_FACTOR
+     num_steps = BLOCK_N1 // MASK_BLOCK_M1
+   ```
 
-<d-code block language="python">
-# The main inner-loop logic for computing dK and dV.
-@triton.jit
-def _attn_bwd_dkdv(dk, dv,  #
-                   Q, k, v, sm_scale,  #
-                   DO,  #
-                   M, D,  #
-                   # shared by Q/K/V/DO.
-                   stride_tok, stride_d,  #
-                   H, N_CTX, BLOCK_M1: tl.constexpr,  #
-                   BLOCK_N1: tl.constexpr,  #
-                   HEAD_DIM: tl.constexpr,  #
-                   # Filled in by the wrapper.
-                   start_n, start_m, num_steps,  #
-                   MASK: tl.constexpr):
-    offs_m = start_m + tl.arange(0, BLOCK_M1)
-    offs_n = start_n + tl.arange(0, BLOCK_N1)
-    offs_k = tl.arange(0, HEAD_DIM)
-    qT_ptrs = Q + offs_m[None, :] * stride_tok + offs_k[:, None] * stride_d
-    do_ptrs = DO + offs_m[:, None] * stride_tok + offs_k[None, :] * stride_d
-    # BLOCK_N1 must be a multiple of BLOCK_M1, otherwise the code wouldn't work.
-    tl.static_assert(BLOCK_N1 % BLOCK_M1 == 0)
-    curr_m = start_m
-    step_m = BLOCK_M1
-    for blk_idx in range(num_steps):
-        qT = tl.load(qT_ptrs)
-        # Load m before computing qk to reduce pipeline stall.
-        offs_m = curr_m + tl.arange(0, BLOCK_M1)
-        m = tl.load(M + offs_m)
-        sT = tl.dot(k, qT)
-        pT = tl.math.exp2(sT - m[None, :])
-        # Autoregressive masking.
-        if MASK:
-            mask = (offs_m[None, :] >= offs_n[:, None])
-            pT = tl.where(mask, pT, 0.0)
-        do = tl.load(do_ptrs)
-        # Compute dV.
-        ppT = pT
-        ppT = ppT.to(tl.float16)
-        dv += tl.dot(ppT, do)
-        # D (= delta) is pre-divided by ds_scale.
-        Di = tl.load(D + offs_m)
-        # Compute dP and dS.
-        dpT = tl.dot(v, tl.trans(do)).to(tl.float32)
-        dsT = pT * (dpT - Di[None, :])
-        dsT = dsT.to(tl.float16)
-        dk += tl.dot(dsT, tl.trans(qT))
-        # Increment pointers.
-        curr_m += step_m
-        qT_ptrs += step_m * stride_tok
-        do_ptrs += step_m * stride_tok
-    return dk, dv
+````
 
-</d-code>
+```python
+  # The main inner-loop logic for computing dK and dV.
+  @triton.jit
+  def _attn_bwd_dkdv(dk, dv,  #
+                     Q, k, v, sm_scale,  #
+                     DO,  #
+                     M, D,  #
+                     # shared by Q/K/V/DO.
+                     stride_tok, stride_d,  #
+                     H, N_CTX, BLOCK_M1: tl.constexpr,  #
+                     BLOCK_N1: tl.constexpr,  #
+                     HEAD_DIM: tl.constexpr,  #
+                     # Filled in by the wrapper.
+                     start_n, start_m, num_steps,  #
+                     MASK: tl.constexpr):
+      offs_m = start_m + tl.arange(0, BLOCK_M1)
+      offs_n = start_n + tl.arange(0, BLOCK_N1)
+      offs_k = tl.arange(0, HEAD_DIM)
+      qT_ptrs = Q + offs_m[None, :] * stride_tok + offs_k[:, None] * stride_d
+      do_ptrs = DO + offs_m[:, None] * stride_tok + offs_k[None, :] * stride_d
+      # BLOCK_N1 must be a multiple of BLOCK_M1, otherwise the code wouldn't work.
+      tl.static_assert(BLOCK_N1 % BLOCK_M1 == 0)
+      curr_m = start_m
+      step_m = BLOCK_M1
+      for blk_idx in range(num_steps):
+          qT = tl.load(qT_ptrs)
+          # Load m before computing qk to reduce pipeline stall.
+          offs_m = curr_m + tl.arange(0, BLOCK_M1)
+          m = tl.load(M + offs_m)
+          sT = tl.dot(k, qT)
+          pT = tl.math.exp2(sT - m[None, :])
+          # Autoregressive masking.
+          if MASK:
+              mask = (offs_m[None, :] >= offs_n[:, None])
+              pT = tl.where(mask, pT, 0.0)
+          do = tl.load(do_ptrs)
+          # Compute dV.
+          ppT = pT
+          ppT = ppT.to(tl.float16)
+          dv += tl.dot(ppT, do)
+          # D (= delta) is pre-divided by ds_scale.
+          Di = tl.load(D + offs_m)
+          # Compute dP and dS.
+          dpT = tl.dot(v, tl.trans(do)).to(tl.float32)
+          dsT = pT * (dpT - Di[None, :])
+          dsT = dsT.to(tl.float16)
+          dk += tl.dot(dsT, tl.trans(qT))
+          # Increment pointers.
+          curr_m += step_m
+          qT_ptrs += step_m * stride_tok
+          do_ptrs += step_m * stride_tok
+      return dk, dv
+```
 
-<d-code block language="python">
- qT = tl.load(qT_ptrs)
- # Load m before computing qk to reduce pipeline stall.
- offs_m = curr_m + tl.arange(0, BLOCK_M1)
- m = tl.load(M + offs_m)
- sT = tl.dot(k, qT)
- pT = tl.math.exp2(sT - m[None, :])
-</d-code>
+```python
+  qT = tl.load(qT_ptrs)
+  # Load m before computing qk to reduce pipeline stall.
+  offs_m = curr_m + tl.arange(0, BLOCK_M1)
+  m = tl.load(M + offs_m)
+  sT = tl.dot(k, qT)
+  pT = tl.math.exp2(sT - m[None, :])
+```
 
 This part of code recomputes $$ S = QK^T $$ and $$ P = \operatorname{softmax}(S) $$ (actually its transposed version, and therefore it needs to pay attention to the broadcast rule `m[None, :]`. `m` is stored in the forward pass for calculating softmax in a numerical stable manner.).
 
@@ -373,19 +370,19 @@ This part of code recomputes $$ S = QK^T $$ and $$ P = \operatorname{softmax}(S)
 
 $$ dQ $$ is calculated similarly: a block of elements of `q` is first loaded (sequence parallelisation), and then carries out a loop over the length dimension of `k, v`.
 
-<d-code block language="python">
- start_m = pid * BLOCK_M2
- offs_m = start_m + tl.arange(0, BLOCK_M2)
- # load q, do, m and Di: they stay in SRAM throughout the inner loop.
- q = tl.load(Q + offs_m[:, None] * stride_tok + offs_k[None, :] * stride_d)
- do = tl.load(DO + offs_m[:, None] * stride_tok + offs_k[None, :] * stride_d)
+```python
+  start_m = pid * BLOCK_M2
+  offs_m = start_m + tl.arange(0, BLOCK_M2)
+  # load q, do, m and Di: they stay in SRAM throughout the inner loop.
+  q = tl.load(Q + offs_m[:, None] * stride_tok + offs_k[None, :] * stride_d)
+  do = tl.load(DO + offs_m[:, None] * stride_tok + offs_k[None, :] * stride_d)
 
- m = tl.load(M + offs_m)
- m = m[:, None]
+  m = tl.load(M + offs_m)
+  m = m[:, None]
 
- Di = tl.load(D + offs_m)
- Di = Di[:, None]
-</d-code>
+  Di = tl.load(D + offs_m)
+  Di = Di[:, None]
+```
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0" id="figure-2">
@@ -398,71 +395,74 @@ $$ dQ $$ is calculated similarly: a block of elements of `q` is first loaded (se
 
 For the causal case, the procedure is split into two steps:
 
+````markdown
 1. Calculate the non-masked blocks (yellow squares in the <a href="#figure-2">Fig-2</a>) by setting `end_n, num_steps = start_m, end_n // BLOCK_N2`. So in the inner loop over `k, v`, the start and end indexes are `0` and `start_m`, respectively.
 2. Calculate the diagonal block (the green square in the <a href="#figure-2">Fig-2</a>) by setting
 
-<d-code block language="python">
-    MASK_BLOCK_N2: tl.constexpr = BLOCK_N2 // BLK_SLICE_FACTOR
-    num_steps = BLOCK_M2 // MASK_BLOCK_N2
-</d-code>
+   ```python
+     MASK_BLOCK_N2: tl.constexpr = BLOCK_N2 // BLK_SLICE_FACTOR
+     num_steps = BLOCK_M2 // MASK_BLOCK_N2
+   ```python
 
    And the start and end indexes are `start_m` and `start_m + BLOCK_M2` respectively.
 
+````
+
 For the non-causal case, in the inner loop over `k, v`, the start and end indexes are simply `0` and `N_CTX`, respectively. However, in my implementation, it is also split into two steps: 1) from `0` to `start_m`, and 2) from `start_m` to `N_CTX`.
 
-<d-code block language="python">
-@triton.jit
-def _attn_bwd_dq(dq, q, K, V,  #
-                 do, m, Di,
-                 # shared by Q/K/V/DO.
-                 stride_tok, stride_d,  #
-                 H, N_CTX,  #
-                 BLOCK_M2: tl.constexpr,  #
-                 BLOCK_N2: tl.constexpr,  #
-                 HEAD_DIM: tl.constexpr,  #
-                 # Filled in by the wrapper.
-                 start_m, start_n, num_steps,  #
-                 MASK: tl.constexpr):
-    offs_m = start_m + tl.arange(0, BLOCK_M2)
-    offs_n = start_n + tl.arange(0, BLOCK_N2)
-    offs_k = tl.arange(0, HEAD_DIM)
-    kT_ptrs = K + offs_n[None, :] * stride_tok + offs_k[:, None] * stride_d
-    vT_ptrs = V + offs_n[None, :] * stride_tok + offs_k[:, None] * stride_d
-    # BLOCK_M2 must be a multiple of BLOCK_N2, otherwise the code wouldn't work.
-    tl.static_assert(BLOCK_M2 % BLOCK_N2 == 0)
-    curr_n = start_n
-    step_n = BLOCK_N2
-    for blk_idx in range(num_steps):
-        kT = tl.load(kT_ptrs)
-        vT = tl.load(vT_ptrs)
-        s = tl.dot(q, kT)
-        p = tl.math.exp2(s - m)
-        # Autoregressive masking.
-        if MASK:
-            offs_n = curr_n + tl.arange(0, BLOCK_N2)
-            mask = (offs_m[:, None] >= offs_n[None, :])
-            p = tl.where(mask, p, 0.0)
-        # Compute dP and dS.
-        dp = tl.dot(do, vT).to(tl.float32)
-        ds = p * (dp - Di)
-        ds = ds.to(tl.float16)
-        # Compute dQ.
-        # NOTE: We need to de-scale dq in the end, because kT was pre-scaled.
-        dq += tl.dot(ds, tl.trans(kT))
-        # Increment pointers.
-        curr_n += step_n
-        kT_ptrs += step_n * stride_tok
-        vT_ptrs += step_n * stride_tok
-    return dq
+```python
+  @triton.jit
+  def _attn_bwd_dq(dq, q, K, V,  #
+                   do, m, Di,
+                   # shared by Q/K/V/DO.
+                   stride_tok, stride_d,  #
+                   H, N_CTX,  #
+                   BLOCK_M2: tl.constexpr,  #
+                   BLOCK_N2: tl.constexpr,  #
+                   HEAD_DIM: tl.constexpr,  #
+                   # Filled in by the wrapper.
+                   start_m, start_n, num_steps,  #
+                   MASK: tl.constexpr):
+      offs_m = start_m + tl.arange(0, BLOCK_M2)
+      offs_n = start_n + tl.arange(0, BLOCK_N2)
+      offs_k = tl.arange(0, HEAD_DIM)
+      kT_ptrs = K + offs_n[None, :] * stride_tok + offs_k[:, None] * stride_d
+      vT_ptrs = V + offs_n[None, :] * stride_tok + offs_k[:, None] * stride_d
+      # BLOCK_M2 must be a multiple of BLOCK_N2, otherwise the code wouldn't work.
+      tl.static_assert(BLOCK_M2 % BLOCK_N2 == 0)
+      curr_n = start_n
+      step_n = BLOCK_N2
+      for blk_idx in range(num_steps):
+          kT = tl.load(kT_ptrs)
+          vT = tl.load(vT_ptrs)
+          s = tl.dot(q, kT)
+          p = tl.math.exp2(s - m)
+          # Autoregressive masking.
+          if MASK:
+              offs_n = curr_n + tl.arange(0, BLOCK_N2)
+              mask = (offs_m[:, None] >= offs_n[None, :])
+              p = tl.where(mask, p, 0.0)
+          # Compute dP and dS.
+          dp = tl.dot(do, vT).to(tl.float32)
+          ds = p * (dp - Di)
+          ds = ds.to(tl.float16)
+          # Compute dQ.
+          # NOTE: We need to de-scale dq in the end, because kT was pre-scaled.
+          dq += tl.dot(ds, tl.trans(kT))
+          # Increment pointers.
+          curr_n += step_n
+          kT_ptrs += step_n * stride_tok
+          vT_ptrs += step_n * stride_tok
+      return dq
 
-</d-code>
+```
 
-<d-code block language="python">
- kT = tl.load(kT_ptrs)
- vT = tl.load(vT_ptrs)
- s = tl.dot(q, kT)
- p = tl.math.exp2(s - m)
-</d-code>
+```python
+  kT = tl.load(kT_ptrs)
+  vT = tl.load(vT_ptrs)
+  s = tl.dot(q, kT)
+  p = tl.math.exp2(s - m)
+```
 
 This part of code recomputes $$ S = QK^T $$ and $$ P = \operatorname{softmax}(S) $$.
 
