@@ -157,7 +157,18 @@ In the following, I will give some visual illustrations to facilitate your under
 
   A = np.arange(N * N).reshape(N, N)
   print(A)
+  
+  [[ 0  1  2  3  4  5  6  7]
+   [ 8  9 10 11 12 13 14 15]
+   [16 17 18 19 20 21 22 23]
+   [24 25 26 27 28 29 30 31]
+   [32 33 34 35 36 37 38 39]
+   [40 41 42 43 44 45 46 47]
+   [48 49 50 51 52 53 54 55]
+   [56 57 58 59 60 61 62 63]]
+```
 
+```python
   BLOCK_M = 2
   col_dim = N
 
@@ -172,48 +183,28 @@ In the following, I will give some visual illustrations to facilitate your under
 
   # illustrate loading tensors from memory
   print(A.flatten()[offs_m])
+
+  [[ 0  1  2  3  4  5  6  7]
+   [ 8  9 10 11 12 13 14 15]]
+
 ```
 
 ```python
-  [[ 0  1  2  3  4  5  6  7]
-   [ 8  9 10 11 12 13 14 15]
-   [16 17 18 19 20 21 22 23]
-   [24 25 26 27 28 29 30 31]
-   [32 33 34 35 36 37 38 39]
-   [40 41 42 43 44 45 46 47]
-   [48 49 50 51 52 53 54 55]
-   [56 57 58 59 60 61 62 63]]
-  [[ 0  1  2  3  4  5  6  7]
-   [ 8  9 10 11 12 13 14 15]]
-```
-
-<pre>
-<code>
-  # illustrate moving blocks step_size rows down, which will be used in the for loop to 
+  # illustrate moving blocks `step_size` rows down, which will be used in the for loop to 
   # traverse over one dimension of a tensor.
   step_size = 2
   print(A.flatten()[offs_m + step_size * N])
-</code>
-</pre>
 
-<pre>
-<code>
   [[16 17 18 19 20 21 22 23]
    [24 25 26 27 28 29 30 31]]
-</code>
-</pre>
+```
 
-<pre>
-<code>
+```python
   # illustrate loading tensors directly in its transposed version and moving blocks accordingly
   offs_m_T = np.arange(BLOCK_M)[None, :] * stride_row + np.arange(col_dim)[:, None] * stride_col
   print(A.flatten()[offs_m_T])
   print(A.flatten()[offs_m_T + step_size * N])
-</code>
-</pre>
 
-<pre>
-<code>
   [[ 0  8]
    [ 1  9]
    [ 2 10]
@@ -222,6 +213,7 @@ In the following, I will give some visual illustrations to facilitate your under
    [ 5 13]
    [ 6 14]
    [ 7 15]]
+
   [[16 24]
    [17 25]
    [18 26]
@@ -230,8 +222,7 @@ In the following, I will give some visual illustrations to facilitate your under
    [21 29]
    [22 30]
    [23 31]]
-</code>
-</pre>
+```
 
 Here, we analyse a simplified version of FlashAttention (technically, FlashAttention2) adapted from the official Triton tutorial [Fused Attention](https://triton-lang.org/main/getting-started/tutorials/06-fused-attention.html#fused-attention), accounting for both the 'Causal' and 'Non-Causal' modes.
 
