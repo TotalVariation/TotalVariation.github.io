@@ -402,7 +402,7 @@ For the causal case, the procedure is split into two steps:
    ```python
      MASK_BLOCK_N2: tl.constexpr = BLOCK_N2 // BLK_SLICE_FACTOR
      num_steps = BLOCK_M2 // MASK_BLOCK_N2
-   ```python
+   ```
 
    And the start and end indexes are `start_m` and `start_m + BLOCK_M2` respectively.
 
