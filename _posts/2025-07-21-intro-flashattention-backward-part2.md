@@ -49,22 +49,6 @@ _styles: >
     text-align: center;
     font-size: 16px;
   }
-  .pre {
-    background-color: #f4f4f4;
-    border: 1px solid #ddd;
-    border-left: 3px solid #f36d21;
-    color: #666;
-    page-break-inside: avoid;
-    font-family: monospace;
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 1.6em;
-    max-width: 100%;
-    overflow: auto;
-    padding: 1em 1.5em;
-    display: block;
-    word-wrap: break-word;
-  }
 ---
 
 ## Recap Forward and Backward Passes of Standard Attention
@@ -164,8 +148,7 @@ Instead of using `block pointer` defined by `make_block_ptr`, I find that direct
 
 In the following, I will give some visual illustrations to facilitate your understanding of how `tl.load()` works, as there is no difference in read (`tl.load()`) and write (`tl.store()`) operations as long as their indexes are specified correctly.
 
-<pre>
-<code>
+```python
   import numpy as np
 
   N = 8
@@ -189,11 +172,9 @@ In the following, I will give some visual illustrations to facilitate your under
 
   # illustrate loading tensors from memory
   print(A.flatten()[offs_m])
-</code>
-</pre>
+```
 
-<pre>
-<code>
+```python
   [[ 0  1  2  3  4  5  6  7]
    [ 8  9 10 11 12 13 14 15]
    [16 17 18 19 20 21 22 23]
@@ -204,8 +185,7 @@ In the following, I will give some visual illustrations to facilitate your under
    [56 57 58 59 60 61 62 63]]
   [[ 0  1  2  3  4  5  6  7]
    [ 8  9 10 11 12 13 14 15]]
-</code>
-</pre>
+```
 
 <pre>
 <code>
