@@ -176,7 +176,8 @@ In the following, I will give some visual illustrations to facilitate your under
 </code>
 </pre>
 
-<d-code block language="python">
+```
+{
   [[ 0  1  2  3  4  5  6  7]
    [ 8  9 10 11 12 13 14 15]
    [16 17 18 19 20 21 22 23]
@@ -187,7 +188,8 @@ In the following, I will give some visual illustrations to facilitate your under
    [56 57 58 59 60 61 62 63]]
   [[ 0  1  2  3  4  5  6  7]
    [ 8  9 10 11 12 13 14 15]]
-</d-code>
+}
+```
 
 <d-code block language="python">
   # illustrate moving blocks step_size rows down, which will be used in the for loop to 
