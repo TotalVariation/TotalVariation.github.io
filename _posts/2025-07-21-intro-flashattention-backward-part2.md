@@ -96,7 +96,7 @@ $$
     Image Credit: FlashAttention2 paper.
 </div>
 
-To construct a direct correspondence between the mathematical equations and Triton code, we replace $$ \frac{\partial L}{\partial V} $$ with $$ dV $$ with a slight abuse of notation <d-footnote>Please note that $$ dV $$ hereafter will no longer denote differential.</d-footnote>, as in the backward pass, the matrix $$ dV $$ contains the gradient of scalar-valued loss function $$ L $$ w.r.t. $$ V $$, i.e., $$ \frac{\partial L}{\partial V} $$. By applying similar replacements to all the other variables, we therefore obtain the following equations adopted in the FlashAttention2 paper <d-cite key="dao2023flashattention"></d-cite>:
+To construct a direct correspondence between the mathematical equations and Triton code, we replace $$ \frac{\partial L}{\partial V} $$ with $$ dV $$ with a slight abuse of notation <d-footnote>Please note that $ dV $ hereafter will no longer denote differential.</d-footnote>, as in the backward pass, the matrix $$ dV $$ contains the gradient of scalar-valued loss function $$ L $$ w.r.t. $$ V $$, i.e., $$ \frac{\partial L}{\partial V} $$. By applying similar replacements to all the other variables, we therefore obtain the following equations adopted in the FlashAttention2 paper <d-cite key="dao2023flashattention"></d-cite>:
 
 $$ 
 dV = P^T dO \in \mathbb{R}^{N\times d} 
@@ -176,8 +176,8 @@ In the following, I will give some visual illustrations to facilitate your under
 </code>
 </pre>
 
-```
-{
+<pre>
+<code>
   [[ 0  1  2  3  4  5  6  7]
    [ 8  9 10 11 12 13 14 15]
    [16 17 18 19 20 21 22 23]
@@ -188,46 +188,54 @@ In the following, I will give some visual illustrations to facilitate your under
    [56 57 58 59 60 61 62 63]]
   [[ 0  1  2  3  4  5  6  7]
    [ 8  9 10 11 12 13 14 15]]
-}
-```
+</code>
+</pre>
 
-<d-code block language="python">
+<pre>
+<code>
   # illustrate moving blocks step_size rows down, which will be used in the for loop to 
   # traverse over one dimension of a tensor.
   step_size = 2
   print(A.flatten()[offs_m + step_size * N])
-</d-code>
+</code>
+</pre>
 
-<d-code block language="python">
-[[16 17 18 19 20 21 22 23]
- [24 25 26 27 28 29 30 31]]
-</d-code>
+<pre>
+<code>
+  [[16 17 18 19 20 21 22 23]
+   [24 25 26 27 28 29 30 31]]
+</code>
+</pre>
 
-<d-code block language="python">
-# illustrate loading tensors directly in its transposed version and moving blocks accordingly
-offs_m_T = np.arange(BLOCK_M)[None, :] * stride_row + np.arange(col_dim)[:, None] * stride_col
-print(A.flatten()[offs_m_T])
-print(A.flatten()[offs_m_T + step_size * N])
-</d-code>
+<pre>
+<code>
+  # illustrate loading tensors directly in its transposed version and moving blocks accordingly
+  offs_m_T = np.arange(BLOCK_M)[None, :] * stride_row + np.arange(col_dim)[:, None] * stride_col
+  print(A.flatten()[offs_m_T])
+  print(A.flatten()[offs_m_T + step_size * N])
+</code>
+</pre>
 
-<d-code block language="python">
-[[ 0  8]
- [ 1  9]
- [ 2 10]
- [ 3 11]
- [ 4 12]
- [ 5 13]
- [ 6 14]
- [ 7 15]]
-[[16 24]
- [17 25]
- [18 26]
- [19 27]
- [20 28]
- [21 29]
- [22 30]
- [23 31]]
-</d-code>
+<pre>
+<code>
+  [[ 0  8]
+   [ 1  9]
+   [ 2 10]
+   [ 3 11]
+   [ 4 12]
+   [ 5 13]
+   [ 6 14]
+   [ 7 15]]
+  [[16 24]
+   [17 25]
+   [18 26]
+   [19 27]
+   [20 28]
+   [21 29]
+   [22 30]
+   [23 31]]
+</code>
+</pre>
 
 Here, we analyse a simplified version of FlashAttention (technically, FlashAttention2) adapted from the official Triton tutorial [Fused Attention](https://triton-lang.org/main/getting-started/tutorials/06-fused-attention.html#fused-attention), accounting for both the 'Causal' and 'Non-Causal' modes.
 
@@ -239,24 +247,26 @@ The implementation of the backward pass of FlashAttention can be generally group
 
 3. Calculate $$ dQ $$ via the function `_attn_bwd_dq()`.
 
-<d-code block language="python">
 
-@triton.jit
-def _attn_bwd_preprocess(O, DO,  #
-                         Delta,  #
-                         Z, H, N_CTX,  #
-                         BLOCK_M: tl.constexpr, HEAD_DIM: tl.constexpr  #
-                         ):
-    off_m = tl.program_id(0) * BLOCK_M + tl.arange(0, BLOCK_M)
-    off_hz = tl.program_id(1)
-    off_n = tl.arange(0, HEAD_DIM)
-    # load
-    o = tl.load(O + off_hz * HEAD_DIM * N_CTX + off_m[:, None] * HEAD_DIM + off_n[None, :]).to(tl.float32)
-    do = tl.load(DO + off_hz * HEAD_DIM * N_CTX + off_m[:, None] * HEAD_DIM + off_n[None, :]).to(tl.float32)
-    delta = tl.sum(o * do, axis=1)  
-    tl.store(Delta + off_hz * N_CTX + off_m, delta)
+<pre>
+<code>
+  @triton.jit
+  def _attn_bwd_preprocess(O, DO,  #
+                           Delta,  #
+                           Z, H, N_CTX,  #
+                           BLOCK_M: tl.constexpr, HEAD_DIM: tl.constexpr  #
+                           ):
+      off_m = tl.program_id(0) * BLOCK_M + tl.arange(0, BLOCK_M)
+      off_hz = tl.program_id(1)
+      off_n = tl.arange(0, HEAD_DIM)
+      # load
+      o = tl.load(O + off_hz * HEAD_DIM * N_CTX + off_m[:, None] * HEAD_DIM + off_n[None, :]).to(tl.float32)
+      do = tl.load(DO + off_hz * HEAD_DIM * N_CTX + off_m[:, None] * HEAD_DIM + off_n[None, :]).to(tl.float32)
+      delta = tl.sum(o * do, axis=1)  
+      tl.store(Delta + off_hz * N_CTX + off_m, delta)
 
-</d-code>
+</code>
+</pre>
 
 where `delta = tl.sum(o * do, axis=1)` implements the equation $$ D_i = do_i^T o_i $$.
 
@@ -285,7 +295,7 @@ num_steps = (N_CTX - start_m) // BLOCK_M1
     </div>
 </div>
 <div class="caption">
-    Fig-1 An illustration of $$ S^T = KQ^T $$.
+    Fig-1 An illustration of $ S^T = KQ^T $.
 </div>
 
 
@@ -396,7 +406,7 @@ $$ dQ $$ is calculated similarly: a block of elements of `q` is first loaded (se
     </div>
 </div>
 <div class="caption">
-    Fig-2 An illustration of $$ S = QK^T $$.
+    Fig-2 An illustration of $ S = QK^T $.
 </div>
 
 For the causal case, the procedure is split into two steps:
