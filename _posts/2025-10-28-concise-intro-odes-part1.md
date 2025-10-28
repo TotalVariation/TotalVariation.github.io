@@ -253,12 +253,14 @@ where $$ f : [0, T] \times \mathbb{R}^d \to \mathbb{R}^d $$ is continuous. Then 
 *Step 2*: Construct a sequence of piecewise linear functions $$ \mathbf{x}_n(t) $$, called Euler polygons, to approximate the solution over $$ [t_0, t_0 + h] $$. Specifically, for each positive integer $$ n $$:
 
   $$ \triangleright $$ Divide $$ [t_0, t_0 + h] $$ into $$ n $$ equal subintervals of length $$ \Delta_n = \frac{h}{n} $$, with points $$ t_k^n = t_0 + k \Delta_n $$ for $$ k = 0, 1, \ldots, n $$.
-  $$ \triangleright $$ Set $$ \mathbf{x}_n(t_0) = \mathbf{x}_0 $$.</li>
+
+  $$ \triangleright $$ Set $$ \mathbf{x}_n(t_0) = \mathbf{x}_0 $$.
+
   $$ \triangleright $$ On each subinterval $$ [t_k^n, t_{k+1}^n] $$, define $$ \mathbf{x}_n(t) $$ linearly with slope $$ f(t_k^n, \mathbf{x}_n(t_k^n)) $$: 
 
-$$ 
-\mathbf{x}_n(t) = \mathbf{x}_n(t_k^n) + f(t_k^n, \mathbf{x}_n(t_k^n))(t - t_k^n) \quad \text{for} \quad t \in [t_k^n, t_{k+1}^n]
-$$
+  $$ 
+  \mathbf{x}_n(t) = \mathbf{x}_n(t_k^n) + f(t_k^n, \mathbf{x}_n(t_k^n))(t - t_k^n) \quad \text{for} \quad t \in [t_k^n, t_{k+1}^n]
+  $$
 
 *Step 3*: To prove local existence of a solution, we then apply <a href="https://users.math.msu.edu/users/shapiro/Pubvit/Downloads/ArzNotes/ArzNotes.pdf">Arzela&#768–Ascoli theorem</a>, which states that that a sequence of functions $$ \{ f_n \}_1^{\infty} \in \mathcal{C}(X) $$, where $$ X $$ denotes a compact metric space with the supremum norm $$ \| f \|_{\infty} = \sup_{x \in X} | f(x) | $$ has a uniformly convergent subsequence if it is bounded and equicontinuous. Specifically, `` $$ \{ f_n \}_1^{\infty} \in \mathcal{C}(X) $$ is bounded '' means that there exists a positive constant $$ M < \infty $$ such that $$ | f_n(x) | < M $$ for each $$ x \in X $$ and each $$ f_n $$. $$ \{ f_n \}_1^{\infty} \in \mathcal{C}(X) $$ is equicontinuous at a point $$ a \in X $$ means that, for each $$ \epsilon > 0 $$, there exists $$ \delta > 0 $$ such that $$ |f_n(x) - f_n(a) | < \epsilon $$ for all $$ x \in X $$ with $$ \text{dist}(x, a) < \delta $$ and for all $$ f_n $$, which means $$ \delta $$ is independent of functions. Furthermore, If $$ X $$ is compact and a family of functions $$ \mathcal{F} \in \mathcal{C}(X) $$ is equicontinuous on $$ X $$, then $$ \mathcal{F} $$ is uniformly equicontinuous, which means that, for each $$ \epsilon > 0 $$, there exists $$ \delta > 0 $$ such that $$ | f(x) - f(y) | < \epsilon $$ for all $$ x, y \in X $$ with $$ \text{dist}(x, y) < \delta $$ and for all $$ f \in \mathcal{F} $$.
 
