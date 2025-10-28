@@ -5,7 +5,7 @@ output:
     toc: true
     toc_depth: 2
 title: Reconstructing the Scaffolding A Learner’s Notes on Ordinary Differential Equations
-description: Part &#8544 Exploring the Picard–Lindelöf and Cauchy–Peano Theorems
+description: Part &#8544 Exploring the Picard–Lindelo&#776f and Cauchy–Peano Theorems
 tags:
 giscus_comments: true
 date: 2025-10-28
@@ -37,7 +37,7 @@ bibliography: 2025-10-28-concise-intro-odes-part1.bib
 #  - name: Other Typography?
 
 toc:
-  - name: Picard-Lindel\"{o}f Theorem
+  - name: Picard-Lindelo&#776f Theorem
   - name: Cauchy-Peano Existence Theorem
   - name: The General n-th Order ODE
   - name: Concluding Remarks
@@ -75,7 +75,7 @@ In this blog, I will present detailed mathematical proofs of the Picard–Lindel
 
 In contrast to more general treatments <d-footnote>We warmly recommend the <a href="https://sites.math.washington.edu//~burke/crs/555/555_notes/index.html">lecture notes</a> provided by Prof. James Burke to readers seeking a more mathematically rigorous treatment of ODE theories.</d-footnote>, where an ordinary differential equation is expressed as an $$ m^{th} $$-order $$ n \times n $$ system $$ f(t, \mathbf{x}, \mathbf{x}', \ldots, \mathbf{x}^{(m)}) = 0 $$ with $$ f $$ mapping a subset of $$ \mathbb{R} \times (\mathbb{F}^n)^{m+1} $$ into $$ \mathbb{F}^n $$. I will begin with the single-variable case, then move on to vector-valued first-order ODEs, and finally showcase its usage in proving the existence and uniqueness theorem of the general n-th order ODEs and their linear counterparts as supplementary exercises.
 
-## Picard-Lindel\"{o}f Theorem
+## Picard-Lindelo&#776f Theorem
 
 Consider the initial value problem (IVP) of the form :
 
@@ -83,7 +83,7 @@ $$
 \frac{dy}{dt} = f(t,y), y(t_0) = y_0
 $$
 
-where $$ f(t, y) $$ is a function defined in some region of the $$ (t, y) $$-plane containing the initial point $$ (t_0, y_0) $$. If $$ f(t, y) $$ is continuous in $$ t $$ and Lipschitz continuous in $$ y $$ in a rectangular region $$ R = \{ (t, y) : |t - t_0| \leq a, |y - y_0| \leq b \} $$, where $$ a $$ and $$ b $$ are positive constants. Then, there exists a unique solution $$ y(t) $$ to the IVP, defined on some interval $$ [t_0 - h, t_0 + h] $$ for some $$ h > 0 $$.
+where $$ f(t, y) $$ is a function defined in some region of the $$ (t, y) $$ -plane containing the initial point $$ (t_0, y_0) $$. If $$ f(t, y) $$ is continuous in $$ t $$ and Lipschitz continuous in $$ y $$ in a rectangular region $$ R = \{ (t, y) : |t - t_0| \leq a, |y - y_0| \leq b \} $$, where $$ a $$ and $$ b $$ are positive constants. Then, there exists a unique solution $$ y(t) $$ to the IVP, defined on some interval $$ [t_0 - h, t_0 + h] $$ for some $$ h > 0 $$.
 
 **Lipschitz Continuity**
 A function $$ f(t, y) $$ is Lipschitz continuous in $$ y $$ if there exists a constant $$ L_f > 0 $$ (called the Lipschitz constant) such that:
@@ -134,7 +134,7 @@ $$
 
 If $$ L_f h < 1 $$ (e.g., choosing $$ h < \min\{ a, \frac{b}{M}, \frac{1}{L_f} \} $$), then $$ \lambda = L_f h < 1 $$, and $$ T $$ is a contraction mapping.
 
-The single variable case of Picard-Lindel\"{o}f Theorem can be easily generalised to vector-valued ODEs: $$ \frac{d\mathbf{x}}{dt} = f(t, \mathbf{x}), \quad \mathbf{x}(0) = \mathbf{x}_0 $$, where $$ t \in [0, T] $$ for some fixed $$ T > 0 $$, $$ \mathbf{x}(t) \in \mathbb{R}^d $$, $$ f = (f_1, \ldots, f_d) : D \subset [0, T] \times \mathbb{R}^d \to \mathbb{R}^d $$ is continuous and Lipschitz continuous with respect to $$ \mathbf{x} $$, i.e., $$ \| f(t, \mathbf{x}) - f(t, \mathbf{y}) \| \leq L_f \| \mathbf{x} - \mathbf{y} \|, \quad  \forall (t, \mathbf{x}), (t, \mathbf{y}) \in D $$, $$ \mathbf{x}_0 \in \mathbb{R}^d $$ is the initial condition at $$ t = 0 $$.<d-footnote>Technically, this is a forward time version. A backward-in-time version (on $$ [t_0 - a, t_0] $$) can be proved in a similar fashion by simply using $$ \widetilde{x}(t) = x(c - t) $$, and correspondingly $$ \widetilde{f}(t) = -f(c-t, x) $$.</d-footnote>
+The single variable case of Picard-Lindelo&#776f Theorem can be easily generalised to vector-valued ODEs: $$ \frac{d\mathbf{x}}{dt} = f(t, \mathbf{x}), \quad \mathbf{x}(0) = \mathbf{x}_0 $$, where $$ t \in [0, T] $$ for some fixed $$ T > 0 $$, $$ \mathbf{x}(t) \in \mathbb{R}^d $$, $$ f = (f_1, \ldots, f_d) : D \subset [0, T] \times \mathbb{R}^d \to \mathbb{R}^d $$ is continuous and Lipschitz continuous with respect to $$ \mathbf{x} $$, i.e., $$ \| f(t, \mathbf{x}) - f(t, \mathbf{y}) \| \leq L_f \| \mathbf{x} - \mathbf{y} \|, \quad  \forall (t, \mathbf{x}), (t, \mathbf{y}) \in D $$, $$ \mathbf{x}_0 \in \mathbb{R}^d $$ is the initial condition at $$ t = 0 $$.<d-footnote>Technically, this is a forward time version. A backward-in-time version (on $$ [t_0 - a, t_0] $$) can be proved in a similar fashion by simply using $$ \widetilde{x}(t) = x(c - t) $$, and correspondingly $$ \widetilde{f}(t) = -f(c-t, x) $$.</d-footnote>
 
 A solution can be viewed as a parametric curve in an n-dimensional space while $$ t $$ changing in the interval $$ [0, T] $$. It can also be viewed as a trajectory of a particle moving in an n-dimensional space with its velocity (i.e., the tangent vector of the path) specified as per $$ f(t, \mathbf{x}) $$.
 
