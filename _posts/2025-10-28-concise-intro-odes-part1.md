@@ -183,21 +183,28 @@ A solution can be viewed as a parametric curve in an n-dimensional space while $
 
 The mathematical proof is almost identical to that of the single variable case, provided the vector norm $$ \| \cdot \| $$ is used instead to replace the absolute value $$ | \cdot | $$.
 
-*Step 1*: Construct a compact set $$ R = [0, h] \cap [0, T] \times \overline{B}(\mathbf{x}_0, r) $$ (hypercylinder) and a contraction operator $$ \Phi[\mathbf{x}](t) = \mathbf{x}_0 + \int_{t_0}^t f(s, \mathbf{x}(s))ds $$, where $$ h \leq \frac{r}{M} $$ and $$ M = \sup_{ (t, \mathbf{x}) \in R} \| f(t, \mathbf{x}) \| < \infty $$, ensuring $$ \| \Phi[\mathbf{x}](t) - \mathbf{x}_0 \| \leq r $$ for all $$ t \in [0, h] $$.
+<p>
+*Step 1 :* Construct a compact set $$ R = [0, h] \cap [0, T] \times \overline{B}(\mathbf{x}_0, r) $$ (hypercylinder) and a contraction operator $$ \Phi[\mathbf{x}](t) = \mathbf{x}_0 + \int_{t_0}^t f(s, \mathbf{x}(s))ds $$, where $$ h \leq \frac{r}{M} $$ and $$ M = \sup_{ (t, \mathbf{x}) \in R} \| f(t, \mathbf{x}) \| < \infty $$, ensuring $$ \| \Phi[\mathbf{x}](t) - \mathbf{x}_0 \| \leq r $$ for all $$ t \in [0, h] $$.
+</p>
 
-*Step 2*: 
+<p>
+*Step 2 :* 
 
 $$ 
 \| \Phi[\mathbf{x}](t) - \Phi[\mathbf{y}](t)\| = \| \int_0^t \left[ f(s, \mathbf{x}(s)) - f(s, \mathbf{y}(s))ds \right]  \| \leq \int_0^t L_f \| \mathbf{x}(s) - \mathbf{y}(s) \| ds 
 $$
 
 Define the supremum norm on $$ \mathcal{C}([0, T];\mathbb{R}^d) $$ as $$ \| \mathbf{x} \|_{\infty} = \sup_t \| \mathbf{x}(t) \| $$, and then take $$ \sup $$ gives $$ \| \Phi[\mathbf{x}] - \Phi[\mathbf{y}] \|_{\infty} \leq L_f h \| \mathbf{x} - \mathbf{y} \|_{\infty} $$. Thus if we choose $$ h < \frac{1}{L_f} $$, then $$ \Phi[\cdot] $$ is a contraction mapping.
+</p>
 
-*Step 3*: By Banach Fixed-Point Theorem, $$ \Phi $$ has a unique fixed point $$ \mathbf{x} $$ such that:
+<p>
+*Step 3 :* By Banach Fixed-Point Theorem, $$ \Phi $$ has a unique fixed point $$ \mathbf{x} $$ such that:
 
 $$
 \mathbf{x}(t) = \mathbf{x}_0 + \int_0^t f(s, \mathbf{x}(s))ds, \quad t \in [0, h], \; \text{where} \; h = \min \{ \frac{r}{M}, \frac{1}{L_f} \}
 $$
+
+</p>
 
 In the following, we give another proof where the property of uniform convergence is used.
 
