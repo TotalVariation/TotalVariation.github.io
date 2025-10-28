@@ -122,9 +122,19 @@ $$
 |y(t) - y_0| \leq \int_{t_0}^t |f(s, y(s))| \, ds \leq Mh < b. 
 $$
 
-*Step 4*: Use Banach Fixed-Point Theorem to prove convergence. 
+*Step 4*: Use Banach Fixed-Point Theorem to prove convergence. Define the operator $$ T $$ on the space of continuous functions $$ \mathcal{C}[t_0 - h, t_0 + h] $$ with the supremum norm 
 
-Define the operator $$ T $$ on the space of continuous functions $$ \mathcal{C}[t_0 - h, t_0 + h] $$ with the supremum norm $$ \|y\|_{\infty} = \sup_{t} |y(t)| $$, guaranteeing a complete metric space (i.e., every Cauchy sequence is convergent.): $$ T \left[ y \right]\left(t \right) = y_0 + \int_{t_0}^t f(s, y(s)) \, ds $$. We’ll show $$ T $$ is a contraction mapping, meaning there exists $$ 0 < \lambda < 1 $ such that: $ \| T[y] - T[z] \|_{\infty} \le \lambda \| y - z \|_{\infty} $$. The Banach fixed-point theorem then guarantees the sequence $$ y_{n+1} = T[y_n] $$ converges to a unique fixed point $$ y = T[y] $$, satisfying the integral equation and hence the IVP.
+$$
+\|y\|_{\infty} = \sup_{t} |y(t)|, 
+$$ 
+
+guaranteeing a complete metric space (i.e., every Cauchy sequence is convergent): 
+
+$$
+T \left[ y \right]\left(t \right) = y_0 + \int_{t_0}^t f(s, y(s)) \, ds.
+$$
+
+We’ll show $$ T $$ is a contraction mapping, meaning there exists $$ 0 < \lambda < 1 $$ such that: $$ \| T[y] - T[z] \|_{\infty} \le \lambda \| y - z \|_{\infty} $$. The Banach fixed-point theorem then guarantees the sequence $$ y_{n+1} = T[y_n] $$ converges to a unique fixed point $$ y = T[y] $$, satisfying the integral equation and hence the IVP.
 
 For any $$ y, z \in C[t_0 - h, t_0 + h] $$:
 
