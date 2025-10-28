@@ -85,94 +85,93 @@ _styles: >
 This post is part of my ongoing series of learning notes on Ordinary Differential Equations (ODEs). In this instalment, I will present detailed mathematical proofs of the Dahlquist Equivalence Theorem for Linear Multistep Methods (LMMs), which establishes that Convergence $$ \iff $$ Consistency + Zero-Stability.
 
 Throughout this blog, we focus on the initial value problems (IVPs) for one-dimensional ODEs for notational simplicity
- 
+
 $$
 y'(t) = f(t, y(t)), \; y(t_0) = y_0, \; t \in [t_0, T]
 $$
- 
+
 with $$ f $$ a sufficiently smooth (as specified when needed) scalar function.
 
 ## Consistency and Zero-Stability
 
 A $$ k $$-step linear multistep method (LMM) has the form 
- 
+
 $$
 \sum_{j=0}^k \alpha_j y_{n+j} = h \sum_{j=0}^k \beta_j f_{n+j}, \alpha_k = 1, n \geq 0.
 $$
- 
+
 Define the generating polynomials $$ \rho(\zeta) = \sum_{j=0}^k \alpha_j \zeta^j $$, $$ \sigma(\zeta) = \sum_{j=0}^k \beta_j \zeta^j $$.
 
 **Consistency**
- 
+
 Define the local truncation error (LTE) of an LMM by substituting the exact solution $$ y(t) $$ into the scheme:
- 
 $$
 \tau_{n+k} := \sum_{j=0}^k \alpha_j y(t_{n+j}) - h \sum_{j=0}^k \beta_j y'(t_{n+j})
 $$
- 
+
 The method has order $$ p $$ if $$ \tau_{n+k} = \mathcal{O}(h^{p+1}) $$ for smooth $$ y(t) $$.
- 
+
 Taylor expand about $$ t_n $$:
- 
+
 $$
 y(t_{n+j}) = y(t_n) + jh \cdot y'(t_n) + \frac{(jh)^2}{2!} y''(t_n) + \cdots + \frac{(jh)^p}{p!}y^{(p)}(t_n) + \mathcal{O} (h^{p+1})
 $$
- 
+
 $$
 y'(t_{n+j}) =  y'(t_n) + jh \cdot y''(t_n) + \frac{(jh)^2}{2!} y'''(t_n) + \cdots + \frac{(jh)^{p-1}}{(p-1)!}y^{(p)}(t_n) + \mathcal{O} (h^{p+1})
 $$
- 
+
 Insert into $$ \tau_{n+k} $$, collect powers of $$ h $$, and require the coefficients of $$ y^{(\ell)}(t_n) $$ to vanish for $$ \ell = 0, 1, \ldots, p $$.
- 
+
 $$
 \tau_{n+k} = C_0 y(t_n) + C_1 h y'(t_n) + \cdots + C_p h^p y^{(p)}(t_n) + \mathcal{O}(h^{p+1})
 $$
- 
+
 $$
 C_0: \sum_{j=0}^k \alpha_j = \rho(1) = 0.
 $$
- 
+
 $$
 C_1: \sum_{j=0}^k j \alpha_j = \sum_{j=0}^k \beta_j, \iff \rho'(1) = \sigma(1).  
 $$
- 
-In general, the coefficient of $$ h^{\ell}y^{(\ell)}(t_n) $$ for $$ \ell \geq 1 $$ is 
- 
+
+In general, the coefficient of $$ h^{\ell}y^{(\ell)}(t_n) $$ for $$ \ell \geq 1 $$ is
+
 $$
 \frac{1}{\ell !} \sum_{j=0}^k \alpha_j j^{\ell} - \frac{1}{(\ell - 1) !} \sum_{j=0}^k \beta_j j^{\ell - 1}.
 $$
- 
+
 For order $$ p $$, these must vanish for $$ \ell = 1, 2, \ldots, p $$:
- 
+
 $$
 \sum_{j=0}^k \alpha_j j^{\ell} = \ell \sum_{j=0}^k \beta_j j^{\ell - 1}, \; \ell = 0, 1, \ldots, p,
 $$
- 
+
 An LMM is consistent if $$ C_0 = C_1 = 0 $$, i.e., $$ \rho(1) = 0 $$ and $$ \rho'(1) = \sigma(1) $$, which means $$ \frac{1}{h} \tau_{n+k} = \mathcal{O}(h) $$.
 
 **Zero-stability**
- 
+
 Consider the homogeneous recurrence with a perturbation:
 
 $$
 \sum_{j=0}^k \alpha_j w_{n+j} = \delta_{n+k}, \; n \geq 0,
 $$
- 
+
 with given starting values $$ w_0, w_1, \ldots, w_{k-1} $$.
- 
+
 The LMM is zero-stable if there exists a constant $$ C $$ independent of $$ h $$ such that 
- 
+
 $$
 \max_{0 \leq n \leq N} |w_n| \leq C \left(\max_{0 \leq j \leq k-1} |w_j| + \max_{k \leq m \leq N} |\delta_m|  \right)
 $$
 
 **The root condition** 
- 
-Let $$ \rho(\zeta) = \sum_{j=0}^k \alpha_j \zeta^j $$. The root condition is : All roots of $$ \rho $$ satisfy $$ |\zeta| \leq 1 $$, and any root with $$ |\zeta| = 1 $$ is simple (i.e., algebraic multiplicity $$ = 1 $$).
+
+Let $$ \rho(\zeta) = \sum_{j=0}^k \alpha_j \zeta^j $$. The root condition is: All roots of $$ \rho $$ satisfy $$ |\zeta| \leq 1 $$, and any root with $$ |\zeta| = 1 $$ is simple (i.e., algebraic multiplicity $ = 1 $).
 
 **Theorem** An LMM is zero-stable $$ \iff $$ its $$ \rho(\zeta) $$ satisfies the root condition.
 
-Assume the root condition holds. Consider the homogeneous recurrence $$ \sum_{j=0}^k \alpha_j w_{n+j} = 0 \quad \alpha_k = 1 $$. 
+Assume the root condition holds. Consider the homogeneous recurrence $$ \sum_{j=0}^k \alpha_j w_{n+j} = 0 \quad \alpha_k = 1 $$.
 
 Introduce the companion matrix
 
