@@ -104,9 +104,9 @@ $$
 y_{n+1}(t) = y_0 + \int_{t_0}^t f(s, y_n(s)) \, ds
 $$
 
-*Step 3*: Pick $$ h \leq \min\left\{ a, \frac{b}{M} \right\} $$ such that the sequence of functions $$ \{ y_n(t) \} $$ is well-defined on the interval $$ [t_0 - h, t_0 + h] $$, where $$ M = \sup_{(t, y) \in R} |f(t, y)| < \infty $$ since $$ f $$ is continuous and $$ R $$ is bounded (compact). Specifically, $$ |y(t) - y_0| \leq \int_{t_0}^t |f(s, y(s))| \, ds \leq Mh < b $$.
+*Step 3*: Pick $$ h \leq \min\left\{a, \frac{b}{M} \right\} $$ such that the sequence of functions $$ \{ y_n(t) \} $$ is well-defined on the interval $$ [t_0 - h, t_0 + h] $$, where $$ M = \sup_{(t, y) \in R} |f(t, y)| < \infty $$ since $$ f $$ is continuous and $$ R $$ is bounded (compact). Specifically, $$ |y(t) - y_0| \leq \int_{t_0}^t |f(s, y(s))| \, ds \leq Mh < b $$.
 
-*Step 4*: Use Banach Fixed-Point Theorem to prove convergence. Define the operator $$ T $$ on the space of continuous functions $$ \mathcal{C}[t_0 - h, t_0 + h] $$ with the supremum norm $$ \|y\|_{\infty} = \sup_{t} |y(t)| $$, guaranteeing a complete metric space (i.e., every Cauchy sequence is convergent.): $$ T[y](t) = y_0 + \int_{t_0}^t f(s, y(s)) \, ds $$. We’ll show $$ T $$ is a contraction mapping, meaning there exists $$ 0 < \lambda < 1 $$ such that: $$ \| T[y] - T[z] \|_{\infty} \leq \lambda \| y - z \|_{\infty} $$. The Banach fixed-point theorem then guarantees the sequence $$ y_{n+1} = T[y_n] $$ converges to a unique fixed point $$ y = T[y] $$, satisfying the integral equation and hence the IVP.
+*Step 4*: Use Banach Fixed-Point Theorem to prove convergence. Define the operator $ T $ on the space of continuous functions $ \mathcal{C}[t_0 - h, t_0 + h] $ with the supremum norm $ \|y\|_{\infty} = \sup_{t} |y(t)| $, guaranteeing a complete metric space (i.e., every Cauchy sequence is convergent.): $ T \left[ y \right]\left(t \right) = y_0 + \int_{t_0}^t f(s, y(s)) \, ds $. We’ll show $ T $ is a contraction mapping, meaning there exists $ 0 < \lambda < 1 $ such that: $ \| T[y] - T[z] \|_{\infty} \leq \lambda \| y - z \|_{\infty} $. The Banach fixed-point theorem then guarantees the sequence $ y_{n+1} = T[y_n] $ converges to a unique fixed point $ y = T[y] $, satisfying the integral equation and hence the IVP.
 
 For any $$ y, z \in C[t_0 - h, t_0 + h] $$:
 
@@ -116,7 +116,7 @@ $$
 
 Using the Lipschitz condition:
 
-$$ 
+$$
 |f(s, y(s)) - f(s, z(s))| \leq L_f |y(s) - z(s)| \leq L_f \| y - z \|_{\infty}
 $$
 
