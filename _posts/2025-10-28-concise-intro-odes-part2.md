@@ -94,7 +94,7 @@ $$
 \tau_{n+1} = \left[ y(t_{n+1}) - y(t_n) - h \Phi(t_n, y(t_n), h) \right] 
 $$
 
-The method is consistent if $$ \max_{0 \leq n \leq N-1} \frac{1}{h} |\tau_{n+1}| \to 0 \; \text{as} \; h \to 0 $$, which is equivalent to $$ \Phi(t, y, 0) = f(t, y), \; \text{for all} \; t \in [0,T] $$ as $$ \lim_{h \to 0} \frac{1}{h} \tau_{n+1} = y'(t_n) - \Phi(t_n, y(t_n), 0) $$.
+The method is consistent if $$ \max_{0 \leq n \leq N-1} \frac{1}{h} |\tau_{n+1}| \to 0 \; \text{as} \; h \to 0 $$, which is equivalent to $$ \Phi(t, y, 0) = f(t, y), \; \text{for all} \; t \in [0, T] $$ as $$ \lim_{h \to 0} \frac{1}{h} \tau_{n+1} = y'(t_n) - \Phi(t_n, y(t_n), 0) $$.
 
 Yet, the convergence of a numerical scheme concerns the global error $$ e_n = y(t_n) - y_n $$, which accumulates over steps. The method is convergent if: $$ \max_{0 \leq n \leq N} |e_n| \to 0 \; \text{as} \; h \to 0 $$, with $$ t \in [0, T] $$. It is convergent of order $$ p $$ if $$ \max |e_n| = O(h^p) $$.
 
