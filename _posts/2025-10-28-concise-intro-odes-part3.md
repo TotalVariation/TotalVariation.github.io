@@ -290,9 +290,8 @@ If there is a root $$ | \zeta | = 1 $$ with multiplicity $$ \ge 2 $$, the homoge
 
 **Convergence of linear multistep methods** A $$ k $$-step linear multi-step method is convergent on $$ [t_0, T] $$ if for sufficiently smooth IVP $$ y' = f(t, y) $$ with the exact solution $$ y(t) $$, and for any family of starting values $$ y_j(h), j = 0, \ldots, k-1 $$ satisfying $$ \lim_{h \to 0} | y(t_j) - y_j(h) | = 0, \; j = 0, \ldots, k-1 $$ and the numerical solution $$ \{ y_n(h) \}_{n=0}^{N(h)} $$ produced by the LMM satisfies $$ \lim_{h \to 0} \max_{0 \le n \le N(h)} | e_n | = 0 $$ with $$ e_n := y(t_n) - y_n(h) $$.
 
-<div class="theorem" text='Dahlquist Equivalence Theorem for Linear Multistep Methods'>
+**Dahlquist Equivalence Theorem for Linear Multistep Methods**
 If a linear multistep method for solving ODE IVPs is convergent, i.e., the global error $$ e_n := y(t_n) - y_n $$ satisfies $$ \max_{0 \leq n \leq N} | e_n | \to 0 \; \text{as} \; h \to 0 $$, if and only if it is consistent and zero-stable. Moreover, if $$ \max_{0 \leq n \leq N} | e_n | \leq C h^p $$, then the linear multistep method is of order $$ p $$.
-</div>
 
 Proof of sufficiency (Consistency + Zero-Stability $$ \implies $$ Convergence):
 
