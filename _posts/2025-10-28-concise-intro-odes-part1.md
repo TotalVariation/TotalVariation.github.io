@@ -71,25 +71,25 @@ _styles: >
     The phase portrait of Lotka Volterra equations.
 </div>
 
+<p>
 In this blog, I will present detailed mathematical proofs of the Picard–Lindelo&#776f theorem and the Cauchy–Peano existence theorem. This post is part of my ongoing series of learning notes on Ordinary Differential Equations (ODEs), written with the primary goal of strengthening my own understanding and practising the analytical tools I have learned in real analysis and matrix analysis. It would be my pleasure if anyone finds this blog even slightly helpful in their own study of ODEs.
+</p>
 
-In contrast to more general treatments <d-footnote>We warmly recommend the <a href="https://sites.math.washington.edu//~burke/crs/555/555_notes/index.html">lecture notes</a> provided by Prof. James Burke to readers seeking a more mathematically rigorous treatment of ODE theories.</d-footnote>, where an ordinary differential equation is expressed as an $$ m^{th} $$-order $$ n \times n $$ system $$ f(t, \mathbf{x}, \mathbf{x}', \ldots, \mathbf{x}^{(m)}) = 0 $$ with $$ f $$ mapping a subset of $$ \mathbb{R} \times (\mathbb{F}^n)^{m+1} $$ into $$ \mathbb{F}^n $$. I will begin with the single-variable case, then move on to vector-valued first-order ODEs, and finally showcase its usage in proving the existence and uniqueness theorem of the general n-th order ODEs and their linear counterparts as supplementary exercises.
+<p>
+In contrast to more general treatments <d-footnote>We warmly recommend the <a href="https://sites.math.washington.edu//~burke/crs/555/555_notes/index.html">lecture notes</a> provided by Prof. James Burke to readers seeking a more mathematically rigorous treatment of ODE theories.</d-footnote>, where an ordinary differential equation is expressed as an $ m^{th} $-order $ n \times n $ system $ f(t, \mathbf{x}, \mathbf{x}', \ldots, \mathbf{x}^{(m)}) = 0 $ with $ f $ mapping a subset of $ \mathbb{R} \times (\mathbb{F}^n)^{m+1} $ into $ \mathbb{F}^n $. I will begin with the single-variable case, then move on to vector-valued first-order ODEs, and finally showcase its usage in proving the existence and uniqueness theorem of the general n-th order ODEs and their linear counterparts as supplementary exercises.
+</p>
 
-## Picard-Lindelo&#776f Theorem
+<h2> Picard-Lindelo&#776f Theorem </h2>
 
+<p>
 Consider the initial value problem (IVP) of the form :
 
 $$
 \frac{dy}{dt} = f(t,y), y(t_0) = y_0
 $$
 
-where $$ f(t, y) $$ is a function defined in some region of the $$ (t, y) $$-plane containing the initial point $$ (t_0, y_0) $$. If $$ f(t, y) $$ is continuous in $$ t $$ and Lipschitz continuous in $$ y $$ in a rectangular region 
-
-$$ 
-R = \{ (t, y) : |t - t_0| \le a, |y - y_0| \le b \}, 
-$$
-
-where $$ a $$ and $$ b $$ are positive constants. Then, there exists a unique solution $$ y(t) $$ to the IVP, defined on some interval $$ [t_0 - h, t_0 + h] $$ for some $$ h > 0 $$.
+where $ f(t, y) $ is a function defined in some region of the $ (t, y) $-plane containing the initial point $ (t_0, y_0) $. If $ f(t, y) $ is continuous in $ t $ and Lipschitz continuous in $ y $ in a rectangular region $ R = \{ (t, y) : |t - t_0| \le a, |y - y_0| \le b \} $, where $ a $ and $ b $ are positive constants. Then, there exists a unique solution $ y(t) $ to the IVP, defined on some interval $ [t_0 - h, t_0 + h] $ for some $ h > 0 $.
+</p>
 
 **Lipschitz Continuity**
 A function $$ f(t, y) $$ is Lipschitz continuous in $$ y $$ if there exists a constant $$ L_f > 0 $$ (called the Lipschitz constant) such that:
