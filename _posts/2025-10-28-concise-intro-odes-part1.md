@@ -165,7 +165,19 @@ $$
 
 If $$ L_f h < 1 $$ (e.g., choosing $$ h < \min\{ a, \frac{b}{M}, \frac{1}{L_f} \} $$), then $$ \lambda = L_f h < 1 $$, and $$ T $$ is a contraction mapping.
 
-The single variable case of Picard-Lindelo&#776f Theorem can be easily generalised to vector-valued ODEs: $$ \frac{d\mathbf{x}}{dt} = f(t, \mathbf{x}), \quad \mathbf{x}(0) = \mathbf{x}_0 $$, where $$ t \in [0, T] $$ for some fixed $$ T > 0 $$, $$ \mathbf{x}(t) \in \mathbb{R}^d $$, $$ f = (f_1, \ldots, f_d) : D \subset [0, T] \times \mathbb{R}^d \to \mathbb{R}^d $$ is continuous and Lipschitz continuous with respect to $$ \mathbf{x} $$, i.e., $$ \| f(t, \mathbf{x}) - f(t, \mathbf{y}) \| \leq L_f \| \mathbf{x} - \mathbf{y} \|, \quad  \forall (t, \mathbf{x}), (t, \mathbf{y}) \in D $$, $$ \mathbf{x}_0 \in \mathbb{R}^d $$ is the initial condition at $$ t = 0 $$. <d-footnote>Technically, this is a forward time version. A backward-in-time version (on $ [t_0 - a, t_0] $) can be proved in a similar fashion by simply using $ \widetilde{x}(t) = x(c - t) $, and correspondingly $ \widetilde{f}(t) = -f(c-t, x) $.</d-footnote>
+The single variable case of Picard-Lindelo&#776f Theorem can be easily generalised to vector-valued ODEs: 
+
+$$
+\frac{d\mathbf{x}}{dt} = f(t, \mathbf{x}), \quad \mathbf{x}(0) = \mathbf{x}_0, 
+$$ 
+
+where $$ t \in [0, T] $$ for some fixed $$ T > 0 $$, $$ \mathbf{x}(t) \in \mathbb{R}^d $$, $$ f = (f_1, \ldots, f_d) : D \subset [0, T] \times \mathbb{R}^d \to \mathbb{R}^d $$ is continuous and Lipschitz continuous with respect to $$ \mathbf{x} $$, i.e., 
+
+$$
+\| f(t, \mathbf{x}) - f(t, \mathbf{y}) \| \leq L_f \| \mathbf{x} - \mathbf{y} \|, \quad  \forall (t, \mathbf{x}), (t, \mathbf{y}) \in D,
+$$
+
+$$ \mathbf{x}_0 \in \mathbb{R}^d $$ is the initial condition at $$ t = 0 $$. <d-footnote>Technically, this is a forward time version. A backward-in-time version (on $ [t_0 - a, t_0] $) can be proved in a similar fashion by simply using $ \widetilde{x}(t) = x(c - t) $, and correspondingly $ \widetilde{f}(t) = -f(c-t, x) $.</d-footnote>
 
 A solution can be viewed as a parametric curve in an n-dimensional space while $$ t $$ changing in the interval $$ [0, T] $$. It can also be viewed as a trajectory of a particle moving in an n-dimensional space with its velocity (i.e., the tangent vector of the path) specified as per $$ f(t, \mathbf{x}) $$.
 
@@ -194,8 +206,10 @@ In the Picard's Iteration $$ \mathbf{x}_0(t) \equiv \mathbf{x}_0, \mathbf{x}_{n+
 $$
 \begin{align*}
 	\| \mathbf{x}_1(t) - \mathbf{x}_0(t) \| &= \| \int_0^t f(s, \mathbf{x}_0(s)) ds  \| \leq Mt \\
-	\| \mathbf{x}_2(t) - \mathbf{x}_1(t) \| &= \| \int_0^t \left[ f(s, \mathbf{x}_1(s)) - f(s, \mathbf{x}_0(s)) ds \right]  \| \leq \int_0^t L_f \| \mathbf{x}_1(s) - \mathbf{x}_0(s) \| ds \leq M L_f \int_0^t s ds =  M L_f \frac{t^2}{2}\\
-	\| \mathbf{x}_3(t) - \mathbf{x}_2(t) \| &= \| \int_0^t \left[ f(s, \mathbf{x}_2(s)) - f(s, \mathbf{x}_1(s)) ds \right]  \| \leq \int_0^t L_f \| \mathbf{x}_2(s) - \mathbf{x}_1(s) \| ds \leq ML_f^2 \int_0^t \frac{s^2}{2} ds =  ML_f^2 \frac{t^3}{3!}\\
+	\| \mathbf{x}_2(t) - \mathbf{x}_1(t) \| &= \| \int_0^t \left[ f(s, \mathbf{x}_1(s)) - f(s, \mathbf{x}_0(s)) ds \right]  \| \leq \int_0^t L_f \| \mathbf{x}_1(s) - \mathbf{x}_0(s) \| ds \\
+    &\leq M L_f \int_0^t s ds =  M L_f \frac{t^2}{2}\\
+	\| \mathbf{x}_3(t) - \mathbf{x}_2(t) \| &= \| \int_0^t \left[ f(s, \mathbf{x}_2(s)) - f(s, \mathbf{x}_1(s)) ds \right]  \| \leq \int_0^t L_f \| \mathbf{x}_2(s) - \mathbf{x}_1(s) \| ds \\ 
+    &\leq ML_f^2 \int_0^t \frac{s^2}{2} ds =  ML_f^2 \frac{t^3}{3!}\\
 	& \vdots \\
 	\| \mathbf{x}_{n}(t) - \mathbf{x}_{n-1}(t) \| & \leq M L_f^{n-1} \frac{t^{n}}{n!} \leq M L_f^{n-1} \frac{h^{n}}{n!}
 \end{align*}
