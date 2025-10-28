@@ -154,7 +154,9 @@ $$
 |T[y](t) - T[z](t)| \leq \int_{t_0}^t L_f \| y - z \|_{\infty} \, ds = L_f \| y - z \|_{\infty} |t - t_0| \leq L_f h \| y - z \|_{\infty} 
 $$
 
-since $$ |t - t_0| \le h $$. Taking the supremum:
+since $$ |t - t_0| \le h $$. 
+
+Taking the supremum:
 
 $$
 \| T[y] - T[z] \|_{\infty} \leq L_f h \| y - z \|_{\infty}
