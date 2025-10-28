@@ -124,7 +124,7 @@ $$
 M = \sup_{(t, y) \in R} |f(t, y)| < \infty 
 $$ 
 
-since $$ f $$ is continuous and $$ R $$ is bounded (compact). Specifically, $ |y(t) - y_0| \leq \int_{t_0}^t |f(s, y(s))| \, ds \leq Mh < b $.
+since $ f $ is continuous and $ R $ is bounded (compact). Specifically, $ |y(t) - y_0| \leq \int_{t_0}^t |f(s, y(s))| \, ds \leq Mh < b $.
 </p>
 
 <p>
