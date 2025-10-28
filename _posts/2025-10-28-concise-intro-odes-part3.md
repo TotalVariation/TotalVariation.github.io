@@ -169,7 +169,7 @@ $$
 
 Let $$ \rho(\zeta) = \sum_{j=0}^k \alpha_j \zeta^j $$. The root condition is: 
 
-All roots of $$ \rho $$ satisfy $$ |\zeta| \leq 1 $$, and any root with $$ |\zeta| = 1 $$ is simple (i.e., algebraic multiplicity $ = 1 $).
+All roots of $ \rho $ satisfy $ |\zeta| \le 1 $, and any root with $ |\zeta|=1 $ is simple (i.e., algebraic multiplicity $ = 1 $).
 
 **Theorem** An LMM is zero-stable $$ \iff $$ its $$ \rho(\zeta) $$ satisfies the root condition.
 
