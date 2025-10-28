@@ -144,7 +144,7 @@ $$
 |T[y](t) - T[z](t)| \leq \int_{t_0}^t L_f \| y - z \|_{\infty} \, ds = L_f \| y - z \|_{\infty} |t - t_0| \leq L_f h \| y - z \|_{\infty} 
 $$
 
-since $$ |t - t_0| \leq h $$. Taking the supremum:
+since $$ |t - t_0| \le h $$. Taking the supremum:
 
 $$
 \| T[y] - T[z] \|_{\infty} \leq L_f h \| y - z \|_{\infty}
@@ -152,7 +152,7 @@ $$
 
 If $$ L_f h < 1 $$ (e.g., choosing $$ h < \min\{ a, \frac{b}{M}, \frac{1}{L_f} \} $$), then $$ \lambda = L_f h < 1 $$, and $$ T $$ is a contraction mapping.
 
-The single variable case of Picard-Lindelo&#776f Theorem can be easily generalised to vector-valued ODEs: $$ \frac{d\mathbf{x}}{dt} = f(t, \mathbf{x}), \quad \mathbf{x}(0) = \mathbf{x}_0 $$, where $$ t \in [0, T] $$ for some fixed $$ T > 0 $$, $$ \mathbf{x}(t) \in \mathbb{R}^d $$, $$ f = (f_1, \ldots, f_d) : D \subset [0, T] \times \mathbb{R}^d \to \mathbb{R}^d $$ is continuous and Lipschitz continuous with respect to $$ \mathbf{x} $$, i.e., $$ \| f(t, \mathbf{x}) - f(t, \mathbf{y}) \| \leq L_f \| \mathbf{x} - \mathbf{y} \|, \quad  \forall (t, \mathbf{x}), (t, \mathbf{y}) \in D $$, $$ \mathbf{x}_0 \in \mathbb{R}^d $$ is the initial condition at $$ t = 0 $$.<d-footnote>Technically, this is a forward time version. A backward-in-time version (on $$ [t_0 - a, t_0] $$) can be proved in a similar fashion by simply using $$ \widetilde{x}(t) = x(c - t) $$, and correspondingly $$ \widetilde{f}(t) = -f(c-t, x) $$.</d-footnote>
+The single variable case of Picard-Lindelo&#776f Theorem can be easily generalised to vector-valued ODEs: $$ \frac{d\mathbf{x}}{dt} = f(t, \mathbf{x}), \quad \mathbf{x}(0) = \mathbf{x}_0 $$, where $$ t \in [0, T] $$ for some fixed $$ T > 0 $$, $$ \mathbf{x}(t) \in \mathbb{R}^d $$, $$ f = (f_1, \ldots, f_d) : D \subset [0, T] \times \mathbb{R}^d \to \mathbb{R}^d $$ is continuous and Lipschitz continuous with respect to $$ \mathbf{x} $$, i.e., $$ \| f(t, \mathbf{x}) - f(t, \mathbf{y}) \| \leq L_f \| \mathbf{x} - \mathbf{y} \|, \quad  \forall (t, \mathbf{x}), (t, \mathbf{y}) \in D $$, $$ \mathbf{x}_0 \in \mathbb{R}^d $$ is the initial condition at $$ t = 0 $$. <d-footnote>Technically, this is a forward time version. A backward-in-time version (on $ [t_0 - a, t_0] $) can be proved in a similar fashion by simply using $ \widetilde{x}(t) = x(c - t) $, and correspondingly $ \widetilde{f}(t) = -f(c-t, x) $.</d-footnote>
 
 A solution can be viewed as a parametric curve in an n-dimensional space while $$ t $$ changing in the interval $$ [0, T] $$. It can also be viewed as a trajectory of a particle moving in an n-dimensional space with its velocity (i.e., the tangent vector of the path) specified as per $$ f(t, \mathbf{x}) $$.
 
