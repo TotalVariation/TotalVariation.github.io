@@ -83,7 +83,7 @@ $$
 \frac{dy}{dt} = f(t,y), y(t_0) = y_0
 $$
 
-where $ f(t, y) $ is a function defined in some region of the $ (t, y) $-plane containing the initial point $ (t_0, y_0) $. If $ f(t, y) $ is continuous in $ t $ and Lipschitz continuous in $ y $ in a rectangular region $ R = \{ (t, y) : |t - t_0| \leq a, |y - y_0| \leq b \} $, where $ a $ and $ b $ are positive constants. Then, there exists a unique solution $ y(t) $ to the IVP, defined on some interval $ [t_0 - h, t_0 + h] $ for some $ h > 0 $.
+where $ f(t, y) $ is a function defined in some region of the $ (t, y) $-plane containing the initial point $ (t_0, y_0) $. If $ f(t, y) $ is continuous in $ t $ and Lipschitz continuous in $ y $ in a rectangular region $ R = \{(t, y) : |t - t_0| \leq a, |y - y_0| \leq b\} $, where $ a $ and $ b $ are positive constants. Then, there exists a unique solution $ y(t) $ to the IVP, defined on some interval $ [t_0 - h, t_0 + h] $ for some $ h > 0 $.
 
 **Lipschitz Continuity**
 A function $$ f(t, y) $$ is Lipschitz continuous in $$ y $$ if there exists a constant $$ L_f > 0 $$ (called the Lipschitz constant) such that:
