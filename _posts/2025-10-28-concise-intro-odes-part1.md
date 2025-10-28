@@ -91,52 +91,50 @@ $$
 where $ f(t, y) $ is a function defined in some region of the $ (t, y) $-plane containing the initial point $ (t_0, y_0) $. If $ f(t, y) $ is continuous in $ t $ and Lipschitz continuous in $ y $ in a rectangular region $ R = \{ (t, y) : |t - t_0| \le a, |y - y_0| \le b \} $, where $ a $ and $ b $ are positive constants. Then, there exists a unique solution $ y(t) $ to the IVP, defined on some interval $ [t_0 - h, t_0 + h] $ for some $ h > 0 $.
 </p>
 
+<p>
 **Lipschitz Continuity**
-A function $$ f(t, y) $$ is Lipschitz continuous in $$ y $$ if there exists a constant $$ L_f > 0 $$ (called the Lipschitz constant) such that:
+A function $ f(t, y) $ is Lipschitz continuous in $ y $ if there exists a constant $ L_f > 0 $ (called the Lipschitz constant) such that:
 
 $$
 |f(t, y_1) - f(t, y_2)| \leq L_f |y_1 - y_2|
 $$
 
-for all $$ (t, y_1), (t, y_2) \in R $$. It’s stronger than continuity but weaker than differentiability—most differentiable functions with bounded derivatives are Lipschitz continuous.
+for all $ (t, y_1), (t, y_2) \in R $. It’s stronger than continuity but weaker than differentiability—most differentiable functions with bounded derivatives are Lipschitz continuous.
+</p>
 
 **Proof**:
 
-*Step 1*: The IVP $$ \frac{dy}{dt} = f(t, y) $$, $$ y(t_0) = y_0 $$ is equivalent to the integral equation by the Fundamental Theorem of Calculus $$ y(t) = y_0 + \int_{t_0}^t f(s, y(s)) \, ds $$.
+<p>
+*Step 1:* The IVP $ \frac{dy}{dt} = f(t, y) $, $ y(t_0) = y_0 $ is equivalent to the integral equation by the Fundamental Theorem of Calculus $ y(t) = y_0 + \int_{t_0}^t f(s, y(s)) \, ds $.
+</p>
 
-*Step 2*: Picard's Iteration: Define a sequence of functions $$ \{ y_n(t) \} $$ to approximate the solution: Start with $$ y_0(t) = y_0 $$ (the constant initial condition). For $$ n \geq 0 $$, define: 
+<p>
+*Step 2:* Picard's Iteration: Define a sequence of functions $ \{ y_n(t) \} $ to approximate the solution: Start with $ y_0(t) = y_0 $ (the constant initial condition). For $ n \geq 0 $, define: 
 
 $$
 y_{n+1}(t) = y_0 + \int_{t_0}^t f(s, y_n(s)) \, ds
 $$
 
-*Step 3*: Pick $$ h \leq \min\left\{a, \frac{b}{M} \right\} $$ such that the sequence of functions $$ \{ y_n(t) \} $$ is well-defined on the interval $$ [t_0 - h, t_0 + h] $$, where 
+</p>
+
+<p>
+*Step 3:* Pick $ h \leq \min\left\{a, \frac{b}{M} \right\} $ such that the sequence of functions $ \{ y_n(t) \} $ is well-defined on the interval $ [t_0 - h, t_0 + h] $, where 
 
 $$
 M = \sup_{(t, y) \in R} |f(t, y)| < \infty 
 $$ 
 
-since $$ f $$ is continuous and $$ R $$ is bounded (compact). Specifically, 
+since $$ f $$ is continuous and $$ R $$ is bounded (compact). Specifically, $ |y(t) - y_0| \leq \int_{t_0}^t |f(s, y(s))| \, ds \leq Mh < b $.
+</p>
 
-$$
-|y(t) - y_0| \leq \int_{t_0}^t |f(s, y(s))| \, ds \leq Mh < b. 
-$$
-
-*Step 4*: Use Banach Fixed-Point Theorem to prove convergence. Define the operator $$ T $$ on the space of continuous functions $$ \mathcal{C}[t_0 - h, t_0 + h] $$ with the supremum norm 
-
-$$
-\|y\|_{\infty} = \sup_{t} |y(t)|, 
-$$ 
-
-guaranteeing a complete metric space (i.e., every Cauchy sequence is convergent): 
+<p>
+*Step 4:* Use Banach Fixed-Point Theorem to prove convergence. Define the operator $ T $ on the space of continuous functions $ \mathcal{C}[t_0 - h, t_0 + h] $ with the supremum norm $ \|y\|_{\infty} = \sup_{t} |y(t)| $, guaranteeing a complete metric space (i.e., every Cauchy sequence is convergent): 
 
 $$
 T \left[ y \right]\left(t \right) = y_0 + \int_{t_0}^t f(s, y(s)) \, ds.
 $$
 
-We’ll show $$ T $$ is a contraction mapping, meaning there exists $$ 0 < \lambda < 1 $$ such that: $$ \| T[y] - T[z] \|_{\infty} \le \lambda \| y - z \|_{\infty} $$. The Banach fixed-point theorem then guarantees the sequence $$ y_{n+1} = T[y_n] $$ converges to a unique fixed point $$ y = T[y] $$, satisfying the integral equation and hence the IVP.
-
-For any $$ y, z \in C[t_0 - h, t_0 + h] $$:
+We’ll show $ T $ is a contraction mapping, meaning there exists $ 0 < \lambda < 1 $ such that: $ \| T[y] - T[z] \|_{\infty} \le \lambda \| y - z \|_{\infty} $. The Banach fixed-point theorem then guarantees the sequence $ y_{n+1} = T[y_n] $ converges to a unique fixed point $ y = T[y] $, satisfying the integral equation and hence the IVP. For any $ y, z \in C[t_0 - h, t_0 + h] $:
 
 $$
 |T[y](t) - T[z](t)| = \left| \int_{t_0}^t [f(s, y(s)) - f(s, z(s))] \, ds \right| \leq \int_{t_0}^t |f(s, y(s)) - f(s, z(s))| \, ds
@@ -157,13 +155,8 @@ $$
 \end{align*}
 $$
 
-Taking the supremum:
-
-$$
-\| T[y] - T[z] \|_{\infty} \leq L_f h \| y - z \|_{\infty}
-$$
-
-If $$ L_f h < 1 $$ (e.g., choosing $$ h < \min\{ a, \frac{b}{M}, \frac{1}{L_f} \} $$), then $$ \lambda = L_f h < 1 $$, and $$ T $$ is a contraction mapping.
+Taking the supremum: $ \| T[y] - T[z] \|_{\infty} \leq L_f h \| y - z \|_{\infty} $. If $ L_f h < 1 $ (e.g., choosing $ h < \min\{ a, \frac{b}{M}, \frac{1}{L_f} \} $), then $ \lambda = L_f h < 1 $, and $ T $ is a contraction mapping.
+</p>
 
 <p>
 The single variable case of Picard-Lindelo&#776f Theorem can be easily generalised to vector-valued ODEs: 
