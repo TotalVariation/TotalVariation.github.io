@@ -264,19 +264,19 @@ $$
 
 In our case $ \mathbf{x}_n(t) \in \mathcal{C}([0, T]; \mathbb{R}^d) $, we need to prove the (uniform) boundedness and equicontinuity of $ \mathbf{x}_n $. Then there exists a subsequence $ \{ \mathbf{x}_{n_k} \} $ converging uniformly to some $ \mathbf{x} \in \mathcal{C}([0, T]; \mathbb{R}^d) $.
 
-    - Uniform boundedness. For each $$ n $$ and $$ t \in [t^n_k, t^n_{k+1}] $$,
+  $$ \triangleright $$ Uniform boundedness. For each $$ n $$ and $$ t \in [t^n_k, t^n_{k+1}] $$,
 
 $$
 \| \mathbf{x}_n(t) - \mathbf{x}_0 \| \le \sum_{j=0}^{k-1} \| \mathbf{x}_n(t_{j+1}^n)  - \mathbf{x}_n(t_{j}^n) \| + \| \mathbf{x}_n(t)  - \mathbf{x}_n(t_k^n) \| \leq \sum_{j=0}^{k-1} M \Delta_n + M | t - t_k^n | \leq M | t - t_0 | \leq Mh
 $$
 
-    -  Equicontinuity. For $$ s, t \in [t^n_k, t^n_{k+1}] $$ with $$ s < t $$,
+  $$ \triangleright $$ Equicontinuity. For $$ s, t \in [t^n_k, t^n_{k+1}] $$ with $$ s < t $$,
 
 $$
 \| \mathbf{x}_n(t) - \mathbf{x}_n(s) \| \leq \int_s^t \| f(t_k^n, \mathbf{x}_n(t_k^n)) \| du \leq M | t - s |
 $$
 
-Unlike Picard–Lindel\"{o}f, the Cauchy-Piano Existence theorem does not assume Lipschitz continuity in $$ \mathbf{x} $$, so the uniqueness is not guaranteed. A classical example in $$ d = 1 $$ is $$ x'(t) = \sqrt{|x(t)|}, \; x(0) = 0 $$. Here $$ f(x) = \sqrt{|x|} $$ is continuous but not Lipschitz at $$ 0 $$ (the derivative of $$ \sqrt{|x|} $$ is unbounded near zero). For any $$ \tau \ge 0 $$,
+Unlike Picard–Lindelo&#776f, the Cauchy-Piano Existence theorem does not assume Lipschitz continuity in $$ \mathbf{x} $$, so the uniqueness is not guaranteed. A classical example in $$ d = 1 $$ is $$ x'(t) = \sqrt{|x(t)|}, \; x(0) = 0 $$. Here $$ f(x) = \sqrt{|x|} $$ is continuous but not Lipschitz at $$ 0 $$ (the derivative of $$ \sqrt{|x|} $$ is unbounded near zero). For any $$ \tau \ge 0 $$,
 
 $$
 x_{\tau}(t) = \begin{cases} 
@@ -301,18 +301,18 @@ $$
 
 where $$ F : [0, T] \times \mathbb{R}^n \to \mathbb{R} $$ is continuous in $$ t $$ and Lipschitz continuous w.r.t. the other variables, i.e., $$ | F(t, \mathbf{x}) - F(t, \mathbf{z}) | \leq L \| \mathbf{x} - \mathbf{z} \| $$. Then, there exists a unique function $$ y \in \mathcal{C}^n(J), \; J := [t_0 - h, t_0 + h] \cap [0, T] $$ solving the IVP.
 
-We will show that the n-th order ODE can be transformed to a system of n first-order ODEs, then apply the Picard-Lindel\"{o}f theorem derived above regarding systems of first-order ODEs to conclude the proof.
+We will show that the n-th order ODE can be transformed to a system of n first-order ODEs, then apply the Picard-Lindelo&#776f theorem derived above regarding systems of first-order ODEs to conclude the proof.
 
 Define $$ x_1(t) := y(t), x_2(t) := y'(t), x_3(t) := y''(t), \ldots, x_n(t) := y^{(n-1)}(t) $$. Then
 
 $$
-\begin{align}
+\begin{align*}
  	x'_1 &= x_2 \\
  	x'_2 &= x_3 \\
  	&\vdots \\
  	x'_{n-1} &= x_n \\
  	x'_n &= F(t, x_1, x_2, \ldots, x_n)
-\end{align}
+\end{align*}
 $$
 
 Write this compactly as the first-order system:
@@ -332,11 +332,11 @@ $$
 \| f(t, \mathbf{x}) - f(t, \mathbf{z}) \| = \| (x_2 - z_2, \ldots, x_n - z_n, F(t, \mathbf{x}) - F(t, \mathbf{z})) \| \leq \| \mathbf{x} - \mathbf{z} \| + | F(t, \mathbf{x}) - F(t, \mathbf{z}) | \leq (1 + L) \| \mathbf{x} - \mathbf{z} \|
 $$
 
-By the Picard–Lindel\"{o}f theorem proved previously for a system of first-order ODEs, there exists a unique solution $$ \mathbf{x}(t) \in \mathcal{C}^1(J;\mathbb{R}^n) $$ of the system $$ \mathbf{x}'(t) = f(t, \mathbf{x}(t)) $$ with the initial condition $$ \mathbf{x}(t_0) = \mathbf{x}_0 : = (y_0, y_1, \ldots, y_{n-1})^T $$ on $$ J := [t_0 - h, t_0 + h] \cap [0, T] $$, where $$ h \leq \{ \frac{r}{\widetilde{M}}, \frac{1}{L} \} $$ and $$ \widetilde{M} = \sup | f(t, \mathbf{x}) | < \infty $. As $ \mathbf{x} \in \mathcal{C}^1(J) $$, $$ x_n = y^{(n-1)} \in \mathcal{C}^1(J) $$, implying $$ y^{(n)} \in \mathcal{C}^n(J) $$. 
+By the Picard–Lindelo&#776f theorem proved previously for a system of first-order ODEs, there exists a unique solution $$ \mathbf{x}(t) \in \mathcal{C}^1(J;\mathbb{R}^n) $$ of the system $$ \mathbf{x}'(t) = f(t, \mathbf{x}(t)) $$ with the initial condition $$ \mathbf{x}(t_0) = \mathbf{x}_0 : = (y_0, y_1, \ldots, y_{n-1})^T $$ on $$ J := [t_0 - h, t_0 + h] \cap [0, T] $$, where $$ h \leq \{ \frac{r}{\widetilde{M}}, \frac{1}{L} \} $$ and $$ \widetilde{M} = \sup | f(t, \mathbf{x}) | < \infty $. As $ \mathbf{x} \in \mathcal{C}^1(J) $$, $$ x_n = y^{(n-1)} \in \mathcal{C}^1(J) $$, implying $$ y^{(n)} \in \mathcal{C}^n(J) $$. 
 
 For n-th order linear ODEs $$ y^{(n)} + p_1(t)y^{(n-1)} + \cdots + p_{n-1}(t)y' + p_n(t)y = g(t) $$ with initial conditions $$ y(t_0) = y_0, y'(t_0) = y_1, \ldots, y^{(n-1)}(t_0) = y_{n-1} $$, where $$ t_0 \in I := (a, b) $$ and $$ p_1(t), \ldots, p_n(t), g(t) $$ are continuous on the open interval $$ I $$, then there exists a unique solution $$ y = \phi(t) $$ that satisfies the IVP and exists throughout the interval $$ I $$.
 
-Similarly, we can convert n-th order linear ODEs to a system of first-order ODEs $ \mathbf{x}' = \mathbf{A}(t)\mathbf{x} + \mathbf{g}(t) $, where 
+Similarly, we can convert n-th order linear ODEs to a system of first-order ODEs $$ \mathbf{x}' = \mathbf{A}(t)\mathbf{x} + \mathbf{g}(t) $$, where 
 
 $$
 \mathbf{A}(t) = \begin{pmatrix}
@@ -350,7 +350,7 @@ $$
 
 and $$ \mathbf{g}(t) = (0, 0, \ldots, 0, g(t))^T $$, with initial conditions $$ \mathbf{x}(t_0) = \mathbf{x}_0 := (y_0, y_1, \ldots, y_{n-1})^T $$.
 
-To apply the Picard–Lindel\"{o}f theorem, we need to check two conditions of $ f(t, \mathbf{x}) = \mathbf{A}(t)\mathbf{x} + \mathbf{g}(t) $:
+To apply the Picard–Lindelo&#776f theorem, we need to check two conditions of $$ f(t, \mathbf{x}) = \mathbf{A}(t)\mathbf{x} + \mathbf{g}(t) $$:
 
 1. Continuity. The entries of $$ \mathbf{A}(t) $$ are continuous functions $$ p_i(t) $$ and thus $$ \mathbf{A}(t) $$ is continuous ($$ \| \mathbf{A}(t_1) - \mathbf{A}(t_2) \| \leq \sum_{i,j} \left[a_{ij}(t_1) - a_{ij}(t_2) \right]^2 $$, where the matrix norm is defined by $$ \| \mathbf{A} \| = \max_{\| \mathbf{x} \|=1} \| \mathbf{Ax} \|, \;\text{where}\; \mathbf{x} \in \mathbb{R}^n $$). $$ \mathbf{g}(t) $$ is continuous as the only contained entry $$ g(t) $$ is continuous as specified.
 
@@ -362,7 +362,7 @@ $$
 \| \mathbf{x}(t) \| \leq \left( \| \mathbf{x}_0 \| + M_g| t - t_0 | \right)e^{K| t - t_0 |}
 $$
 
-Therefore, the solution remains bounded in the interval. Suppose the maximal interval of existence has a right endpoint $$ \beta < b $$. Since $$ p_i(t), g(t) $$ are continuous on $$ I $$, they are continuous on any compact subinterval $$ [t_0, \beta + \epsilon] \subset I $$. Reapply Picard-Lindelöf at $$ t = \beta $$, using $$ \mathbf{x}(\beta) $$ as the new initial condition. This extends the solution beyond $$ \beta $$, contradicting the maximality of $$ \beta $$. Thus, the solution extends to $$ b $$. Similarly, it extends to the left endpoint $$ a $$. Furthermore, any two solutions defined on overlapping intervals must coincide as their difference satisfies the homogeneous equation $$ \mathbf{A}(t)\mathbf{x} = \mathbf{0} $$, which has a unique solution $$ \mathbf{x}(t) = \mathbf{0} $$. Thus, the solution is unique across $$ I $$.
+Therefore, the solution remains bounded in the interval. Suppose the maximal interval of existence has a right endpoint $$ \beta < b $$. Since $$ p_i(t), g(t) $$ are continuous on $$ I $$, they are continuous on any compact subinterval $$ [t_0, \beta + \epsilon] \subset I $$. Reapply Picard-Lindelo&#776f at $$ t = \beta $$, using $$ \mathbf{x}(\beta) $$ as the new initial condition. This extends the solution beyond $$ \beta $$, contradicting the maximality of $$ \beta $$. Thus, the solution extends to $$ b $$. Similarly, it extends to the left endpoint $$ a $$. Furthermore, any two solutions defined on overlapping intervals must coincide as their difference satisfies the homogeneous equation $$ \mathbf{A}(t)\mathbf{x} = \mathbf{0} $$, which has a unique solution $$ \mathbf{x}(t) = \mathbf{0} $$. Thus, the solution is unique across $$ I $$.
 
 Actually, $$ f(t, \mathbf{x}) = \mathbf{A}(t)\mathbf{x} + \mathbf{g}(t) $$ is a special case of a common sufficient condition for global existence on the full interval $$ [0, T] $$, i.e., a linear growth bound:
 
@@ -370,7 +370,7 @@ $$
 \| f(t, \mathbf{x}) \| \le a(t) + b \| \mathbf{x} \|, \; t \in [0, T], \mathbf{x} \in \mathbb{R}^d,
 $$
 
-with $$ a \in L^1([0, T]) $$ and $$ b\ge 0 $$. By Gr\"{o}nwall's inequality, $$ \| \mathbf{x}(t) \| \le \left(\|\mathbf{x}_{0}\| + \int_{t_0}^t a(s)ds \right)e^{b(t - t_0)}, \; t \ge t_0 $$. This bound prevents blow-up in finite time, so the solution can be extended to the end point $$ T $$.
+with $$ a \in L^1([0, T]) $$ and $$ b\ge 0 $$. By Gro&#776nwall's inequality, $$ \| \mathbf{x}(t) \| \le \left(\|\mathbf{x}_{0}\| + \int_{t_0}^t a(s)ds \right)e^{b(t - t_0)}, \; t \ge t_0 $$. This bound prevents blow-up in finite time, so the solution can be extended to the end point $$ T $$.
 
 ## Concluding Remarks
 
