@@ -397,19 +397,25 @@ $$
 
 </p>
  
+<p>
 The starting errors $ e_0, \ldots, e_{k-1} $ are assumed $ \mathcal{O}(h^p) $, which are usually obtained by a one-step method of order $ p $, so $ \max_{0 \leq j \leq k-1} |e_j| \leq C_{s}h^p $.
+</p>
+
+<p> 
+The LTE has order $ p $ by assumption: $ | \tau_m | \leq C_{\tau} h^{p+1} $. Hence $ \sum_{m=k}^N | \tau_m | \leq C_{\tau} (Nh) h^p = C_{\tau}(T - t_0) h^p $.
+</p>
  
-The LTE has order $$ p $$ by assumption: $$ | \tau_m | \leq C_{\tau} h^{p+1} $$. Hence $$ \sum_{m=k}^N | \tau_m | \leq C_{\tau} (Nh) h^p = C_{\tau}(T - t_0) h^p $$.
- 
-Using Lipschitz continuity of $$ f $$, i.e., $$ | f(t, y_1) - f(t, y_2) | \leq L | y_1 - y_2 | $$ to obtain an error bound of terms $$ r_m $$,
+<p>
+Using Lipschitz continuity of $ f $, i.e., $ | f(t, y_1) - f(t, y_2) | \leq L | y_1 - y_2 | $ to obtain an error bound of terms $ r_m $,
  
 $$
-| \sum_{j=0}^k \beta_j \left( f(t_{n+j}, y(t_{n+j})) - f(t_{n+j}, y_{n+j}) \right) | \le L \sum_{j=0}^k | \beta_j | | e_{n+j} |  \leq \widetilde{L} \max_{0 \leq j \leq k} | e_{n+j} |, \; \text{where} \;  \widetilde{L} = L\sum_{j=0}^k | \beta_j |
+\begin{align*}
+| \sum_{j=0}^k \beta_j \left( f(t_{n+j}, y(t_{n+j})) - f(t_{n+j}, y_{n+j}) \right) | &\le L \sum_{j=0}^k | \beta_j | | e_{n+j} |  \leq \widetilde{L} \max_{0 \leq j \leq k} | e_{n+j} |, \; \text{where} \;  \widetilde{L} = L\sum_{j=0}^k | \beta_j | \\
+h \sum_{m=k}^{N}|r_m| &\le h  \widetilde{L} \sum_{m=k}^{N} \max_{0\le j\le k}|e_{m-k+j}| \le \widetilde{L} h \sum_{m=0}^{N} \, \max_{0\le j\le k}|e_{m-k+j}|
+\end{align*}
 $$
- 
-$$
-h \sum_{m=k}^{N}|r_m|\le h  \widetilde{L} \sum_{m=k}^{N} \max_{0\le j\le k}|e_{m-k+j}| \le \widetilde{L} h \sum_{m=0}^{N} \, \max_{0\le j\le k}|e_{m-k+j}|
-$$
+
+</p>
 
 Let $$ E := \max_{0\le n\le N}|e_n| $$, $$ h\sum_{m=k}^N |r_m| \leq \widetilde{L}(T - t_0)E $$.
 
