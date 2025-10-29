@@ -665,34 +665,24 @@ $$
 with coefficients $ (\alpha_0, \alpha_1, \alpha_2) = (0, -1, 1) $ and $ (\beta_0, \beta_1, \beta_2) = (-\frac{1}{2}, \frac{3}{2}, 0) $.
 </p>
  
+<p>
 It is straightforward to check the consistency and order conditions:
  
 $$
-\sum_j \alpha_j = 0 + (-1) + 1 = 0
-$$
-
-$$ 
 \begin{align*}
+    \sum_j \alpha_j &= 0 + (-1) + 1 = 0 \\
     \sum_j \alpha_j &= 0 + (1 \cdot -1) + (2 \cdot 1) = 1 \\
- 	\sum_j \beta_j &= - \frac{1}{2} + \frac{3}{2} + 0 =1
-\end{align*}
-$$
-
-$$ 
-\begin{align*}
+ 	\sum_j \beta_j &= - \frac{1}{2} + \frac{3}{2} + 0 =1 \\
     \sum_j j^2 \alpha_j &= 0 + (1 \cdot -1) + ( 2^2 \cdot 1) = 3\\
- 	2 \cdot \sum_j j \beta_j &= 2\left( (0 \cdot - \frac{1}{2}) + (1 \cdot \frac{3}{2}) + (2 \cdot 0) \right)
-\end{align*}
-$$ 
-
-$$
-\begin{align*}
+ 	2 \cdot \sum_j j \beta_j &= 2\left( (0 \cdot - \frac{1}{2}) + (1 \cdot \frac{3}{2}) + (2 \cdot 0) \right)\\
     \sum_j j^3 \alpha_j &= 0 + (1 \cdot -1) + (2^3 \cdot 1) = 7 \\
- 	3 \cdot \sum_j j^2 \beta_j &= 3\left( (0 \cdot - \frac{1}{2}) + (1 \cdot \frac{3}{2}) + (2^2 \cdot 0) \right) = \frac{9}{2} 
+ 	3 \cdot \sum_j j^2 \beta_j &= 3\left( (0 \cdot - \frac{1}{2}) + (1 \cdot \frac{3}{2}) + (2^2 \cdot 0) \right) = \frac{9}{2}
 \end{align*}
 $$
+
+</p>
  
-The LTE of AB2 is of order $$ \mathcal{O}(h^3) $$, and thus AB2 is of order $$ \mathcal{O}(h^2) $$. 
+<p>The LTE of AB2 is of order $ \mathcal{O}(h^3) $, and thus AB2 is of order $ \mathcal{O}(h^2) $.</p>
  
 2. Adams-Moulton methods
  
