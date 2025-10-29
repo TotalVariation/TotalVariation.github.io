@@ -377,21 +377,27 @@ The general solution to the homogeneous linear difference equation $ \sum_{j=0}^
 If a linear multistep method for solving ODE IVPs is convergent, i.e., the global error $ e_n := y(t_n) - y_n $ satisfies $ \max_{0 \leq n \leq N} | e_n | \to 0 \; \text{as} \; h \to 0 $, if and only if it is consistent and zero-stable. Moreover, if $ \max_{0 \leq n \leq N} | e_n | \leq C h^p $, then the linear multistep method is of order $ p $.
 </p>
 
-Proof of sufficiency (Consistency + Zero-Stability $$ \implies $$ Convergence):
+<p><strong>Proof of sufficiency (Consistency + Zero-Stability $ \implies $ Convergence):</strong></p>
 
-Subtracting the numerical scheme from the equation of the local truncation error $$ \tau_{n+k} := \sum_{j=0}^k \alpha_j y(t_{n+j}) - h \sum_{j=0}^k \beta_j f(t_{n+j}, y(t_{n+j})) $$:
+<p>
+Subtracting the numerical scheme from the equation of the local truncation error $ \tau_{n+k} := \sum_{j=0}^k \alpha_j y(t_{n+j}) - h \sum_{j=0}^k \beta_j f(t_{n+j}, y(t_{n+j})) $:
  
 $$
 \sum_{j=0}^k \alpha_j e_{n+j} = h \sum_{j=0}^k \beta_j \left(f(t_{n+j}, y(t_{n+j})) - f(t_{n+j}, y_{n+j}) \right) + \tau_{n+k}
 $$
  
-Let $$ r_{n+k} = \sum_{j=0}^k \beta_j \left(f(t_{n+j}, y(t_{n+j})) - f(t_{n+j}, y_{n+j}) \right) $$, then the error recurrence can be viewed as a perturbed linear recurrence $$ \sum_{j=0}^k \alpha_j e_{n+j} = \delta_{n+k}, \; n \geq 0 $$ with $$ \delta_{n+k} = r_{n+k} + \tau_{n+k} $$. By zero-stability, there exists $$ C_0 $$ (independent of $$ h $$) such that 
+</p>
+
+<p>
+Let $ r_{n+k} = \sum_{j=0}^k \beta_j \left(f(t_{n+j}, y(t_{n+j})) - f(t_{n+j}, y_{n+j}) \right) $, then the error recurrence can be viewed as a perturbed linear recurrence $ \sum_{j=0}^k \alpha_j e_{n+j} = \delta_{n+k}, \; n \geq 0 $ with $ \delta_{n+k} = r_{n+k} + \tau_{n+k} $. By zero-stability, there exists $ C_0 $ (independent of $ h $) such that 
  
 $$
 \max_{0 \leq n \leq N} | e_n | \leq C_0 \left( \max_{0 \leq j \leq k-1} | e_j | + \sum_{m=k}^N | r_m | + \sum_{m=k}^N | \tau_m | \right)
 $$
+
+</p>
  
-The starting errors $$ e_0, \ldots, e_{k-1} $$ are assumed $$ \mathcal{O}(h^p) $$, which are usually obtained by a one-step method of order $$ p $$, so $$ \max_{0 \leq j \leq k-1} |e_j| \leq C_{s}h^p $$.
+The starting errors $ e_0, \ldots, e_{k-1} $ are assumed $ \mathcal{O}(h^p) $, which are usually obtained by a one-step method of order $ p $, so $ \max_{0 \leq j \leq k-1} |e_j| \leq C_{s}h^p $.
  
 The LTE has order $$ p $$ by assumption: $$ | \tau_m | \leq C_{\tau} h^{p+1} $$. Hence $$ \sum_{m=k}^N | \tau_m | \leq C_{\tau} (Nh) h^p = C_{\tau}(T - t_0) h^p $$.
  
