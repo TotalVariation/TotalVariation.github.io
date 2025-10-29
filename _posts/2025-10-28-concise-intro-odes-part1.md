@@ -487,11 +487,20 @@ The matrix norm is bounded (e.g., $ \| \mathbf{A} \|_{\infty} = \max_i \sum_j | 
 </ul>
 </p>
 
-The Picard-Lindel\"{o}f theorem guarantees a local solution $$ \mathbf{x}(t) $$ existing on some interval $$ [t_0 - h, t_0 + h] \subset I $$. Since the ODE is linear, we can extend the solution to the entire interval $$ I $$. $$ \| \mathbf{x}(t) \| \leq \| \mathbf{x}_0 \| + \int_{t_0}^t [ \| \mathbf{A}(s) \| \| \mathbf{x}(s) \| + \| \mathbf{g}(s) \| ] \, ds $$. Since $$ \| \mathbf{A}(s) \| \leq K $$ and $$ \| \mathbf{g}(s) \| \leq M_g $$ on $$ I $$, apply Gr\"{o}nwall’s inequality.
+<p>
+The Picard-Lindelo&#776;f theorem guarantees a local solution $ \mathbf{x}(t) $ existing on some interval $ [t_0 - h, t_0 + h] \subset I $. Since the ODE is linear, we can extend the solution to the entire interval $ I $. 
+
+$$
+\| \mathbf{x}(t) \| \leq \| \mathbf{x}_0 \| + \int_{t_0}^t [ \| \mathbf{A}(s) \| \| \mathbf{x}(s) \| + \| \mathbf{g}(s) \| ] \, ds. 
+$$ 
+
+Since $ \| \mathbf{A}(s) \| \le K $ and $ \| \mathbf{g}(s) \| \le M_g $ on $ I $, apply Gro&#776;nwall’s inequality.
 
 $$
 \| \mathbf{x}(t) \| \leq \left( \| \mathbf{x}_0 \| + M_g| t - t_0 | \right)e^{K| t - t_0 |}
 $$
+
+</p>
 
 Therefore, the solution remains bounded in the interval. Suppose the maximal interval of existence has a right endpoint $$ \beta < b $$. Since $$ p_i(t), g(t) $$ are continuous on $$ I $$, they are continuous on any compact subinterval $$ [t_0, \beta + \epsilon] \subset I $$. Reapply Picard-Lindelo&#776f at $$ t = \beta $$, using $$ \mathbf{x}(\beta) $$ as the new initial condition. This extends the solution beyond $$ \beta $$, contradicting the maximality of $$ \beta $$. Thus, the solution extends to $$ b $$. Similarly, it extends to the left endpoint $$ a $$. Furthermore, any two solutions defined on overlapping intervals must coincide as their difference satisfies the homogeneous equation $$ \mathbf{A}(t)\mathbf{x} = \mathbf{0} $$, which has a unique solution $$ \mathbf{x}(t) = \mathbf{0} $$. Thus, the solution is unique across $$ I $$.
 
