@@ -564,6 +564,8 @@ $$
 
 </p>
 
+<p>
+
 $$
 \mathbf{C}^n = \mathbf{S} \begin{pmatrix} \ddots & & \\ & \mathbf{J}^n_{\star} & \\ & & \ddots \end{pmatrix} \mathbf{S}^{-1}
 $$
@@ -573,6 +575,8 @@ where
 $$
 \mathbf{J}_{\star}^n = \begin{pmatrix} \zeta_0 & 1 & & \\ & \ddots & \ddots &\\ & & \ddots & 1\\ & & & \zeta_0 \end{pmatrix}_{m \times m}^n = \begin{pmatrix} \zeta_0^n & \begin{pmatrix} n \\ 1 \end{pmatrix} \zeta_0^{n-1} & \begin{pmatrix} n \\ 2 \end{pmatrix} \zeta_0^{n-2} & \cdots & \begin{pmatrix} n \\ m-1 \end{pmatrix} \zeta_0^{n-m+1} \\  & \zeta_0^n & \begin{pmatrix} n \\ 1 \end{pmatrix} \zeta_0^{n-1} & \ddots & \vdots \\  &  & \ddots & \ddots & \begin{pmatrix} n \\ 2 \end{pmatrix} \zeta_0^{n-2} \\  &  &  & \zeta_0^n & \begin{pmatrix} n \\ 1 \end{pmatrix} \zeta_0^{n-1} \\  &  &  &  & \zeta_0^n  \end{pmatrix}_{m \times m}
 $$
+
+</p>
 
 Focus on the single $$ m \times m $$ Jordan block $$ \mathbf{J}^n_{\star} $$ associated with the eigenvalue $$ \zeta_0 $$, and $$ \mathbf{S}_{\star} = \left[\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_m  \right] $$ be the portion of $$ \mathbf{S} = \left[ \cdots | \mathbf{S}_{\star} | \cdots \right] $$ corresponding to the position of $$ \mathbf{J}^n_{\star} $ in $ \mathbf{J}^n $$. Then, $$ \mathbf{C}^n \mathbf{S} = \mathbf{S} \begin{pmatrix} \ddots & & \\ & \mathbf{J}^n_{\star} & \\ & & \ddots \end{pmatrix} $$ implies $$ \mathbf{C}^n\mathbf{S}_{\star} = \mathbf{S}_{\star} \mathbf{J}^n_{\star}(\zeta_0) $$, i.e., 
 
