@@ -684,17 +684,18 @@ $$
  
 <p>The LTE of AB2 is of order $ \mathcal{O}(h^3) $, and thus AB2 is of order $ \mathcal{O}(h^2) $.</p>
  
-2. Adams-Moulton methods
+<p><strong>Adams-Moulton methods</strong></p>
  
-AM2 (trapezoidal rule)
+<p>AM2 (trapezoidal rule)</p>
  
-Interpolate through $$ t_n, t_{n+1} $$:
+<p>
+Interpolate through $ t_n, t_{n+1} $:
  
 $$
 P_1(s) = f_n \cdot \frac{t_{n+1} - s}{h} + f_{n+1} \cdot \frac{s - t_n}{h}
 $$
  
-Integrate on $$ [t_n, t_{n+1}] $$ (set $$ \tau = s - t_n \in [0, h] $$):
+Integrate on $ [t_n, t_{n+1}] $ (set $ \tau = s - t_n \in [0, h] $):
  
 $$
 \int_{t_n}^{t_{n+1}} P_1(s) ds = \int_0^h \left( f_n \frac{h - \tau}{h} + f_{n+1}\frac{\tau}{h} \right)d\tau = h \cdot \frac{f_n + f_{n+1}}{2}
@@ -705,8 +706,12 @@ This yields
 $$
 y_{n+1} - y_n = h \left( \frac{1}{2} f_n  + \frac{1}{2} f_{n+1} \right)
 $$
+
+</p>
  
-It is straightforward to check consistency conditions are satisfied and the $$ \ell = 2 $$ condition holds; the LTE leading term is $$ -\frac{1}{12}h^3 y^{(3)}(t_n) $$. Hence, the AM2 method is of order $$ \mathcal{O}(h^2) $$.
+<p>
+It is straightforward to check consistency conditions are satisfied and the $ \ell = 2 $ condition holds; the LTE leading term is $ -\frac{1}{12}h^3 y^{(3)}(t_n) $. Hence, the AM2 method is of order $ \mathcal{O}(h^2) $.
+</p>
 
 AM3 (2-step, order 3)
  
