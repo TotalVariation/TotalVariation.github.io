@@ -352,21 +352,27 @@ $$
  
 </p>
 
-Equate coefficients of $ h $ and $$ h^2 $$:
+<p>Equate coefficients of $ h $ and $ h^2 $:</p>
  
-**Order 1 condition**:
+<p>
+<strong>Order 1 condition:</strong>
  
 $$
 \sum_{i=1}^s b_i = 1
 $$
- 
-**Order 2 condition**:
+
+</p> 
+
+<p>
+<strong>Order 2 condition:</strong>
  
 $$
 \sum_{i=1}^s b_i c_i = \frac{1}{2}
 $$
+
+</p>
  
-**Order 3 conditions**:
+<strong>Order 3 conditions:</strong>
  
 We need one higher order in the stage expansion.
  
