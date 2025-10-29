@@ -439,7 +439,8 @@ $$
 
 </p>
 
-**Order 4 conditions**:
+<p>
+<strong>Order 4 conditions:</strong>
  
 $$
 \begin{align*}
@@ -449,9 +450,14 @@ $$
  	\sum_{i, j, \ell} b_i a_{ij} a_{j \ell} c_{\ell} = \frac{1}{24}
 \end{align*}
 $$ 
+
+</p>
  
-Sketch of derivation <d-footnote>In the following derivations, we assume the general setting, where $$ y(t) \in \mathbb{R}^d, f : \mathbb{R} \times \mathbb{R}^d \to \mathbb{R}^d $$</d-footnote>
- 
+<p>
+<strong>Sketch of derivation</strong><d-footnote>In the following derivations, we assume the general setting, where $ y(t) \in \mathbb{R}^d, f : \mathbb{R} \times \mathbb{R}^d \to \mathbb{R}^d. $</d-footnote>
+</p> 
+
+<p>
 Extend the stage expansion by one more order to order 4:
  
 $$
@@ -464,8 +470,11 @@ $$
  		&\left. + \frac{1}{6} c_i^3 f_{ttt} + \frac{1}{6} c_i^3 f_{yyy}(f, f, f) + \frac{1}{2} c_i^3 f_{tyy}(f, f) + \frac{1}{2} c_i^3 f_{tty} f  \right) + \mathcal{O}(h^4)
 \end{align*}
 $$
- 
-substitute into the update:
+
+</p>
+
+<p>
+Substitute into the update:
 
 $$
 \begin{align*}
@@ -479,7 +488,10 @@ $$
 \end{align*}
 $$
  
-match with the exact Taylor series
+</p>
+
+<p>
+Match with the exact Taylor series
 
 $$ 
 \begin{align*}
@@ -488,6 +500,8 @@ $$
  		&\left. + 3f_{yy} (f_y f, f) + f_y f_{tt} + 2 f_y f_{ty} f + f_y f_{yy}(f, f) + f_y f_y f_t + f_y f_y f_y f \right) + \mathcal{O}(h^5)
 \end{align*}
 $$
+
+</p>
 
 Next, let us take a quick look at the classical RK4 method
  
