@@ -514,10 +514,16 @@ By the Picard–Lindelo&#776;f theorem proved previously for a system of first-o
 
 </p>
 
-<h3> N-th Order Linear ODEs </h3>
-<p>
-For n-th order linear ODEs $ y^{(n)} + p_1(t)y^{(n-1)} + \cdots + p_{n-1}(t)y' + p_n(t)y = g(t) $ with initial conditions $ y(t_0) = y_0, y'(t_0) = y_1, \ldots, y^{(n-1)}(t_0) = y_{n-1} $, where $ t_0 \in I := (a, b) $ and $ p_1(t), \ldots, p_n(t), g(t) $ are continuous on the open interval $ I $, then there exists a unique solution $ y = \phi(t) $ that satisfies the IVP and exists throughout the interval $ I $.
-</p>
+<h3>N-th Order Linear ODEs</h3>
+
+<div class="theorem-box">
+    <div class="theorem-header">
+        <span class="theorem-type">N-th Order Linear ODEs</span>
+    </div>
+    <div class="theorem-content">
+        <p>For n-th order linear ODEs $ y^{(n)} + p_1(t)y^{(n-1)} + \cdots + p_{n-1}(t)y' + p_n(t)y = g(t) $ with initial conditions $ y(t_0) = y_0, y'(t_0) = y_1, \ldots, y^{(n-1)}(t_0) = y_{n-1} $, where $ t_0 \in I := (a, b) $ and $ p_1(t), \ldots, p_n(t), g(t) $ are continuous on the open interval $ I $, then there exists a unique solution $ y = \phi(t) $ that satisfies the IVP and exists throughout the interval $ I $.</p>
+    </div>
+</div>
 
 <p>
 Similarly, we can convert n-th order linear ODEs to a system of first-order ODEs $ \mathbf{x}' = \mathbf{A}(t)\mathbf{x} + \mathbf{g}(t) $, where 
