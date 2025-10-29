@@ -453,13 +453,14 @@ $$
 
 <p>Convergence $ \implies $ Consistency</p>
 
-Subtracting the numerical scheme from the formula defining the LTE $$ \tau_{n+k} $$:
+<p>
+Subtracting the numerical scheme from the formula defining the LTE $ \tau_{n+k} $:
  
 $$
 \tau_{n+k} = \sum_{j=0}^k \alpha_j \left( y(t_{n+j}) - y_{n+j}(h) \right) + h \sum_{j=0}^k \beta_j \left( f(t_{n+j}, y_{n+j}(h)) - f(t_{n+j}, y(t_{n+j})) \right)
 $$
  
-By the Lipschitz continuity of $$ f $$,
+By the Lipschitz continuity of $ f $,
  
 $$
 |\tau_{n+k}| \le \left( \sum_{j=0}^k |\alpha_j| \right) \max_{0 \le j \le k} | e_{n+j}(h) | + hL\left( \sum_{j=0}^k |\beta_j| \right) \max_{0 \le j \le k} | e_{n+j}(h) |
@@ -471,7 +472,8 @@ $$
 |\tau_{n+k}| \le C(h) \max_{0 \le j \le k} | e_{n+j}(h) |
 $$
  
-Since $$ e_n(h) \to 0 $$ (by convergence), $$ \lim_{h \to 0} | \tau_{n+k}(h) | = 0 \; \forall n \ge 0 $$.
+Since $ e_n(h) \to 0 $ (by convergence), $ \lim_{h \to 0} | \tau_{n+k}(h) | = 0 \; \forall n \ge 0 $.
+</p>
  
 Finally, applying this to the test function $$ y(t) = 1 $$ and $$ y(t) = t $$ gives the usual algebraic conditions. Specifically,
  
