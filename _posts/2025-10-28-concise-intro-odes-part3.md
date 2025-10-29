@@ -311,7 +311,10 @@ $$
 \mathbf{J}_{\star}^k = \begin{pmatrix} \lambda & 1 & & \\ & \ddots & \ddots &\\ & & \ddots & 1\\ & & & \lambda \end{pmatrix}_{m \times m}^k = \begin{pmatrix} \lambda^k & \begin{pmatrix} k \\ 1 \end{pmatrix} \lambda^{k-1} & \begin{pmatrix} k \\ 2 \end{pmatrix} \lambda^{k-2} & \cdots & \begin{pmatrix} k \\ m-1 \end{pmatrix} \lambda^{k-m+1} \\  & \lambda^k & \begin{pmatrix} k \\ 1 \end{pmatrix} \lambda^{k-1} & \ddots & \vdots \\  &  & \ddots & \ddots & \begin{pmatrix} k \\ 2 \end{pmatrix} \lambda^{k-2} \\  &  &  & \lambda^k & \begin{pmatrix} k \\ 1 \end{pmatrix} \lambda^{k-1} \\  &  &  &  & \lambda^k  \end{pmatrix}_{m \times m}
 $$
 
-It is clear that if $ |\lambda| < 1 $, $ \lim_{k \to \infty} \lambda^k = 0 $ and $ \lim_{k \to \infty} \begin{pmatrix} k\\ j  \end{pmatrix} \lambda^{k-j} = 0 $ for each fixed value of $ j $.
+</p>
+
+<p>
+It is clear that if $ |\lambda| < 1 $, $ \lim_{k \to \infty} \lambda^k = 0 $ and $ \lim_{k \to \infty} \begin{pmatrix} k\\ j \end{pmatrix} \lambda^{k-j} = 0 $ for each fixed value of $ j $.
 </p>
  
 <p>
