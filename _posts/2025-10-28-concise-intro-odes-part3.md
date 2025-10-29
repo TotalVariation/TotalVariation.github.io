@@ -39,6 +39,7 @@ bibliography: 2025-10-28-concise-intro-odes-part3.bib
 toc:
   - name: Consistency and Zero-Stability
   - name: Dahlquist Equivalence Theorem for Linear Multistep Methods
+  - name: A Few Illustrated Examples
   - name: Concluding Remarks
   - name: Acknowledgement
 
@@ -620,6 +621,8 @@ i.e., a nonzero constant independent of $ h $. Thus the final error does not van
 <p>
 Combining the conclusions obtained above shows that every root $ \zeta $ of $ \rho $ satisfies $ | \zeta | \le 1 $ and any root with $ | \zeta | = 1 $ is simple (algebraic multiplicity 1), which is exactly the root condition.
 </p>
+
+<h2>A Few Illustrated Examples</h2>
 
 <p>Next, let us take a quick look at some important linear multi-step methods.</p>
 
