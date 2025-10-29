@@ -60,6 +60,43 @@ _styles: >
     text-align: center;
     font-size: 16px;
   }
+  .theorem-box {
+    /* Box Model */
+    border: 2px solid ForestGreen; /* A distinct green border */
+    border-radius: 8px;       /* Rounded corners for a softer look */
+    margin: 20px 0;           /* Space above and below the box */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden;         /* Important for containing the floated header */
+    max-width: 600px;         /* Optional: Limits the width on large screens */
+  }
+
+  .theorem-header {
+    /* Header Style */
+    background-color: ForestGreen; /* Green background for the title area */
+    color: white;             /* White text */
+    padding: 8px 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .theorem-content {
+    /* Content Style */
+    background-color: #f8f9fa; /* Light grey/off-white background for content */
+    padding: 15px;
+    font-size: 1.25em;
+    line-height: 1.6;
+  }
+
+  .theorem-content p {
+    margin: 0 0 10px 0; /* Adjust spacing for paragraphs inside the box */
+  }
+
+  /* Styling for the theorem type/title within the header */
+  .theorem-type {
+    /* Ensures the title text is styled correctly */
+    font-family: 'Georgia', serif; 
+  }
 ---
 
 <div class="row mt-3">
@@ -120,6 +157,15 @@ The consistent condition alone does not guarantee convergence, we need an additi
 
 If the one-step method is consistent and $ \Phi $ is Lipschitz in $ y $ with constant $ L_{\Phi} $ independent of $ h $, then it is convergent with the global error expressed as: $ |e_n| \le \frac{\tau}{hL_{\Phi}} (e^{L_{\Phi}(T - t_0)} - 1) $, where $ \tau = \max_{0 \leq n \leq N} |\tau_n| $.
 </p>
+
+<div class="theorem-box">
+    <div class="theorem-header">
+        <span class="theorem-type">Theorem Convergence of One-Step Methods</span>
+    </div>
+    <div class="theorem-content">
+        <p>If the one-step method is consistent and $ \Phi $ is Lipschitz in $ y $ with constant $ L_{\Phi} $ independent of $ h $, then it is convergent with the global error expressed as: $ |e_n| \le \frac{\tau}{hL_{\Phi}} (e^{L_{\Phi}(T - t_0)} - 1) $, where $ \tau = \max_{0 \leq n \leq N} |\tau_n| $.</p>
+    </div>
+</div>
 
 <p><strong>Proof:</strong></p>
 
