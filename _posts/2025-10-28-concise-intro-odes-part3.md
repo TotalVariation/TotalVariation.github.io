@@ -494,14 +494,16 @@ Using $ \sum_j \alpha_j = 0 $, we conclude that $ \sum_j j \alpha_j = \sum_j \be
 </ul>
 </p>
 
-2. Convergence $$ \implies $$ Zero-Stability
+<p>Convergence $ \implies $ Zero-Stability</p>
 
-Proof by contradiction. Assume the method is convergent as defined above, but not zero-stable. Then $$ \rho $$ violates the root condition:
+<p>
+<em>Proof by contradiction.</em> Assume the method is convergent as defined above, but not zero-stable. Then $ \rho $ violates the root condition:
  
 <ul>
- 	<li> Case A: $ \rho $ has a root $ \zeta_0 $ with $ | \zeta_0 | \ge 1 $;</li>
- 	<li> Case B: $ \rho $ has a root $ \zeta_0 $ on the unit circle but with algebraic multiplicity $ m \ge 2 $.</li>
+ 	<li>Case A: $ \rho $ has a root $ \zeta_0 $ with $ | \zeta_0 | \ge 1 $;</li>
+ 	<li>Case B: $ \rho $ has a root $ \zeta_0 $ on the unit circle but with algebraic multiplicity $ m \ge 2 $.</li>
 </ul>
+</p>
  
 To arrive at the contradiction, in each case, we only need to find a family of starting perturbations whose magnitude tends to zero as $$ h \to 0 $$, but for which the propagated solutions as per the numerical scheme $$ \sum_{j=0}^k \alpha_j y_{n+j} = h \sum_{j=0}^k \beta_j f_{n+j} $$ do not tend to zero.
  
