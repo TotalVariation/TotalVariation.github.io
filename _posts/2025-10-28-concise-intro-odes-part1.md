@@ -472,11 +472,20 @@ $$
 and $ \mathbf{g}(t) = (0, 0, \ldots, 0, g(t))^T $, with initial conditions $ \mathbf{x}(t_0) = \mathbf{x}_0 := (y_0, y_1, \ldots, y_{n-1})^T $.
 </p>
 
-To apply the Picard–Lindelo&#776f theorem, we need to check two conditions of $$ f(t, \mathbf{x}) = \mathbf{A}(t)\mathbf{x} + \mathbf{g}(t) $$:
+<p>
+To apply the Picard–Lindelo&#776;f theorem, we need to check two conditions of $ f(t, \mathbf{x}) = \mathbf{A}(t)\mathbf{x} + \mathbf{g}(t) $:
 
-1. Continuity. The entries of $$ \mathbf{A}(t) $$ are continuous functions $$ p_i(t) $$ and thus $$ \mathbf{A}(t) $$ is continuous ($$ \| \mathbf{A}(t_1) - \mathbf{A}(t_2) \| \leq \sum_{i,j} \left[a_{ij}(t_1) - a_{ij}(t_2) \right]^2 $$, where the matrix norm is defined by $$ \| \mathbf{A} \| = \max_{\| \mathbf{x} \|=1} \| \mathbf{Ax} \|, \;\text{where}\; \mathbf{x} \in \mathbb{R}^n $$). $$ \mathbf{g}(t) $$ is continuous as the only contained entry $$ g(t) $$ is continuous as specified.
+<ul>
+<li> <em>Continuity.</em> The entries of $ \mathbf{A}(t) $ are continuous functions $ p_i(t) $ and thus $ \mathbf{A}(t) $ is continuous ($ \| \mathbf{A}(t_1) - \mathbf{A}(t_2) \| \le \sum_{i,j} \left[a_{ij}(t_1) - a_{ij}(t_2) \right]^2 $, where the matrix norm is defined by $ \| \mathbf{A} \| = \max_{\| \mathbf{x} \|=1} \| \mathbf{Ax} \|, \;\text{where}\; \mathbf{x} \in \mathbb{R}^n $). $ \mathbf{g}(t) $ is continuous as the only contained entry $ g(t) $ is continuous as specified.</li>
+<li> <em>Lipschitz continuity.</em> 
 
-2. Lipschitz continuity. $$ \| \mathbf{f}(t, \mathbf{x}) - \mathbf{f}(t, \mathbf{y}) \| = \| \mathbf{A}(t) \mathbf{x} + \mathbf{g}(t) - (\mathbf{A}(t) \mathbf{y} + \mathbf{g}(t)) \| = \| \mathbf{A}(t) (\mathbf{x} - \mathbf{y}) \| \leq \| \mathbf{A}(t) \| \| \mathbf{x} - \mathbf{y} \| $$. The matrix norm is bounded (e.g., $$ \| \mathbf{A} \|_{\infty} = \max_i \sum_j | a_{ij} | $$, and matrix norms are equivalent.), say by $$ K $$, since each entry $$ p_i(t) $$ is a continuous function on a compact interval ($$ | p_i(t) | < M_i $$). Thus, $$ \| f(t, \mathbf{x}) - f(t, \mathbf{y}) \| \leq K \| \mathbf{x} - \mathbf{y} \| $$. 
+$$
+\| \mathbf{f}(t, \mathbf{x}) - \mathbf{f}(t, \mathbf{y}) \| = \| \mathbf{A}(t) \mathbf{x} + \mathbf{g}(t) - (\mathbf{A}(t) \mathbf{y} + \mathbf{g}(t)) \| = \| \mathbf{A}(t) (\mathbf{x} - \mathbf{y}) \| \le \| \mathbf{A}(t) \| \| \mathbf{x} - \mathbf{y} \|. 
+$$
+
+The matrix norm is bounded (e.g., $ \| \mathbf{A} \|_{\infty} = \max_i \sum_j | a_{ij} | $, and matrix norms are equivalent.), say by $ K $, since each entry $ p_i(t) $ is a continuous function on a compact interval ($ | p_i(t) | < M_i $). Thus, $ \| f(t, \mathbf{x}) - f(t, \mathbf{y}) \| \leq K \| \mathbf{x} - \mathbf{y} \| $.</li> 
+</ul>
+</p>
 
 The Picard-Lindel\"{o}f theorem guarantees a local solution $$ \mathbf{x}(t) $$ existing on some interval $$ [t_0 - h, t_0 + h] \subset I $$. Since the ODE is linear, we can extend the solution to the entire interval $$ I $$. $$ \| \mathbf{x}(t) \| \leq \| \mathbf{x}_0 \| + \int_{t_0}^t [ \| \mathbf{A}(s) \| \| \mathbf{x}(s) \| + \| \mathbf{g}(s) \| ] \, ds $$. Since $$ \| \mathbf{A}(s) \| \leq K $$ and $$ \| \mathbf{g}(s) \| \leq M_g $$ on $$ I $$, apply Gr\"{o}nwall’s inequality.
 
