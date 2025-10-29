@@ -440,15 +440,18 @@ $$
 If $ 1 - C_0\widetilde{L}(T - t_0) > 0 $, we are done. If not, we use a standard patching trick: splitting the time interval $ [t_0, T] $ into $ M $ short subintervals of length $ \Delta < T - t_0 $, chosen such that $ C_0\widetilde{L}\Delta \le \frac{1}{2} $. On the first subinterval, the error bound derived above holds true, implying the local maximum error is of order $ \mathcal{O}(h^p) $. Therefore, the endpoints of the previous subinterval can be used as starting values of the next subinterval, leading to the same error estimate by applying the above derivation. Iterating over a finite number of subintervals yields an overall bound $ \max_{0 \le n \le N} |e_n| \le Ch^p $.
 </p>
 
+<p>
 Furthermore, it is evident that the source of global error of LMMs can be decomposed into two terms:
  
 $$
 \max_{0\le n\le N} |e_n| \le C_1 \cdot \underbrace{\max_{0 \le j \le k-1} | e_j |}_{\text{initial error}} + C_2 \cdot \underbrace{\max_{ k \le m \le N} |\tau_m |}_{\substack{\text{the sum of LTE} \\ \text{controlled by} \\ \text{zero-stability}}}
 $$
 
-Proof of necessity (Convergence $$ \implies $$ Consistency + Zero-Stability):
+</p>
 
-1. Convergence $$ \implies $$ Consistency
+<p><strong>Proof of necessity (Convergence $ \implies $ Consistency + Zero-Stability):</strong></p>
+
+<p>Convergence $ \implies $ Consistency</p>
 
 Subtracting the numerical scheme from the formula defining the LTE $$ \tau_{n+k} $$:
  
