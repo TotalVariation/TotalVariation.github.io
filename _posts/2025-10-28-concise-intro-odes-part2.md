@@ -162,15 +162,19 @@ $$
 
 </p>
 
-Since $$ 1 + x \leq e^x $$ and $$ n h = t_n - t_0 \leq T - t_0 $$,  we have $$ (1 + h L_{\Phi})^n \leq e^{n h L_{\Phi}} \leq e^{L_{\Phi} (T - t_0)} $$, thus yielding the final expression: 
+<p>
+Since $ 1 + x \leq e^x $ and $ n h = t_n - t_0 \le T - t_0 $,  we have $ (1 + h L_{\Phi})^n \leq e^{n h L_{\Phi}} \leq e^{L_{\Phi} (T - t_0)} $, thus yielding the final expression: 
 
 $$ 
 |e_n| \leq \frac{|\tau|}{hL_{\Phi}} (e^{L_{\Phi} (T - t_0)} - 1) 
 $$ 
 
-As $$ h \to 0 $$, consistency implies $$ \frac{1}{h}|\tau| \to 0 $$, so $$ |e_n| \to 0 $$, proving convergence. If the method is of order $$ p $$, then $$ |\tau| = O(h^{p+1}) $$, so $$ |e_n| = O(h^p) $$, proving order $$ p $$ convergence.
+As $ h \to 0 $, consistency implies $ \frac{1}{h}|\tau| \to 0 $, so $ |e_n| \to 0 $, proving convergence. If the method is of order $ p $, then $ |\tau| = O(h^{p+1}) $, so $ |e_n| = O(h^p) $, proving order $ p $ convergence.
+</p>
 
-The main takeaway is, for one-step methods, **consistency** + **one-step stability (Lipschitz continuity)** $$ \implies $$ **convergence**. Furthermore, the LTE is $$ \mathcal{O}(h^{p+1}) $$ $$ \implies $$ the global error is $$ \mathcal{O}(h^p) $$.
+<p>
+The main takeaway is, for one-step methods, <strong>consistency + one-step stability (Lipschitz continuity) $ \implies $ convergence</strong>. Furthermore, the LTE is $ \mathcal{O}(h^{p+1}) $ $ \implies $ the global error is $ \mathcal{O}(h^p) $.
+</p>
 
 Next, we will examine the LTE of some common one-step methods:
 
