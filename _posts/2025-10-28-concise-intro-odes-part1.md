@@ -5,7 +5,7 @@ output:
     toc: true
     toc_depth: 2
 title: Reconstructing the Scaffolding A Learner’s Notes on Ordinary Differential Equations
-description: Part &#8544 Exploring the Picard–Lindelo&#776f and Cauchy–Peano Theorems
+description: Part &#8544 Exploring the Picard–Lindelo&#776;f and Cauchy–Peano Theorems
 tags:
 giscus_comments: true
 date: 2025-10-28
@@ -37,7 +37,7 @@ bibliography: 2025-10-28-concise-intro-odes-part1.bib
 #  - name: Other Typography?
 
 toc:
-  - name: Picard-Lindelo&#776f Theorem
+  - name: Picard-Lindelo&#776;f Theorem
   - name: Cauchy-Peano Existence Theorem
   - name: The General n-th Order ODE
   - name: Concluding Remarks
@@ -72,14 +72,14 @@ _styles: >
 </div>
 
 <p>
-In this blog, I will present detailed mathematical proofs of the Picard–Lindelo&#776f theorem and the Cauchy–Peano existence theorem. This post is part of my ongoing series of learning notes on Ordinary Differential Equations (ODEs), written with the primary goal of strengthening my own understanding and practising the analytical tools I have learned in real analysis and matrix analysis. It would be my pleasure if anyone finds this blog even slightly helpful in their own study of ODEs.
+In this blog, I will present detailed mathematical proofs of the Picard–Lindelo&#776;f theorem and the Cauchy–Peano existence theorem. This post is part of my ongoing series of learning notes on Ordinary Differential Equations (ODEs), written with the primary goal of strengthening my own understanding and practising the analytical tools I have learned in real analysis and matrix analysis. It would be my pleasure if anyone finds this blog even slightly helpful in their own study of ODEs.
 </p>
 
 <p>
 In contrast to more general treatments <d-footnote>We warmly recommend the <a href="https://sites.math.washington.edu//~burke/crs/555/555_notes/index.html">lecture notes</a> provided by Prof. James Burke to readers seeking a more mathematically rigorous treatment of ODE theories.</d-footnote>, where an ordinary differential equation is expressed as an $ m^{th} $-order $ n \times n $ system $ f(t, \mathbf{x}, \mathbf{x}', \ldots, \mathbf{x}^{(m)}) = 0 $ with $ f $ mapping a subset of $ \mathbb{R} \times (\mathbb{F}^n)^{m+1} $ into $ \mathbb{F}^n $. I will begin with the single-variable case, then move on to vector-valued first-order ODEs, and finally showcase its usage in proving the existence and uniqueness theorem of the general n-th order ODEs and their linear counterparts as supplementary exercises.
 </p>
 
-<h2> Picard-Lindelo&#776f Theorem </h2>
+<h2> Picard-Lindelo&#776;f Theorem </h2>
 
 <p>
 Consider the initial value problem (IVP) of the form :
@@ -102,23 +102,22 @@ $$
 for all $ (t, y_1), (t, y_2) \in R $. It’s stronger than continuity but weaker than differentiability—most differentiable functions with bounded derivatives are Lipschitz continuous.
 </p>
 
-**Proof**:
+<strong>Proof:</strong>
 
 <p>
-*Step 1:* The IVP $ \frac{dy}{dt} = f(t, y) $, $ y(t_0) = y_0 $ is equivalent to the integral equation by the Fundamental Theorem of Calculus $ y(t) = y_0 + \int_{t_0}^t f(s, y(s)) \, ds $.
+<em>Step 1:</em> The IVP $ \frac{dy}{dt} = f(t, y) $, $ y(t_0) = y_0 $ is equivalent to the integral equation by the Fundamental Theorem of Calculus $ y(t) = y_0 + \int_{t_0}^t f(s, y(s)) \, ds $.
 </p>
 
 <p>
-*Step 2:* Picard's Iteration: Define a sequence of functions $ \{ y_n(t) \} $ to approximate the solution: Start with $ y_0(t) = y_0 $ (the constant initial condition). For $ n \geq 0 $, define: 
+<em>Step 2:</em> Picard's Iteration: Define a sequence of functions $ \{ y_n(t) \} $ to approximate the solution: Start with $ y_0(t) = y_0 $ (the constant initial condition). For $ n \geq 0 $, define: 
 
 $$
 y_{n+1}(t) = y_0 + \int_{t_0}^t f(s, y_n(s)) \, ds
 $$
-
 </p>
 
 <p>
-*Step 3:* Pick $ h \leq \min\left\{a, \frac{b}{M} \right\} $ such that the sequence of functions $ \{ y_n(t) \} $ is well-defined on the interval $ [t_0 - h, t_0 + h] $, where 
+<em>Step 3:</em> Pick $ h \leq \min\left\{a, \frac{b}{M} \right\} $ such that the sequence of functions $ \{ y_n(t) \} $ is well-defined on the interval $ [t_0 - h, t_0 + h] $, where 
 
 $$
 M = \sup_{(t, y) \in R} |f(t, y)| < \infty 
@@ -128,7 +127,7 @@ since $ f $ is continuous and $ R $ is bounded (compact). Specifically, $ |y(t) 
 </p>
 
 <p>
-*Step 4:* Use Banach Fixed-Point Theorem to prove convergence. Define the operator $ T $ on the space of continuous functions $ \mathcal{C}[t_0 - h, t_0 + h] $ with the supremum norm $ \|y\|_{\infty} = \sup_{t} |y(t)| $, guaranteeing a complete metric space (i.e., every Cauchy sequence is convergent): 
+<em>Step 4:</em> Use Banach Fixed-Point Theorem to prove convergence. Define the operator $ T $ on the space of continuous functions $ \mathcal{C}[t_0 - h, t_0 + h] $ with the supremum norm $ \|y\|_{\infty} = \sup_{t} |y(t)| $, guaranteeing a complete metric space (i.e., every Cauchy sequence is convergent): 
 
 $$
 T \left[ y \right]\left(t \right) = y_0 + \int_{t_0}^t f(s, y(s)) \, ds.
@@ -159,7 +158,7 @@ Taking the supremum: $ \| T[y] - T[z] \|_{\infty} \leq L_f h \| y - z \|_{\infty
 </p>
 
 <p>
-The single variable case of Picard-Lindelo&#776f Theorem can be easily generalised to vector-valued ODEs: 
+The single variable case of Picard-Lindelo&#776;f Theorem can be easily generalised to vector-valued ODEs: 
 
 $$
 \frac{d\mathbf{x}}{dt} = f(t, \mathbf{x}), \quad \mathbf{x}(0) = \mathbf{x}_0, 
@@ -181,7 +180,7 @@ The mathematical proof is almost identical to that of the single variable case, 
 </p>
 
 <p>
-*Step 1 :* Construct a compact set $ R = [0, h] \cap [0, T] \times \overline{B}(\mathbf{x}_0, r) $ (hypercylinder) and a contraction operator 
+<em>Step 1:</em> Construct a compact set $ R = [0, h] \cap [0, T] \times \overline{B}(\mathbf{x}_0, r) $ (hypercylinder) and a contraction operator 
 
 $$
 \Phi[\mathbf{x}]\left(t \right) = \mathbf{x}_0 + \int_{t_0}^t f(s, \mathbf{x}(s))ds, 
@@ -192,7 +191,7 @@ where $ h \leq \frac{r}{M} $ and $ M = \sup_{ (t, \mathbf{x}) \in R} \| f(t, \ma
 </p>
 
 <p>
-*Step 2 :* 
+<em>Step 2:</em> 
 
 $$ 
 \| \Phi[\mathbf{x}](t) - \Phi[\mathbf{y}](t)\| = \| \int_0^t \left[ f(s, \mathbf{x}(s)) - f(s, \mathbf{y}(s))ds \right]  \| \leq \int_0^t L_f \| \mathbf{x}(s) - \mathbf{y}(s) \| ds 
@@ -208,7 +207,7 @@ Thus if we choose $ h < \frac{1}{L_f} $, then $ \Phi[\cdot] $ is a contraction m
 </p>
 
 <p>
-*Step 3 :* By Banach Fixed-Point Theorem, $ \Phi $ has a unique fixed point $ \mathbf{x} $ such that:
+<em>Step 3:</em> By Banach Fixed-Point Theorem, $ \Phi $ has a unique fixed point $ \mathbf{x} $ such that:
 
 $$
 \mathbf{x}(t) = \mathbf{x}_0 + \int_0^t f(s, \mathbf{x}(s))ds, \quad t \in [0, h], \; \text{where} \; h = \min \{ \frac{r}{M}, \frac{1}{L_f} \}
