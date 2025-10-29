@@ -300,7 +300,9 @@ $$
 
 </p>
  
-If $$ f : \mathbb{R} \times \mathbb{R}^d \to \mathbb{R}^d $$, then $$ f_y \in \mathbb{R}^{d \times d} $$ is the Jacobian matrix. Correspondingly, $$ f_y f $$ denotes matrix-vector multiplication, and $$ f_{yy} f f := f_{yy}[f, f] $$ denotes the bilinear map <d-footnote>We encourage readers seeking a deep understanding of this concept to consult the chapter 12 of the book Matrix Calculus (for Machine Learning and Beyond). <d-cite key="bright2025matrix"></d-cite> </d-footnote> acting on vectors, where $$ f_{yy} \in \mathcal{L}(\mathbb{R}^d, \mathcal{L}(\mathbb{R}^d, \mathbb{R}^d)) $$, $$ f_{yy} \cdot e_i = H_{f_i} $$ with $$ H_{f_i} $$ defined as per the Hessian matrix of a scalar-valued function.
+<p>
+If $ f : \mathbb{R} \times \mathbb{R}^d \to \mathbb{R}^d $, then $ f_y \in \mathbb{R}^{d \times d} $ is the Jacobian matrix. Correspondingly, $ f_y f $ denotes matrix-vector multiplication, and $ f_{yy} f f := f_{yy}[f, f] $ denotes the bilinear map <d-footnote>We encourage readers seeking a deep understanding of this concept to consult the chapter 12 of the book Matrix Calculus (for Machine Learning and Beyond). <d-cite key="bright2025matrix"></d-cite> </d-footnote> acting on vectors, where $ f_{yy} \in \mathcal{L}(\mathbb{R}^d, \mathcal{L}(\mathbb{R}^d, \mathbb{R}^d)) $, $ f_{yy} \cdot e_i = H_{f_i} $ with $ H_{f_i} $ defined as per the Hessian matrix of a scalar-valued function.
+</p>
 
 Stage expansions
  
