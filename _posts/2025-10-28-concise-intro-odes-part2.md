@@ -114,12 +114,15 @@ Yet, the convergence of a numerical scheme concerns the global error $ e_n = y(t
 The consistent condition alone does not guarantee convergence, we need an additional stability condition on $ \Phi $: $ |\Phi(t, y_1, h) - \Phi(t, y_2, h)| \leq L_{\Phi} |y_1 - y_2|, t \in [0, T], h \in [0, h_0] $, i.e.,  $ \Phi $ satisfying the Lipschitz condition in $ y $ and independent of $ h $. This ensures errors do not amplify excessively.
 </p>
 
-**Theorem** Convergence of One-Step Method
+<p>
+<strong>Theorem Convergence of One-Step Method</strong>
 
-If the one-step method is consistent and $$ \Phi $$ is Lipschitz in $$ y $$ with constant $$ L_{\Phi} $$ independent of $$ h $$, then it is convergent with the global error expressed as: $$ |e_n| \leq \frac{\tau}{hL_{\Phi}} (e^{L_{\Phi}(T - t_0)} - 1) $$, where $$ \tau = \max_{0 \leq n \leq N} |\tau_n| $$.
+If the one-step method is consistent and $ \Phi $ is Lipschitz in $ y $ with constant $ L_{\Phi} $ independent of $ h $, then it is convergent with the global error expressed as: $ |e_n| \le \frac{\tau}{hL_{\Phi}} (e^{L_{\Phi}(T - t_0)} - 1) $, where $ \tau = \max_{0 \leq n \leq N} |\tau_n| $.
+</p>
 
-Proof:
+<p><strong>Proof:</strong></p>
 
+<p>
 By the definition of the LTE, the exact solution satisfies:
 
 $$
@@ -129,16 +132,14 @@ $$
 Subtracting the numerical scheme $$ y_{n+1} = y_n + h \Phi(t_n, y_n, h) $$, we obtain a recursive formula for error function:
 
 $$
-e_{n+1} = y(t_{n+1}) - y_{n+1} = [y(t_n) - y_n] + h [\Phi(t_n, y(t_n), h) - \Phi(t_n, y_n, h)] + \tau_{n+1}
+\begin{align*}
+e_{n+1} &= y(t_{n+1}) - y_{n+1} = [y(t_n) - y_n] + h [\Phi(t_n, y(t_n), h) - \Phi(t_n, y_n, h)] + \tau_{n+1} \\
+e_{n+1} &= e_n + h [\Phi(t_n, y(t_n), h) - \Phi(t_n, y_n, h)] + \tau_{n+1} \\
+|e_{n+1}| &\le |e_n| + h |\Phi(t_n, y(t_n), h) - \Phi(t_n, y_n, h)| + |\tau|
+\end{align*}
 $$
 
-$$
-e_{n+1} = e_n + h [\Phi(t_n, y(t_n), h) - \Phi(t_n, y_n, h)] + \tau_{n+1}
-$$
-
-$$
-|e_{n+1}| \leq |e_n| + h |\Phi(t_n, y(t_n), h) - \Phi(t_n, y_n, h)| + |\tau|
-$$
+</p>
 
 By the Lipschitz condition on $ \Phi $, i.e., $$ |\Phi(t_n, y(t_n), h) - \Phi(t_n, y_n, h)| \leq L_{\Phi} |y(t_n) - y_n| = L_{\Phi} |e_n| $$,
 
