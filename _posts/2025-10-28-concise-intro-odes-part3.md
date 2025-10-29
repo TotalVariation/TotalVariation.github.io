@@ -296,17 +296,22 @@ $$
 </p>
 
 {% details Click here to know more %}
-Sketch of proof:
+<p><strong>Sketch of proof:</strong></p>
 
-Converting $$ \mathbf{C} = \mathbf{S} \mathbf{J} \mathbf{S}^{-1} $$ by similarity transformation to its Jordan form. Blocks with $$ | \lambda | < 1 $$ decay to zero as $$ n \to \infty $$; 
+<p>
+Converting $ \mathbf{C} = \mathbf{S} \mathbf{J} \mathbf{S}^{-1} $ by similarity transformation to its Jordan form. Blocks with $ | \lambda | < 1 $ decay to zero as $ n \to \infty $; 
 
 $$
 \mathbf{J}_{\star}^k = \begin{pmatrix} \lambda & 1 & & \\ & \ddots & \ddots &\\ & & \ddots & 1\\ & & & \lambda \end{pmatrix}_{m \times m}^k = \begin{pmatrix} \lambda^k & \begin{pmatrix} k \\ 1 \end{pmatrix} \lambda^{k-1} & \begin{pmatrix} k \\ 2 \end{pmatrix} \lambda^{k-2} & \cdots & \begin{pmatrix} k \\ m-1 \end{pmatrix} \lambda^{k-m+1} \\  & \lambda^k & \begin{pmatrix} k \\ 1 \end{pmatrix} \lambda^{k-1} & \ddots & \vdots \\  &  & \ddots & \ddots & \begin{pmatrix} k \\ 2 \end{pmatrix} \lambda^{k-2} \\  &  &  & \lambda^k & \begin{pmatrix} k \\ 1 \end{pmatrix} \lambda^{k-1} \\  &  &  &  & \lambda^k  \end{pmatrix}_{m \times m}
 $$
 
-It is clear that if $$ |\lambda| < 1 $$, $$ \lim_{k \to \infty} \lambda^k = 0 $$ and $$ \lim_{k \to \infty} \begin{pmatrix} k\\ j  \end{pmatrix} \lambda^{k-j} = 0 $$ for each fixed value of $$ j $$.
+It is clear that if $ |\lambda| < 1 $, $ \lim_{k \to \infty} \lambda^k = 0 $ and $ \lim_{k \to \infty} \begin{pmatrix} k\\ j  \end{pmatrix} \lambda^{k-j} = 0 $ for each fixed value of $ j $.
+</p>
  
-the block with $$ |\lambda| = 1 $$ is $$ \left[ 1 \right]_{1 \times 1} $$. Thus, $$ \| \mathbf{C}^n \| \leq \| \mathbf{S} \| \| \mathbf{S}^{-1} \| $$ (e.g., $$ \| \mathbf{C}^n \|_2 \le \frac{\sigma_1}{\sigma_n} $$, where $$ \sigma_1 $$ and $$ \sigma_n $$ are the largest and smallest singular values of $$ \mathbf{S} $$ respectively, and matrix norms are equivalent) uniformly in $$ n $$.
+<p>
+The block with $ |\lambda| = 1 $ is $ \left[ 1 \right]_{1 \times 1} $. Thus, $ \| \mathbf{C}^n \| \le \| \mathbf{S} \| \| \mathbf{S}^{-1} \| $ (e.g., $ \| \mathbf{C}^n \|_2 \le \frac{\sigma_1}{\sigma_n} $, where $ \sigma_1 $ and $ \sigma_n $ are the largest and smallest singular values of $ \mathbf{S} $ respectively, and matrix norms are equivalent) uniformly in $ n $.
+
+</p>
 {% enddetails %}
 
 For the perturbed recurrence $$ \sum_{j=0}^k \alpha_j w_{n+j} = \delta_{n+k}, \; n \geq 0 $$, reformulate it as the matrix-vector form:
