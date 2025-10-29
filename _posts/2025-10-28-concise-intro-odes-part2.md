@@ -70,35 +70,49 @@ _styles: >
     Animated Trajectories of One-Step Methods on Lotka-Volterra Equations
 </div>
 
+<p>
 This post is part of my ongoing series of learning notes on Ordinary Differential Equations (ODEs). In this instalment, I will first present a fundamental theorem on the convergence of general one-step methods, followed by a concise introduction to Runge–Kutta (RK) methods, including detailed derivations of the order conditions up to order four.
- 
+</p>
+
+<p>
 Throughout this blog, we focus on the initial value problems (IVPs) for one-dimensional ODEs for notational simplicity
  
 $$
 y'(t) = f(t, y(t)), \; y(t_0) = y_0, \; t \in [t_0, T]
 $$
  
-with $$ f $$ a sufficiently smooth (as specified when needed) scalar function. In the more general setting, where $$ f : \mathbb{R} \times \mathbb{R}^d \to \mathbb{R}^d $$, the corresponding proofs remain essentially identical, with vector norms used in place of absolute values where appropriate.
+with $ f $ a sufficiently smooth (as specified when needed) scalar function. In the more general setting, where $ f : \mathbb{R} \times \mathbb{R}^d \to \mathbb{R}^d $, the corresponding proofs remain essentially identical, with vector norms used in place of absolute values where appropriate.
+</p>
 
-## Convergence of General One Step Methods
+<h2> Convergence of General One Step Methods </h2>
 
+<p>
 A general (explicit) one-step method can be written in the form:
 
 $$
 y_{n+1} = y_n + h \Phi(t_n, y_n, h), \; n=0,1,\ldots, N-1, \; h = \frac{T - t_0}{N}, \; t_n = t_0 + nh, \; y_0 = y(t_0)
 $$
 
-Definition Local Truncation Error (LTE): The local truncation error $$ \tau_{n+1} $$ at step $$ t_{n+1} $$ is defined as by assuming $$ y_n = y(t_n) $$ is exact:
+</p>
+
+<p>
+<strong>Definition Local Truncation Error (LTE):</strong> The local truncation error $ \tau_{n+1} $ at step $ t_{n+1} $ is defined as by assuming $ y_n = y(t_n) $ is exact:
 
 $$
 \tau_{n+1} = \left[ y(t_{n+1}) - y(t_n) - h \Phi(t_n, y(t_n), h) \right] 
 $$
 
-The method is consistent if $$ \max_{0 \leq n \leq N-1} \frac{1}{h} |\tau_{n+1}| \to 0 \; \text{as} \; h \to 0 $$, which is equivalent to $$ \Phi(t, y, 0) = f(t, y), \; \text{for all} \; t \in [0, T] $$ as $$ \lim_{h \to 0} \frac{1}{h} \tau_{n+1} = y'(t_n) - \Phi(t_n, y(t_n), 0) $$.
+</p>
 
-Yet, the convergence of a numerical scheme concerns the global error $$ e_n = y(t_n) - y_n $$, which accumulates over steps. The method is convergent if: $$ \max_{0 \leq n \leq N} |e_n| \to 0 \; \text{as} \; h \to 0 $$, with $$ t \in [0, T] $$. It is convergent of order $$ p $$ if $$ \max |e_n| = O(h^p) $$.
+<p>
+The method is consistent if $ \max_{0 \leq n \leq N-1} \frac{1}{h} |\tau_{n+1}| \to 0 \; \text{as} \; h \to 0 $, which is equivalent to $ \Phi(t, y, 0) = f(t, y), \; \text{for all} \; t \in [0, T] $ as $ \lim_{h \to 0} \frac{1}{h} \tau_{n+1} = y'(t_n) - \Phi(t_n, y(t_n), 0) $.
+</p>
 
-The consistent condition alone does not guarantee convergence, we need an additional stability condition on $$ \Phi $$: $$ |\Phi(t, y_1, h) - \Phi(t, y_2, h)| \leq L_{\Phi} |y_1 - y_2|, t \in [0, T], h \in [0, h_0] $$, i.e.,  $$ \Phi $$ satisfying the Lipschitz condition in $$ y $$ and independent of $$ h $$. This ensures errors do not amplify excessively.
+<p>
+Yet, the convergence of a numerical scheme concerns the global error $ e_n = y(t_n) - y_n $, which accumulates over steps. The method is convergent if: $ \max_{0 \leq n \leq N} |e_n| \to 0 \; \text{as} \; h \to 0 $, with $ t \in [0, T] $. It is convergent of order $ p $ if $ \max |e_n| = O(h^p) $.
+
+The consistent condition alone does not guarantee convergence, we need an additional stability condition on $ \Phi $: $ |\Phi(t, y_1, h) - \Phi(t, y_2, h)| \leq L_{\Phi} |y_1 - y_2|, t \in [0, T], h \in [0, h_0] $, i.e.,  $ \Phi $ satisfying the Lipschitz condition in $ y $ and independent of $ h $. This ensures errors do not amplify excessively.
+</p>
 
 **Theorem** Convergence of One-Step Method
 
