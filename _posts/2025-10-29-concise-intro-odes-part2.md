@@ -75,7 +75,7 @@ _styles: >
     background-color: ForestGreen; /* Green background for the title area */
     color: white;             /* White text */
     padding: 8px 15px;
-    font-size: 1.2em;
+    font-size: 1.3em;
     font-weight: bold;
     text-transform: uppercase;
   }
@@ -84,7 +84,7 @@ _styles: >
     /* Content Style */
     background-color: #f8f9fa; /* Light grey/off-white background for content */
     padding: 15px;
-    font-size: 1.1em;
+    font-size: 1.2em;
     line-height: 1.6;
   }
 
@@ -150,12 +150,6 @@ The method is consistent if $ \max_{0 \leq n \leq N-1} \frac{1}{h} |\tau_{n+1}| 
 Yet, the convergence of a numerical scheme concerns the global error $ e_n = y(t_n) - y_n $, which accumulates over steps. The method is convergent if: $ \max_{0 \leq n \leq N} |e_n| \to 0 \; \text{as} \; h \to 0 $, with $ t \in [0, T] $. It is convergent of order $ p $ if $ \max |e_n| = O(h^p) $.
 
 The consistent condition alone does not guarantee convergence, we need an additional stability condition on $ \Phi $: $ |\Phi(t, y_1, h) - \Phi(t, y_2, h)| \leq L_{\Phi} |y_1 - y_2|, t \in [0, T], h \in [0, h_0] $, i.e.,  $ \Phi $ satisfying the Lipschitz condition in $ y $ and independent of $ h $. This ensures errors do not amplify excessively.
-</p>
-
-<p>
-<strong>Theorem Convergence of One-Step Method</strong>
-
-If the one-step method is consistent and $ \Phi $ is Lipschitz in $ y $ with constant $ L_{\Phi} $ independent of $ h $, then it is convergent with the global error expressed as: $ |e_n| \le \frac{\tau}{hL_{\Phi}} (e^{L_{\Phi}(T - t_0)} - 1) $, where $ \tau = \max_{0 \leq n \leq N} |\tau_n| $.
 </p>
 
 <div class="theorem-box">
