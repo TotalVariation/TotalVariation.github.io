@@ -743,11 +743,13 @@ $$
 It is straightforward to check consistency conditions are satisfied and the $ \ell = 2, 3 $ conditions hold; the LTE leading term is $ -\frac{1}{24}h^4 y^{(4)}(t_n) $. Hence, the AM3 method (2-step) is of order $ \mathcal{O}(h^3) $. 
 </p>
 
-3. Backward Differentiation Formulas
+<p><strong>Backward Differentiation Formulas</strong></p>
  
-This type of linear multistep method uses a polynomial $$ P_k(t) $$ of degree $$ k $$ passing through past values $$ y_{n+1}, y_n, \ldots, y_{n-k+1} $$ to approximate the solution $$ y(t) $$ instead of its derivative $$ y'(t) $$ as in the Adams methods. Then differentiate $$ P_k(t) $$ and enforce $$ P_k'(t_{n+1}) = f(t_{n+1}, y_{n+1}) $$.
+<p>
+This type of linear multistep method uses a polynomial $ P_k(t) $ of degree $ k $ passing through past values $ y_{n+1}, y_n, \ldots, y_{n-k+1} $ to approximate the solution $ y(t) $ instead of its derivative $ y'(t) $ as in the Adams methods. Then differentiate $ P_k(t) $ and enforce $ P_k'(t_{n+1}) = f(t_{n+1}, y_{n+1}) $.
+</p>
  
-BDF2
+<p>BDF2</p>
  
 The degree 2 Lagrange interpolating polynomial through $$ (t_{n-1}, y_{n-1}), (t_n, y_n), (t_{n+1}, y_{n+1}) $$ is 
  
