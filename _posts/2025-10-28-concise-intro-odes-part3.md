@@ -109,7 +109,7 @@ $$
 
 <p>Define the generating polynomials $ \rho(\zeta) = \sum_{j=0}^k \alpha_j \zeta^j $, $ \sigma(\zeta) = \sum_{j=0}^k \beta_j \zeta^j $.</p>
 
-<p><strong>Consistency</strong></p>
+<h3>Consistency</h3>
 
 <p>
 Define the local truncation error (LTE) of an LMM by substituting the exact solution $ y(t) $ into the scheme:
@@ -166,7 +166,7 @@ An LMM is consistent if $ C_0 = C_1 = 0 $, i.e., $ \rho(1) = 0 $ and $ \rho'(1) 
 
 </p>
 
-<p><strong>Zero-Stability</strong></p>
+<h3>Zero-Stability</h3>
 
 <p>
 Consider the homogeneous recurrence with a perturbation:
