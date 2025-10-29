@@ -617,7 +617,9 @@ $$
 i.e., a nonzero constant independent of $ h $. Thus the final error does not vanish, again contradicting convergence.
 </p>
 
-Combining the conclusions obtained above shows that every root $$ \zeta $$ of $$ \rho $$ satisfies $$ | \zeta | \le 1 $$ and any root with $$ | \zeta | = 1 $$ is simple (algebraic multiplicity 1), which is exactly the root condition.
+<p>
+Combining the conclusions obtained above shows that every root $ \zeta $ of $ \rho $ satisfies $ | \zeta | \le 1 $ and any root with $ | \zeta | = 1 $ is simple (algebraic multiplicity 1), which is exactly the root condition.
+</p>
 
 Next, let us take a quick look at some important linear multi-step methods.
 
