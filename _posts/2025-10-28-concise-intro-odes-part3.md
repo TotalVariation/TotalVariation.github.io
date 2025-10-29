@@ -505,13 +505,18 @@ Using $ \sum_j \alpha_j = 0 $, we conclude that $ \sum_j j \alpha_j = \sum_j \be
 </ul>
 </p>
  
-To arrive at the contradiction, in each case, we only need to find a family of starting perturbations whose magnitude tends to zero as $$ h \to 0 $$, but for which the propagated solutions as per the numerical scheme $$ \sum_{j=0}^k \alpha_j y_{n+j} = h \sum_{j=0}^k \beta_j f_{n+j} $$ do not tend to zero.
+<p>
+To arrive at the contradiction, in each case, we only need to find a family of starting perturbations whose magnitude tends to zero as $ h \to 0 $, but for which the propagated solutions as per the numerical scheme $ \sum_{j=0}^k \alpha_j y_{n+j} = h \sum_{j=0}^k \beta_j f_{n+j} $ do not tend to zero.
+</p>
  
-Recall that the homogeneous recurrence $$ \sum_{j=0}^k \alpha_j w_{n+j} = 0 $$ can be written in the matrix-vector form $$ \mathbf{w}_{n+1} = \mathbf{C} \mathbf{w}_n $$, where $$ \mathbf{w}_n = ( w_{n}, \ldots, w_{n+k-2}, w_{n+k-1})^T $$ and $$ \mathbf{C} $$ is the companion matrix
+<p>
+Recall that the homogeneous recurrence $ \sum_{j=0}^k \alpha_j w_{n+j} = 0 $ can be written in the matrix-vector form $ \mathbf{w}_{n+1} = \mathbf{C} \mathbf{w}_n $, where $ \mathbf{w}_n = ( w_{n}, \ldots, w_{n+k-2}, w_{n+k-1})^T $ and $ \mathbf{C} $ is the companion matrix
 
 $$
 \mathbf{C} = \begin{pmatrix} 0 & 1 & \cdots & 0 & 0 \\ 0 & 0 & 1 & \cdots & 0 \\ \vdots & \vdots & \ddots & \ddots &\vdots \\ 0 & 0 & \cdots & 0 & 1 \\ - \alpha_0 & - \alpha_1 & \cdots & - \alpha_{k-2} & -\alpha_{k-1} \end{pmatrix}_{k \times k}
 $$
+
+</p>
 
 The polynomial $$ p(\zeta) = \sum_{j=0}^k \alpha_j \zeta^j, \alpha_k = 1 $$ is both the characteristic and minimum polynomial for $$ \mathbf{C} $$, which means the eigenvalues of $$ \mathbf{C} $$ are exactly the roots of $$ \rho $$ and $$ \text{alg mult}(\lambda_j) = \text{index}(\lambda_j) $$ for each eigenvalue $$ \lambda_j \in \sigma(\mathbf{C}) $$.
 
