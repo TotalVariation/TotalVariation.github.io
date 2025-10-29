@@ -432,10 +432,17 @@ where $ f : [0, T] \times \mathbb{R}^n \to \mathbb{R}^n $ is defined by $ f(t, \
 </p>
 
 <p>
-It is trivial to check that $ f $ is continuous as its components are continuous. We just need to verify the Lipschitz continuity in $ \mathbf{x} $. For $ (t, \mathbf{x}), (t, \mathbf{z}) \in \widetilde{\mathcal{R}} := ([t_0 - h, t_0 + h] \cap [0, T]) \times \overline{B}(\mathbf{x}_0, r) \subset [0, T] \times \mathbb{R}^n $,
+It is trivial to check that $ f $ is continuous as its components are continuous. We just need to verify the Lipschitz continuity in $ \mathbf{x} $. For 
+
+$$
+(t, \mathbf{x}), (t, \mathbf{z}) \in \widetilde{\mathcal{R}} := ([t_0 - h, t_0 + h] \cap [0, T]) \times \overline{B}(\mathbf{x}_0, r) \subset [0, T] \times \mathbb{R}^n, 
+$$
  
 $$
-\| f(t, \mathbf{x}) - f(t, \mathbf{z}) \| = \| (x_2 - z_2, \ldots, x_n - z_n, F(t, \mathbf{x}) - F(t, \mathbf{z})) \| \leq \| \mathbf{x} - \mathbf{z} \| + | F(t, \mathbf{x}) - F(t, \mathbf{z}) | \leq (1 + L) \| \mathbf{x} - \mathbf{z} \|
+\begin{align*}
+\| f(t, \mathbf{x}) - f(t, \mathbf{z}) \| &= \| (x_2 - z_2, \ldots, x_n - z_n, F(t, \mathbf{x}) - F(t, \mathbf{z})) \| \\
+    &\le \| \mathbf{x} - \mathbf{z} \| + | F(t, \mathbf{x}) - F(t, \mathbf{z}) | \leq (1 + L) \| \mathbf{x} - \mathbf{z} \|
+\end{align*}
 $$
 
 </p>
