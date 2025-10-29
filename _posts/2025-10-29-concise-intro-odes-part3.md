@@ -421,6 +421,15 @@ The general solution to the homogeneous linear difference equation $ \sum_{j=0}^
 If a linear multistep method for solving ODE IVPs is convergent, i.e., the global error $ e_n := y(t_n) - y_n $ satisfies $ \max_{0 \leq n \leq N} | e_n | \to 0 \; \text{as} \; h \to 0 $, if and only if it is consistent and zero-stable. Moreover, if $ \max_{0 \leq n \leq N} | e_n | \leq C h^p $, then the linear multistep method is of order $ p $.
 </p>
 
+<div class="theorem-box">
+    <div class="theorem-header">
+        <span class="theorem-type">Dahlquist Equivalence Theorem for Linear Multistep Methods</span>
+    </div>
+    <div class="theorem-content">
+        <p>If a linear multistep method for solving ODE IVPs is convergent, i.e., the global error $ e_n := y(t_n) - y_n $ satisfies $ \max_{0 \leq n \leq N} | e_n | \to 0 \; \text{as} \; h \to 0 $, if and only if it is consistent and zero-stable. Moreover, if $ \max_{0 \leq n \leq N} | e_n | \leq C h^p $, then the linear multistep method is of order $ p $.</p>
+    </div>
+</div>
+
 <p><strong>Proof of sufficiency (Consistency + Zero-Stability $ \implies $ Convergence):</strong></p>
 
 <p>
