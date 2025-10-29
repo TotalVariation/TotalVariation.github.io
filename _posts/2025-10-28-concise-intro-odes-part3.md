@@ -314,7 +314,13 @@ $$
 </p>
 
 <p>
-It is clear that if $ |\lambda| < 1 $, $ \lim_{k \to \infty} \lambda^k = 0 $ and $ \lim_{k \to \infty} \begin{pmatrix} k\\ j \end{pmatrix} \lambda^{k-j} = 0 $ for each fixed value of $ j $.
+It is clear that if $ |\lambda| < 1 $, $ \lim_{k \to \infty} \lambda^k = 0 $ and 
+
+$$
+\lim_{k \to \infty} \begin{pmatrix} k\\ j \end{pmatrix} \lambda^{k-j} = 0 
+$$ 
+
+for each fixed value of $ j $.
 </p>
  
 <p>
