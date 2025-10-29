@@ -391,6 +391,7 @@ is a $ C^1 $ solution. Thus there are infinitely many solutions passing through 
 
 <h2> The General n-th Order ODE </h2>
 
+<p>
 Next, we consider the IVP of the general n-th order ODE:
 
 $$
@@ -400,11 +401,13 @@ $$
 \end{cases}
 $$
 
-where $$ F : [0, T] \times \mathbb{R}^n \to \mathbb{R} $$ is continuous in $$ t $$ and Lipschitz continuous w.r.t. the other variables, i.e., $$ | F(t, \mathbf{x}) - F(t, \mathbf{z}) | \leq L \| \mathbf{x} - \mathbf{z} \| $$. Then, there exists a unique function $$ y \in \mathcal{C}^n(J), \; J := [t_0 - h, t_0 + h] \cap [0, T] $$ solving the IVP.
+where $ F : [0, T] \times \mathbb{R}^n \to \mathbb{R} $ is continuous in $ t $ and Lipschitz continuous w.r.t. the other variables, i.e., $ | F(t, \mathbf{x}) - F(t, \mathbf{z}) | \leq L \| \mathbf{x} - \mathbf{z} \| $. Then, there exists a unique function $ y \in \mathcal{C}^n(J), \; J := [t_0 - h, t_0 + h] \cap [0, T] $ solving the IVP.
+</p>
 
-We will show that the n-th order ODE can be transformed to a system of n first-order ODEs, then apply the Picard-Lindelo&#776f theorem derived above regarding systems of first-order ODEs to conclude the proof.
+<p>We will show that the n-th order ODE can be transformed to a system of n first-order ODEs, then apply the Picard-Lindelo&#776;f theorem derived above regarding systems of first-order ODEs to conclude the proof.</p>
 
-Define $$ x_1(t) := y(t), x_2(t) := y'(t), x_3(t) := y''(t), \ldots, x_n(t) := y^{(n-1)}(t) $$. Then
+<p>
+Define $ x_1(t) := y(t), x_2(t) := y'(t), x_3(t) := y''(t), \ldots, x_n(t) := y^{(n-1)}(t) $. Then
 
 $$
 \begin{align*}
@@ -425,15 +428,22 @@ $$
 \end{cases}
 $$
 
-where $$ f : [0, T] \times \mathbb{R}^n \to \mathbb{R}^n $$ is defined by $$ f(t, \mathbf{x}) := (x_2, x_3, \ldots, x_n, F(t, \mathbf{x}))^T, \; \mathbf{x} = (x_1, \ldots, x_n)^T \in \mathbb{R}^n $$.
+where $ f : [0, T] \times \mathbb{R}^n \to \mathbb{R}^n $ is defined by $ f(t, \mathbf{x}) := (x_2, x_3, \ldots, x_n, F(t, \mathbf{x}))^T, \; \mathbf{x} = (x_1, \ldots, x_n)^T \in \mathbb{R}^n $.
+</p>
 
-It is trivial to check that $$ f $$ is continuous as its components are continuous. We just need to verify the Lipschitz continuity in $$ \mathbf{x} $$. For $$ (t, \mathbf{x}), (t, \mathbf{z}) \in \widetilde{\mathcal{R}} := ([t_0 - h, t_0 + h] \cap [0, T]) \times \overline{B}(\mathbf{x}_0, r) \subset [0, T] \times \mathbb{R}^n $$,
+<p>
+It is trivial to check that $ f $ is continuous as its components are continuous. We just need to verify the Lipschitz continuity in $ \mathbf{x} $. For $ (t, \mathbf{x}), (t, \mathbf{z}) \in \widetilde{\mathcal{R}} := ([t_0 - h, t_0 + h] \cap [0, T]) \times \overline{B}(\mathbf{x}_0, r) \subset [0, T] \times \mathbb{R}^n $,
  
 $$
 \| f(t, \mathbf{x}) - f(t, \mathbf{z}) \| = \| (x_2 - z_2, \ldots, x_n - z_n, F(t, \mathbf{x}) - F(t, \mathbf{z})) \| \leq \| \mathbf{x} - \mathbf{z} \| + | F(t, \mathbf{x}) - F(t, \mathbf{z}) | \leq (1 + L) \| \mathbf{x} - \mathbf{z} \|
 $$
 
-By the Picard–Lindelo&#776f theorem proved previously for a system of first-order ODEs, there exists a unique solution $$ \mathbf{x}(t) \in \mathcal{C}^1(J;\mathbb{R}^n) $$ of the system $$ \mathbf{x}'(t) = f(t, \mathbf{x}(t)) $$ with the initial condition $$ \mathbf{x}(t_0) = \mathbf{x}_0 : = (y_0, y_1, \ldots, y_{n-1})^T $$ on $$ J := [t_0 - h, t_0 + h] \cap [0, T] $$, where $$ h \leq \{ \frac{r}{\widetilde{M}}, \frac{1}{L} \} $$ and $$ \widetilde{M} = \sup | f(t, \mathbf{x}) | < \infty $. As $ \mathbf{x} \in \mathcal{C}^1(J) $$, $$ x_n = y^{(n-1)} \in \mathcal{C}^1(J) $$, implying $$ y^{(n)} \in \mathcal{C}^n(J) $$. 
+</p>
+
+<p>
+By the Picard–Lindelo&#776;f theorem proved previously for a system of first-order ODEs, there exists a unique solution $ \mathbf{x}(t) \in \mathcal{C}^1(J;\mathbb{R}^n) $ of the system $ \mathbf{x}'(t) = f(t, \mathbf{x}(t)) $ with the initial condition $ \mathbf{x}(t_0) = \mathbf{x}_0 : = (y_0, y_1, \ldots, y_{n-1})^T $ on $ J := [t_0 - h, t_0 + h] \cap [0, T] $, where $ h \le \{ \frac{r}{\widetilde{M}}, \frac{1}{L} \} $ and $ \widetilde{M} = \sup | f(t, \mathbf{x}) | < \infty $. As $ \mathbf{x} \in \mathcal{C}^1(J) $, $ x_n = y^{(n-1)} \in \mathcal{C}^1(J) $, implying $ y^{(n)} \in \mathcal{C}^n(J) $. 
+
+</p>
 
 For n-th order linear ODEs $$ y^{(n)} + p_1(t)y^{(n-1)} + \cdots + p_{n-1}(t)y' + p_n(t)y = g(t) $$ with initial conditions $$ y(t_0) = y_0, y'(t_0) = y_1, \ldots, y^{(n-1)}(t_0) = y_{n-1} $$, where $$ t_0 \in I := (a, b) $$ and $$ p_1(t), \ldots, p_n(t), g(t) $$ are continuous on the open interval $$ I $$, then there exists a unique solution $$ y = \phi(t) $$ that satisfies the IVP and exists throughout the interval $$ I $$.
 
