@@ -92,7 +92,7 @@ where $ f(t, y) $ is a function defined in some region of the $ (t, y) $-plane c
 </p>
 
 <p>
-**Lipschitz Continuity**
+<strong>Lipschitz Continuity</strong>
 A function $ f(t, y) $ is Lipschitz continuous in $ y $ if there exists a constant $ L_f > 0 $ (called the Lipschitz constant) such that:
 
 $$
@@ -275,23 +275,32 @@ Set $ u(t) = \| \mathbf{x}_1(t) - \mathbf{x}_2(t) \| $, then by Gro&#776;nwall's
 
 </p>
 
-Maximal Interval of Existence and Continuation
+<p>
+<strong>Maximal Interval of Existence and Continuation</strong>
  
-Given $$ (t_0, \mathbf{x}_0) $$, there exists a unique maximal solution: $$ (t_0, \tau_{+}) \to \mathbb{R}^d $$ with $$ t_0 < \tau_{+} \le T $$, obtained by extending the local solution as long as it remains in $$ [t_0, T] \times \mathbb{R}^d $$ and within regions where $$ f $$ is continuous and locally Lipschitz in $$ \mathbf{x} $$. If $$ \tau_{+} \le T $$, then necessarily $$ \lim_{t \to \tau_{+}} \| x(t) \| \to \infty $$ or $$ x(t) $$ approaches a point where $$ f $$ ceases to be continuous or locally Lipschitz in $$ \mathbf{x} $$. In particular, if the solution remains bounded (not blow-up in finite time) and $$ f $$ is continuous and locally Lipschitz in $$ \mathbf{x} $$ on all of $$ [t_0, T] \times \mathbb{R}^d $$, the solution can be extended to the right point $$ T $$.
+Given $ (t_0, \mathbf{x}_0) $, there exists a unique maximal solution: $ (t_0, \tau_{+}) \to \mathbb{R}^d $ with $ t_0 < \tau_{+} \le T $, obtained by extending the local solution as long as it remains in $ [t_0, T] \times \mathbb{R}^d $ and within regions where $ f $ is continuous and locally Lipschitz in $ \mathbf{x} $. If $ \tau_{+} \le T $, then necessarily $ \lim_{t \to \tau_{+}} \| x(t) \| \to \infty $ or $ x(t) $ approaches a point where $ f $ ceases to be continuous or locally Lipschitz in $ \mathbf{x} $. In particular, if the solution remains bounded (not blow-up in finite time) and $ f $ is continuous and locally Lipschitz in $ \mathbf{x} $ on all of $ [t_0, T] \times \mathbb{R}^d $, the solution can be extended to the right point $ T $.
+</p>
 
+<p>
 Next, let us take a quick look at a simple example <d-footnote>The example is borrowed from the book Elementary Differential Equations and Boundary Value Problems.<d-cite key="boyce2021elementary"></d-cite></d-footnote> to gain an intuitive understanding of how Picard's iteration works:
  
 $$
 y' = 2t(1 + y), \quad y(0) = 0
 $$
- 
-Applying the Picard's iteration $$ \Phi_{n+1}(t) = y_0 + \int_0^t f(s, \Phi_n(s)) ds $$ to $$ f(t, y(t)) = 2t(1 + y) $$, we obtain:
+
+</p>
+
+<p>
+Applying the Picard's iteration $ \Phi_{n+1}(t) = y_0 + \int_0^t f(s, \Phi_n(s)) ds $ to $ f(t, y(t)) = 2t(1 + y) $, we obtain:
  
 $$
 \Phi_n(t) = \sum_{k=1}^n \frac{t^{2k}}{k!}
 $$
+
+</p>
  
-Proof by induction. For $$ n = 1 $$, $$ \Phi_1(t) = \int_0^t 2s\left(1 + \Phi_0(s) \right) ds = t^2 $$, where $$ \Phi_0(t) = 0 $$. We then need to show that if it is true for $$ n = k $$, then it also holds true for $$ n = k + 1 $$.
+<p>
+<em>Proof by induction.</em> For $ n = 1 $, $ \Phi_1(t) = \int_0^t 2s\left(1 + \Phi_0(s) \right) ds = t^2 $, where $ \Phi_0(t) = 0 $. We then need to show that if it is true for $ n = k $, then it also holds true for $ n = k + 1 $.
  
 $$
 \begin{align*}
@@ -302,7 +311,8 @@ $$
 \end{align*}
 $$
  
-The infinite series $$ \sum_{k=1}^{\infty} \frac{t^{2k}}{k!} $$ converges to $$ \Phi(t) = e^{t^2} - 1 $$.
+The infinite series $ \sum_{k=1}^{\infty} \frac{t^{2k}}{k!} $ converges to $ \Phi(t) = e^{t^2} - 1 $.
+</p>
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
