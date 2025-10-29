@@ -415,10 +415,11 @@ The LTE has order $ p $ by assumption: $ | \tau_m | \leq C_{\tau} h^{p+1} $. Hen
 Using Lipschitz continuity of $ f $, i.e., $ | f(t, y_1) - f(t, y_2) | \leq L | y_1 - y_2 | $ to obtain an error bound of terms $ r_m $,
  
 $$
-\begin{align*}
-| \sum_{j=0}^k \beta_j \left( f(t_{n+j}, y(t_{n+j})) - f(t_{n+j}, y_{n+j}) \right) | &\le L \sum_{j=0}^k | \beta_j | | e_{n+j} |  \leq \widetilde{L} \max_{0 \leq j \leq k} | e_{n+j} |, \; \text{where} \;  \widetilde{L} = L\sum_{j=0}^k | \beta_j | \\
-h \sum_{m=k}^{N}|r_m| &\le h  \widetilde{L} \sum_{m=k}^{N} \max_{0\le j\le k}|e_{m-k+j}| \le \widetilde{L} h \sum_{m=0}^{N} \, \max_{0\le j\le k}|e_{m-k+j}|
-\end{align*}
+| \sum_{j=0}^k \beta_j \left( f(t_{n+j}, y(t_{n+j})) - f(t_{n+j}, y_{n+j}) \right) | \le L \sum_{j=0}^k | \beta_j | | e_{n+j} |  \leq \widetilde{L} \max_{0 \leq j \leq k} | e_{n+j} |, \; \text{where} \;  \widetilde{L} = L\sum_{j=0}^k | \beta_j |
+$$
+
+$$
+h \sum_{m=k}^{N}|r_m| \le h  \widetilde{L} \sum_{m=k}^{N} \max_{0\le j\le k}|e_{m-k+j}| \le \widetilde{L} h \sum_{m=0}^{N} \, \max_{0\le j\le k}|e_{m-k+j}|
 $$
 
 </p>
