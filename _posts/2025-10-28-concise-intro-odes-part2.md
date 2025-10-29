@@ -176,29 +176,32 @@ As $ h \to 0 $, consistency implies $ \frac{1}{h}|\tau| \to 0 $, so $ |e_n| \to 
 The main takeaway is, for one-step methods, <strong>consistency + one-step stability (Lipschitz continuity) $ \implies $ convergence</strong>. Furthermore, the LTE is $ \mathcal{O}(h^{p+1}) $ $ \implies $ the global error is $ \mathcal{O}(h^p) $.
 </p>
 
+<p>
 Next, we will examine the LTE of some common one-step methods:
 
-1. Explicit Euler $$ y_{n+1} = y_n + hf(t_n, y_n) $$. Use Taylor expansion of the exact solution:
+<ol>
+<li> Explicit Euler $ y_{n+1} = y_n + hf(t_n, y_n) $. Use Taylor expansion of the exact solution:
 
 $$
 y(t_{n+1}) = y(t_n) + h y'(t_n) +  \mathcal{O}(h^2)
 $$
 
-Given $$ y'(t_n) = f(t_n, y(t_n)) $$, so
+Given $ y'(t_n) = f(t_n, y(t_n)) $, so
  
 $$
 \tau_{n+1} = y(t_{n+1}) - \left(y(t_n) + hf(t_n, y(t_n)) \right) =  \mathcal{O}(h^2)
 $$
  
-hence $$ |\tau| \le Ch^2 $$ (with $$ C = \max_{t \in [t_0, T]} |y''(t)| $$). Thus, explicit Euler has order $$ p = 1 $$.
+hence $ |\tau| \le Ch^2 $ (with $ C = \max_{t \in [t_0, T]} |y''(t)| $). Thus, explicit Euler has order $ p = 1 $.
+</li>
  
-2. Improved Euler $$ y_{n+1} = y_n + \frac{h}{2} \left[ f(t_n, y_n) + f(t_n + h, y_n + h f(t_n, y_n)) \right] $$. Use Taylor expansion of the exact solution:
+<li> Improved Euler $ y_{n+1} = y_n + \frac{h}{2} \left[ f(t_n, y_n) + f(t_n + h, y_n + h f(t_n, y_n)) \right] $. Use Taylor expansion of the exact solution:
  
 $$
 y(t_{n+1}) = y(t_n) + h y'(t_n) + \frac{h^2}{2} y''(t_n) + \mathcal{O}(h^3)
 $$
  
-Given $$ y'(t_n) = f(t_n, y(t_n)) $$ and 
+Given $ y'(t_n) = f(t_n, y(t_n)) $ and 
  
 $$
 y''(t_n) = f_t(t_n, y(t_n)) + f_y(t_n, y(t_n)) f(t_n, y(t_n))
@@ -222,11 +225,14 @@ $$
 \tau_{n+1} = y(t_{n+1}) - \left( y(t_n) + \frac{h}{2} \left( f(t_n, y(t_n)) + f(t_n + h, y(t_n) + h f(t_n, y(t_n))) \right) \right) =  \mathcal{O}(h^3)
 $$
  
-hence $$ |\tau| \le Ch^3 $$. Thus, improved Euler has order $$ p = 2 $$.
- 
-It turns out that the methods we discussed above, i.e., explicit Euler and improved Euler, are special cases of Runge-Kutta methods, which we will inspect shortly. 
+hence $ |\tau| \le Ch^3 $. Thus, improved Euler has order $ p = 2 $.
+</li>
+</ol>
+</p>
 
-## General Runge-Kutta Methods
+<p>It turns out that the methods we discussed above, i.e., explicit Euler and improved Euler, are special cases of Runge-Kutta methods, which we will inspect shortly.</p>
+
+<h2> General Runge-Kutta Methods </h2>
 
 An $$ s $$-stage Runge-Kutta (RK) method computes stage derivatives
  
