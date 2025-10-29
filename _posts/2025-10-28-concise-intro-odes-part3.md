@@ -605,15 +605,17 @@ $$
 
 </p>
 
-Now constructing starting data as follows. Set $$ \eta(h) = N(h)^{-(m-1)} $$. Then, take the initial perturbation as $$ \mathbf{w}_0 = \eta(h)\mathbf{v}_m $$, which is admissible as $$ \eta(h) \to 0 \; \text{as} \; h \to 0 $$.
+<p>
+Now constructing starting data as follows. Set $ \eta(h) = N(h)^{-(m-1)} $. Then, take the initial perturbation as $ \mathbf{w}_0 = \eta(h)\mathbf{v}_m $, which is admissible as $ \eta(h) \to 0 \; \text{as} \; h \to 0 $.
 
-But the propagated perturbation at step $$ n = N(h) $$ is
+But the propagated perturbation at step $ n = N(h) $ is
 
 $$
 \| \mathbf{w}_{N(h)} \|_{\infty} = \| \mathbf{C}^{N(h)} \mathbf{w}_0 \|_{\infty} \propto \eta(h) K N(h)^{m-1} = K
 $$
 
-i.e., a nonzero constant independent of $$ h $$. Thus the final error does not vanish, again contradicting convergence.
+i.e., a nonzero constant independent of $ h $. Thus the final error does not vanish, again contradicting convergence.
+</p>
 
 Combining the conclusions obtained above shows that every root $$ \zeta $$ of $$ \rho $$ satisfies $$ | \zeta | \le 1 $$ and any root with $$ | \zeta | = 1 $$ is simple (algebraic multiplicity 1), which is exactly the root condition.
 
