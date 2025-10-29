@@ -368,19 +368,6 @@ The infinite series $ \sum_{k=1}^{\infty} \frac{t^{2k}}{k!} $ converges to $ \Ph
 
 <h2>Cauchy-Peano Existence Theorem</h2>
 
-<p>
-For the initial value problem
-
-$$
-\begin{cases}
-	\mathbf{x}^{\prime}(t) = f(t, \mathbf{x}(t)), \quad t \in [0, T], \\
-	\mathbf{x}(t_0) = \mathbf{x}_0 \in \mathbb{R}^d
-\end{cases}
-$$
-
-where $ f : [0, T] \times \mathbb{R}^d \to \mathbb{R}^d $ is continuous. Then there exists a solution $ \mathbf{x}(t) \in \mathcal{C}^1([t_0, t_0 + h]; \mathbb{R}^d) $ that satisfies both the differential equation and the initial condition.
-</p>
-
 <div class="theorem-box">
     <div class="theorem-header">
         <span class="theorem-type">Cauchy-Peano Existence Theorem</span>
@@ -457,20 +444,27 @@ $$
 is a $ C^1 $ solution. Thus there are infinitely many solutions passing through $ (0, 0) $.
 </p>
 
-<h2> The General n-th Order ODE </h2>
+<h2>The General N-th Order ODE</h2>
 
-<p>
-Next, we consider the IVP of the general n-th order ODE:
+<div class="theorem-box">
+    <div class="theorem-header">
+        <span class="theorem-type">The General N-th Order ODE</span>
+    </div>
+    <div class="theorem-content">
+        <p>
+        Next, we consider the IVP of the general n-th order ODE:
 
-$$
-\begin{cases}
-	y^{(n)}(t) = F(t, y(t), y'(t), \ldots, y^{(n-1)}(t)), \quad t \in [0, T], \\
-	y(t_0) = y_0, y'(t_0) = y_1, \ldots, y^{(n-1)}(t_0) = y_{n-1},
-\end{cases}
-$$
+        $$
+        \begin{cases}
+	        y^{(n)}(t) = F(t, y(t), y'(t), \ldots, y^{(n-1)}(t)), \quad t \in [0, T], \\
+	        y(t_0) = y_0, y'(t_0) = y_1, \ldots, y^{(n-1)}(t_0) = y_{n-1},
+        \end{cases}
+        $$
 
-where $ F : [0, T] \times \mathbb{R}^n \to \mathbb{R} $ is continuous in $ t $ and Lipschitz continuous w.r.t. the other variables, i.e., $ | F(t, \mathbf{x}) - F(t, \mathbf{z}) | \leq L \| \mathbf{x} - \mathbf{z} \| $. Then, there exists a unique function $ y \in \mathcal{C}^n(J), \; J := [t_0 - h, t_0 + h] \cap [0, T] $ solving the IVP.
+        where $ F : [0, T] \times \mathbb{R}^n \to \mathbb{R} $ is continuous in $ t $ and Lipschitz continuous w.r.t. the other variables, i.e., $ | F(t, \mathbf{x}) - F(t, \mathbf{z}) | \leq L \| \mathbf{x} - \mathbf{z} \| $. Then, there exists a unique function $ y \in \mathcal{C}^n(J), \; J := [t_0 - h, t_0 + h] \cap [0, T] $ solving the IVP.
 </p>
+    </div>
+</div>
 
 <p>We will show that the n-th order ODE can be transformed to a system of n first-order ODEs, then apply the Picard-Lindelo&#776;f theorem derived above regarding systems of first-order ODEs to conclude the proof.</p>
 
