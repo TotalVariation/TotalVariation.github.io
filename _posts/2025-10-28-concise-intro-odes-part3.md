@@ -621,9 +621,10 @@ i.e., a nonzero constant independent of $ h $. Thus the final error does not van
 Combining the conclusions obtained above shows that every root $ \zeta $ of $ \rho $ satisfies $ | \zeta | \le 1 $ and any root with $ | \zeta | = 1 $ is simple (algebraic multiplicity 1), which is exactly the root condition.
 </p>
 
-Next, let us take a quick look at some important linear multi-step methods.
+<p>Next, let us take a quick look at some important linear multi-step methods.</p>
 
-1. Adams-Bashforth methods
+<p>
+<strong>Adams-Bashforth methods</strong>
 
 Starting from the integral form:
 
@@ -631,7 +632,8 @@ $$
 y(t_{n+1}) = y(t_n) + \int_{t_n}^{t_{n+1}} f(s, y(s)) ds
 $$
  
-Approximate $$ f(s, y(s)) $$ by the Lagrange interpolating polynomials.
+Approximate $ f(s, y(s)) $ by the Lagrange interpolating polynomials.
+</p>
  
 AB2 (order 2)
  
