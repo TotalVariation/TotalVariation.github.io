@@ -304,31 +304,35 @@ $$
 If $ f : \mathbb{R} \times \mathbb{R}^d \to \mathbb{R}^d $, then $ f_y \in \mathbb{R}^{d \times d} $ is the Jacobian matrix. Correspondingly, $ f_y f $ denotes matrix-vector multiplication, and $ f_{yy} f f := f_{yy}[f, f] $ denotes the bilinear map <d-footnote>We encourage readers seeking a deep understanding of this concept to consult the chapter 12 of the book Matrix Calculus (for Machine Learning and Beyond). <d-cite key="bright2025matrix"></d-cite> </d-footnote> acting on vectors, where $ f_{yy} \in \mathcal{L}(\mathbb{R}^d, \mathcal{L}(\mathbb{R}^d, \mathbb{R}^d)) $, $ f_{yy} \cdot e_i = H_{f_i} $ with $ H_{f_i} $ defined as per the Hessian matrix of a scalar-valued function.
 </p>
 
-Stage expansions
+<p><strong>Stage expansions</strong></p>
  
-For small $$ h $$, expand each stage:
+<p>
+For small $ h $, expand each stage:
  
 $$
 k_i = f \left(t + c_i h, y + h \sum_j a_{ij}k_j \right)
 $$
+
+</p>
  
-1. Zeroth order: $$ k_i = f + \mathcal{O}(h) $$.
+<p><em>Zeroth order:</em> $ k_i = f + \mathcal{O}(h) $.</p>
  
-2. First order: $$ k_i = f + c_i h f_t + h f_y \sum_j a_{ij} k_j + \mathcal{O}(h^2) $$
+<p><em>First order:</em> $ k_i = f + c_i h f_t + h f_y \sum_j a_{ij} k_j + \mathcal{O}(h^2) $.</p>
  
-Replace $$ k_j = f + \mathcal{O}(h) $$ inside the sum to get
+<p>
+Replace $ k_j = f + \mathcal{O}(h) $ inside the sum to get
  
 $$
 k_i = f + c_i h f_t + h f_y \sum_j a_{ij} f + \mathcal{O}(h^2)
 $$
  
-Assume the row sum condition $$ c_i := \sum_j a_{ij} $$, which holds true for all classic RK methods. Then
+Assume the row sum condition $ c_i := \sum_j a_{ij} $, which holds true for all classic RK methods. Then
  
 $$
 k_i = f + h(c_i f_t + c_i f_y f) + \mathcal{O}(h^2)
 $$
  
-Insert the expansion of $$ k_i $$ into the numerical update $$ y_{n+1} = y_n + h \sum_i b_i k_i $$:
+Insert the expansion of $ k_i $ into the numerical update $ y_{n+1} = y_n + h \sum_i b_i k_i $:
  
 $$
 y_{n+1} = y_n + h \sum_i b_i f + h^2 \sum_i b_i (c_i f_t + \alpha_i f_y f) + \mathcal{O}(h^3)
@@ -346,7 +350,9 @@ $$
 y(t + h) = y + hf + \frac{h^2}{2} (f_t + f_y f) + \mathcal{O}(h^3)
 $$
  
-Equate coefficients of $$ h $$ and $$ h^2 $$:
+</p>
+
+Equate coefficients of $ h $ and $$ h^2 $$:
  
 **Order 1 condition**:
  
