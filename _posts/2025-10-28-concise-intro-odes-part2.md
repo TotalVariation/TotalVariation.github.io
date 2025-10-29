@@ -234,7 +234,8 @@ hence $ |\tau| \le Ch^3 $. Thus, improved Euler has order $ p = 2 $.
 
 <h2> General Runge-Kutta Methods </h2>
 
-An $$ s $$-stage Runge-Kutta (RK) method computes stage derivatives
+<p>
+An $ s $-stage Runge-Kutta (RK) method computes stage derivatives
  
 $$
 k_i = f \left(t_n + c_i h, y_n + h \sum_{j=1}^s a_{ij}k_j \right), i=1,\ldots,s,
@@ -245,8 +246,11 @@ and updates as per the following formula:
 $$
 y_{n+1} = y_n + h \sum_{i=1}^s b_i k_i.
 $$
+
+</p>
  
-The coefficients $$ \mathbf{A} = [a_{ij}]_{s \times s}, \mathbf{b} = (b_1, \cdots, b_s), \mathbf{c}=(c_1, \cdots, c_s)^T $$ are real numbers arranged in the Butcher tableau
+<p>
+The coefficients $ \mathbf{A} = [a_{ij}]_{s \times s}, \mathbf{b} = (b_1, \cdots, b_s), \mathbf{c}=(c_1, \cdots, c_s)^T $ are real numbers arranged in the Butcher tableau
 
 $$
 \begin{array}{c|ccc}
@@ -258,7 +262,8 @@ $$
 	\end{array}
 $$
 
-The $$ k_i $$ are slopes evaluated at intermediate points. If $$ \mathbf{A} $$ is strictly lower triangular ($$ a_{ij} = 0 $$ for $$ j \ge i $$), the method is explicit. Otherwise, it is implicit.
+The $ k_i $ are slopes evaluated at intermediate points. If $ \mathbf{A} $ is strictly lower triangular ($ a_{ij} = 0 $ for $ j \ge i $), the method is explicit. Otherwise, it is implicit.
+</p>
  
 To derive RK methods of order $$ p $$, the numerical solution must match the exact Taylor expansion up to $$ O(h^{p+1}) $$ (i.e., ensuring the LTE is $$ O(h^{p+1}) $$). Expand $$ y_{n+1} $$ and each $$ k_i $$ in Taylor series, then equate coefficients. This yields order conditions on $$ \mathbf{b}, \mathbf{c}, A $$.
  
