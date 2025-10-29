@@ -380,8 +380,14 @@ If a linear multistep method for solving ODE IVPs is convergent, i.e., the globa
 <p><strong>Proof of sufficiency (Consistency + Zero-Stability $ \implies $ Convergence):</strong></p>
 
 <p>
-Subtracting the numerical scheme from the equation of the local truncation error $ \tau_{n+k} := \sum_{j=0}^k \alpha_j y(t_{n+j}) - h \sum_{j=0}^k \beta_j f(t_{n+j}, y(t_{n+j})) $:
- 
+Subtracting the numerical scheme from the equation of the local truncation error 
+
+$$
+\tau_{n+k} := \sum_{j=0}^k \alpha_j y(t_{n+j}) - h \sum_{j=0}^k \beta_j f(t_{n+j}, y(t_{n+j})),
+$$
+
+we get
+
 $$
 \sum_{j=0}^k \alpha_j e_{n+j} = h \sum_{j=0}^k \beta_j \left(f(t_{n+j}, y(t_{n+j})) - f(t_{n+j}, y_{n+j}) \right) + \tau_{n+k}
 $$
