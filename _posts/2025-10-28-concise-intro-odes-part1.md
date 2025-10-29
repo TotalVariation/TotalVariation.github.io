@@ -376,7 +376,8 @@ $$
 </ul>
 </p>
 
-Unlike Picard–Lindelo&#776f, the Cauchy-Piano Existence theorem does not assume Lipschitz continuity in $$ \mathbf{x} $$, so the uniqueness is not guaranteed. A classical example in $$ d = 1 $$ is $$ x'(t) = \sqrt{|x(t)|}, \; x(0) = 0 $$. Here $$ f(x) = \sqrt{|x|} $$ is continuous but not Lipschitz at $$ 0 $$ (the derivative of $$ \sqrt{|x|} $$ is unbounded near zero). For any $$ \tau \ge 0 $$,
+<p>
+Unlike Picard–Lindelo&#776;f, the Cauchy-Piano Existence theorem does not assume Lipschitz continuity in $ \mathbf{x} $, so the uniqueness is not guaranteed. A classical example in $ d = 1 $ is $ x'(t) = \sqrt{|x(t)|}, \; x(0) = 0 $. Here $ f(x) = \sqrt{|x|} $ is continuous but not Lipschitz at $ 0 $ (the derivative of $ \sqrt{|x|} $ is unbounded near zero). For any $ \tau \ge 0 $,
 
 $$
 x_{\tau}(t) = \begin{cases} 
@@ -385,10 +386,10 @@ x_{\tau}(t) = \begin{cases}
 	 \end{cases}
 $$
 
-is a $$ C^1 $$ solution. Thus there are infinitely many solutions passing through $$ (0, 0) $$.
+is a $ C^1 $ solution. Thus there are infinitely many solutions passing through $ (0, 0) $.
+</p>
 
-
-## The General n-th Order ODE
+<h2> The General n-th Order ODE </h2>
 
 Next, we consider the IVP of the general n-th order ODE:
 
