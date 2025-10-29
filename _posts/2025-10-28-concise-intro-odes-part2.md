@@ -544,7 +544,10 @@ $$
 
 </p>
  
-Next, we will construct a general 2-stage, order-2 explicit RK by using order conditions derived above. Let
+<p>Next, we will construct a general 2-stage, order-2 explicit RK by using order conditions derived above.</p>
+
+<p>
+Let
  
 $$
 \begin{array}{c|cc}
@@ -555,13 +558,19 @@ $$
 \end{array} \quad (c_2 = a_{21}).
 $$
  
+</p>
+
+<p>
 Order conditions:
  
 $$
 b_1 + b_2 = 1, \; b_2 c_2 = \frac{1}{2}
 $$
+
+</p>
  
-Choose a free parameter $$ c_2 = \alpha \neq 0 $$. Then
+<p>
+Choose a free parameter $ c_2 = \alpha \neq 0 $. Then
  
 $$
 b_2 = \frac{1}{2 \alpha}, \; b_1 = 1 - \frac{1}{2 \alpha}
@@ -577,7 +586,10 @@ $$
  	& 1 - \frac{1}{2 \alpha} & \frac{1}{2 \alpha}
 \end{array} \quad (\alpha \neq 0)
 $$
+
+</p>
  
+<p>
 Stage derivatives:
  
 $$
@@ -587,17 +599,19 @@ $$
 \end{align*}
 $$
  
-when $$ \alpha = \frac{1}{2} $$, we recover the midpoint method:
+when $ \alpha = \frac{1}{2} $, we recover the midpoint method:
  
 $$
 y_{n+1} = y_n + h f(t_n + \frac{1}{2}h, y_n + \frac{1}{2}h f(t_n, y_n))
 $$
  
-when $$ \alpha = 1 $$, we recover Heun's method (improved Euler):
+when $ \alpha = 1 $, we recover Heun's method (improved Euler):
  
 $$
 y_{n+1} =  y_n + \frac{h}{2}\left(f(t_n, y_n) + f(t_n +h, y_n + hf(t_n, y_n)) \right)
 $$
+
+</p>
 
 Last, let us take a look at an implicit RK2 method (i.e., implicit trapezoidal method or Crank-Nicolson method):
  
