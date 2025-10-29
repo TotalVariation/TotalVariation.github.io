@@ -547,15 +547,22 @@ Since $ \| \mathbf{w}_{N(h)} \| = \| v \| $, the propagated perturbation does no
 
 </p>
 
-Case B: $$ |\zeta_0| = 1 $$ and algebraic multiplicity $$ m \ge 2 $$.
+<p>Case B: $ |\zeta_0| = 1 $ and algebraic multiplicity $ m \ge 2 $.</p>
 
-In this case, the companion matrix $$ \mathbf{C} $$ has a Jordan block for $$ \zeta_0 $$ of size $$ m \times m $$: 
+<p>
+In this case, the companion matrix $ \mathbf{C} $ has a Jordan block for $ \zeta_0 $ of size $ m \times m $: 
 
 $$ 
 \begin{pmatrix} \zeta_0 & 1 & & \\ & \ddots & \ddots & \\ & & \ddots & 1 \\ & & & \zeta_0 \end{pmatrix}_{m \times m}.
 $$ 
 
-The nonderogatory property of the companion matrix $$ \mathbf{C} $$ indicates that $$ \text{alg mult}(\lambda_j) = \text{index}(\lambda_j) $$ for each eigenvalue $$ \lambda_j \in \sigma(\mathbf{C}) $$, excluding the possibility of eigenvalues being semisimple, i.e., the diagonal block $$ \begin{pmatrix} \lambda & & \\ & \ddots &  \\ & & \lambda \end{pmatrix}_{m \times m} $$.
+The nonderogatory property of the companion matrix $ \mathbf{C} $ indicates that $ \text{alg mult}(\lambda_j) = \text{index}(\lambda_j) $ for each eigenvalue $ \lambda_j \in \sigma(\mathbf{C}) $, excluding the possibility of eigenvalues being semisimple, i.e., the diagonal block 
+
+$$
+\begin{pmatrix} \lambda & & \\ & \ddots &  \\ & & \lambda \end{pmatrix}_{m \times m}.
+$$
+
+</p>
 
 $$
 \mathbf{C}^n = \mathbf{S} \begin{pmatrix} \ddots & & \\ & \mathbf{J}^n_{\star} & \\ & & \ddots \end{pmatrix} \mathbf{S}^{-1}
