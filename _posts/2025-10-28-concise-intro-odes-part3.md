@@ -596,11 +596,14 @@ $$
 
 </p>
 
-Pick a generalised eigenvector in $$ \mathbf{S}_{\star} $$ of the highest order $$ \mathbf{v}_m $$, then
+<p>
+Pick a generalised eigenvector in $ \mathbf{S}_{\star} $ of the highest order $ \mathbf{v}_m $, then
 
 $$
 \| \mathbf{C}^n \mathbf{v}_m \|_{\infty} = \| \mathbf{v}_m \mathbf{J}^n_{\star} \|_{\infty} \propto K n^{m-1} 
 $$ 
+
+</p>
 
 Now constructing starting data as follows. Set $$ \eta(h) = N(h)^{-(m-1)} $$. Then, take the initial perturbation as $$ \mathbf{w}_0 = \eta(h)\mathbf{v}_m $$, which is admissible as $$ \eta(h) \to 0 \; \text{as} \; h \to 0 $$.
 
