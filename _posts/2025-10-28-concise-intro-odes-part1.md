@@ -215,9 +215,10 @@ $$
 
 </p>
 
-In the following, we give another proof where the property of uniform convergence is used.
+<p>In the following, we give another proof where the property of uniform convergence is used.</p>
 
-In the Picard's Iteration $$ \mathbf{x}_0(t) \equiv \mathbf{x}_0, \mathbf{x}_{n+1}(t) = \mathbf{x}_0 + \int_0^t f(s, \mathbf{x}_n(s)) ds $$
+<p>
+In the Picard's Iteration $ \mathbf{x}_0(t) \equiv \mathbf{x}_0, \mathbf{x}_{n+1}(t) = \mathbf{x}_0 + \int_0^t f(s, \mathbf{x}_n(s)) ds $
 
 $$
 \begin{align*}
@@ -235,8 +236,14 @@ $$
 \sum_{i=1}^{n} \|  \mathbf{x}_{i}(t) - \mathbf{x}_{i-1}(t) \| \leq \frac{M}{L_f} \underbrace{\sum_{i=1}^n \frac{(KL_f)^i}{i !}}_{e^{L_f h} - 1}
 $$
 
-By Weierstrass M-Test, series $$ \sum_{i=1}^{n} \|  \mathbf{x}_{i}(t) - \mathbf{x}_{i-1}(t) \| $$ converges uniformly on $$ [0, h] $$, implying $$ \| \mathbf{x}_{n}(t) \| \le \| \mathbf{x}_0(t) \| + \sum_{i=1}^{n} \|  \mathbf{x}_{i}(t) - \mathbf{x}_{i-1}(t) \| $$ converges uniformly to $$ \mathbf{x}(t) $$ on $$ [0, h] $$. As $$ R $$ is compact, $$ f $$ is continuous and thus uniform continuous, implying that $$ f(t, \mathbf{x}_{n}(t)) $$ converges uniformly to $$ f(t, \mathbf{x}(t)) $$. Furthermore, the uniform convergence guarantees $$ \lim_{n} \int_a^b f_n(t) dt = \int_a^b f(t) dt $$, where $$ f_n \to f $$ uniformly on $$ R = [0, h] \cap [0, T] \times \overline{B}(\mathbf{x}_0, r) $$ and $$ f_n $$ is integrable.
+</p>
 
+<p>
+By Weierstrass M-Test, series $ \sum_{i=1}^{n} \|  \mathbf{x}_{i}(t) - \mathbf{x}_{i-1}(t) \| $ converges uniformly on $ [0, h] $, implying $ \| \mathbf{x}_{n}(t) \| \le \| \mathbf{x}_0(t) \| + \sum_{i=1}^{n} \|  \mathbf{x}_{i}(t) - \mathbf{x}_{i-1}(t) \| $ converges uniformly to $ \mathbf{x}(t) $ on $ [0, h] $. As $ R $ is compact, $ f $ is continuous and thus uniform continuous, implying that $ f(t, \mathbf{x}_{n}(t)) $ converges uniformly to $ f(t, \mathbf{x}(t)) $. Furthermore, the uniform convergence guarantees $ \lim_{n} \int_a^b f_n(t) dt = \int_a^b f(t) dt $, where $ f_n \to f $ uniformly on $ R = [0, h] \cap [0, T] \times \overline{B}(\mathbf{x}_0, r) $ and $ f_n $ is integrable.
+
+</p>
+
+<p>
 Therefore, we can conclude that
 
 $$
@@ -247,19 +254,26 @@ $$
 \mathbf{x}(t) = \mathbf{x}_0 + \int_0^t f(s, \mathbf{x}(s)) ds
 $$
 
-The uniqueness of the solution can be proved by Gr\"{o}nwall's Lemma. Let $$ u \in \mathcal{C}([0, T]) $$. If there exist two constants $$ \alpha, \beta \in \mathbb{R}, \beta \geq 0 $$, such that $$ u(t) \leq \alpha + \beta \int_0^t u(s) ds, \; t \in [0, T] $$, then $$ u(t) \leq \alpha e^{\beta t} $$ for all $$ t \in [0, T] $$.
+</p>
 
-Proof:
+<p>
+The uniqueness of the solution can be proved by Gro&#776;nwall's Lemma. Let $ u \in \mathcal{C}([0, T]) $. If there exist two constants $ \alpha, \beta \in \mathbb{R}, \beta \geq 0 $, such that $ u(t) \leq \alpha + \beta \int_0^t u(s) ds, \; t \in [0, T] $, then $ u(t) \leq \alpha e^{\beta t} $ for all $ t \in [0, T] $.
+</p>
 
-Let $$ v(t) := \alpha + \beta \int_0^t u(s) ds $$. Then $$ u \leq v $$ and $$ v^{\prime}(t) = \beta u(t) \leq \beta v(t) $$. Solve $$ v^{\prime}(t) \leq \beta v(t) $$ to get $$ u(t) \leq v(t) \leq \alpha e^{\beta t} $$.
+<strong>Proof:</strong>
 
-If there exist two solutions $$ \mathbf{x}_1(t), \mathbf{x}_2(t) $$ that both satisfy $$ \mathbf{x}^{\prime}(t) = f(t, \mathbf{x}(t)), \mathbf{x}(0) = \mathbf{x}_0 $$, then
+<p>
+Let $ v(t) := \alpha + \beta \int_0^t u(s) ds $. Then $ u \le v $ and $ v^{\prime}(t) = \beta u(t) \leq \beta v(t) $. Solve $ v^{\prime}(t) \le \beta v(t) $ to get $ u(t) \le v(t) \leq \alpha e^{\beta t} $.
+
+If there exist two solutions $ \mathbf{x}_1(t), \mathbf{x}_2(t) $ that both satisfy $ \mathbf{x}^{\prime}(t) = f(t, \mathbf{x}(t)), \mathbf{x}(0) = \mathbf{x}_0 $, then
 
 $$
 \| \mathbf{x}_1(t) - \mathbf{x}_2(t) \| = \| \int_0^t \left[ f(s, \mathbf{x}_1(s)) - f(s, \mathbf{x}_2(s)) \right]  ds \| \leq L_f \int_0^t \| \mathbf{x}_1(s) - \mathbf{x}_2(s) \| ds
 $$
 
-Set $$ u(t) = \| \mathbf{x}_1(t) - \mathbf{x}_2(t) \| $$,  then by Gr\"{o}nwall's Lemma, $$ \| \mathbf{x}_1(t) - \mathbf{x}_2(t) \| = 0 $$.
+Set $ u(t) = \| \mathbf{x}_1(t) - \mathbf{x}_2(t) \| $, then by Gro&#776;nwall's Lemma, $ \| \mathbf{x}_1(t) - \mathbf{x}_2(t) \| = 0 $.
+
+</p>
 
 Maximal Interval of Existence and Continuation
  
