@@ -62,12 +62,12 @@ _styles: >
   }
   .theorem-box {
     /* Box Model */
-    border: 2px solid ForestGreen; /* A distinct green border */
+    border: 4px solid ForestGreen; /* A distinct green border */
     border-radius: 8px;       /* Rounded corners for a softer look */
     margin: 20px 0;           /* Space above and below the box */
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     overflow: hidden;         /* Important for containing the floated header */
-    max-width: 600px;         /* Optional: Limits the width on large screens */
+    max-width: 800px;         /* Optional: Limits the width on large screens */
   }
 
   .theorem-header {
@@ -75,7 +75,7 @@ _styles: >
     background-color: ForestGreen; /* Green background for the title area */
     color: white;             /* White text */
     padding: 8px 15px;
-    font-size: 1.1em;
+    font-size: 1.2em;
     font-weight: bold;
     text-transform: uppercase;
   }
@@ -84,7 +84,7 @@ _styles: >
     /* Content Style */
     background-color: #f8f9fa; /* Light grey/off-white background for content */
     padding: 15px;
-    font-size: 1.25em;
+    font-size: 1.1em;
     line-height: 1.6;
   }
 
