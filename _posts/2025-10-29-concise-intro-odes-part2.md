@@ -39,6 +39,7 @@ bibliography: 2025-10-29-concise-intro-odes-part2.bib
 toc:
   - name: Convergence of General One Step Methods
   - name: General Runge-Kutta Methods
+  - name: A Few Illustrated Examples
   - name: Concluding Remarks
   - name: Acknowledgement
 
@@ -502,6 +503,8 @@ $$
 $$
 
 </p>
+
+<h2>A Few Illustrated Examples</h2>
 
 <p>Next, let us take a quick look at the classical RK4 method</p>
 
