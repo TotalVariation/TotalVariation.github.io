@@ -503,8 +503,9 @@ $$
 
 </p>
 
-Next, let us take a quick look at the classical RK4 method
- 
+<p>Next, let us take a quick look at the classical RK4 method</p>
+
+<p>
 Butcher tableau:
  
 $$
@@ -517,7 +518,10 @@ $$
  	& \frac{1}{6} & \frac{1}{3} & \frac{1}{3} & \frac{1}{6}
 \end{array}
 $$
+
+</p>
  
+<p>
 Stage derivatives:
  
 $$
@@ -529,11 +533,16 @@ $$
 \end{align*}
 $$
 
+</p>
+
+<p>
 The numerical update:
  
 $$
 y_{n+1} = y_n + \frac{h}{6} \left(k_1 + 2 k_2 + 2 k_3 + k_4 \right)
 $$
+
+</p>
  
 Next, we will construct a general 2-stage, order-2 explicit RK by using order conditions derived above. Let
  
