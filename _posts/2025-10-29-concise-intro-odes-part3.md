@@ -213,14 +213,6 @@ $$
 
 </p>
 
-<p><strong>The root condition</strong></p> 
-
-<p>
-Let $ \rho(\zeta) = \sum_{j=0}^k \alpha_j \zeta^j $. The root condition is: All roots of $ \rho $ satisfy $ |\zeta| \le 1 $, and any root with $ |\zeta| = 1 $ is simple (i.e., algebraic multiplicity is equal to 1).
-</p>
-
-<p><strong>Theorem</strong> An LMM is zero-stable $ \iff $ its $ \rho(\zeta) $ satisfies the root condition.</p>
-
 <div class="theorem-box">
     <div class="theorem-header">
         <span class="theorem-type">The Root Condition</span>
@@ -414,11 +406,6 @@ The general solution to the homogeneous linear difference equation $ \sum_{j=0}^
 
 <p>
 <strong>Convergence of linear multistep methods</strong> A $ k $-step linear multi-step method is convergent on $ [t_0, T] $ if for sufficiently smooth IVP $ y' = f(t, y) $ with the exact solution $ y(t) $, and for any family of starting values $ y_j(h), j = 0, \ldots, k-1 $ satisfying $ \lim_{h \to 0} | y(t_j) - y_j(h) | = 0, \; j = 0, \ldots, k-1 $ and the numerical solution $ \{ y_n(h) \}_{n=0}^{N(h)} $ produced by the LMM satisfies $ \lim_{h \to 0} \max_{0 \le n \le N(h)} | e_n | = 0 $ with $ e_n := y(t_n) - y_n(h) $.
-</p>
-
-<p>
-<strong>Dahlquist Equivalence Theorem for Linear Multistep Methods</strong>
-If a linear multistep method for solving ODE IVPs is convergent, i.e., the global error $ e_n := y(t_n) - y_n $ satisfies $ \max_{0 \leq n \leq N} | e_n | \to 0 \; \text{as} \; h \to 0 $, if and only if it is consistent and zero-stable. Moreover, if $ \max_{0 \leq n \leq N} | e_n | \leq C h^p $, then the linear multistep method is of order $ p $.
 </p>
 
 <div class="theorem-box">
