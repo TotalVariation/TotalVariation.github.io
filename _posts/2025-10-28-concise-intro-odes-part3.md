@@ -338,13 +338,18 @@ $$
 
 <p><strong>Proof of the necessity half:</strong></p>
  
-The general solution to the homogeneous linear difference equation $$ \sum_{j=0}^k \alpha_j w_{n+j} = 0 $$ can be expressed as $$ w_n = \sum_{j=1}^s \sum_{\ell = 0}^{m_j - 1} c_{j, \ell}n^{\ell}\zeta_j^n $$, where $$ \zeta_j $$ are distinct complex roots of the characteristic polynomial $$ p(\zeta) = a_k \prod_{j=1}^s (\zeta - \zeta_j)^{m_j} $$, and $$ m_j $$ are their respective multiplicities satisfying $$ \sum_{j=1}^s m_j = k $$.
+<p>
+The general solution to the homogeneous linear difference equation $ \sum_{j=0}^k \alpha_j w_{n+j} = 0 $ can be expressed as $ w_n = \sum_{j=1}^s \sum_{\ell = 0}^{m_j - 1} c_{j, \ell}n^{\ell}\zeta_j^n $, where $ \zeta_j $ are distinct complex roots of the characteristic polynomial $ p(\zeta) = a_k \prod_{j=1}^s (\zeta - \zeta_j)^{m_j} $, and $ m_j $ are their respective multiplicities satisfying $ \sum_{j=1}^s m_j = k $.
+</p>
  
-Proof by contradiction
- 
-If there is a root $$ | \zeta | > 1 $$, then the homogeneous solution contains terms $$ | \zeta |^n $$ growing exponentially.
- 
-If there is a root $$ | \zeta | = 1 $$ with multiplicity $$ \ge 2 $$, the homogenous solution contains $$ n \zeta $$, which grows linearly in $$ n $$, which is also unbounded since $$ n = \frac{T - t_0}{h} \to \infty \; \text{as} \; h \to 0 $$. Thus, zero-stability implies the root condition.
+<p><em>Proof by contradiction</em></p>
+
+<p>
+<ul>
+<li>If there is a root $ | \zeta | > 1 $, then the homogeneous solution contains terms $ | \zeta |^n $ growing exponentially.</li>
+<li>If there is a root $ | \zeta | = 1 $ with multiplicity $ \ge 2 $, the homogenous solution contains $ n \zeta $, which grows linearly in $ n $, which is also unbounded since $ n = \frac{T - t_0}{h} \to \infty \; \text{as} \; h \to 0 $. Thus, zero-stability implies the root condition.</li>
+</ul>
+</p>
 
 ## Convergence Theorem (Consistency + Zero-Stability $$ \iff $$ Convergence.)
 
