@@ -220,7 +220,13 @@ The eigenvalues of $ \mathbf{C} $ are exactly the roots of $ \rho $.
 <p><strong>Companion Matrix of a Polynomial</strong></p>
 
 <p>
-For each monic polynomial $$ p(x) = x^n + \alpha_{n-1}x^{n-1} + \cdots + \alpha_1 x + \alpha_0 $$, the companion matrix $$ p(x) $$ is defined to be
+For each monic polynomial 
+
+$$
+p(x) = x^n + \alpha_{n-1}x^{n-1} + \cdots + \alpha_1 x + \alpha_0,
+$$
+
+the companion matrix $ p(x) $ is defined to be
 
 $$
 \mathbf{C} = \begin{pmatrix} 0 & 0 & \cdots & 0 & -\alpha_0 \\ 1 & 0 & \cdots & 0 & -\alpha_1 \\ \vdots & \ddots & \ddots & &\vdots \\ 0 & \cdots & 1 & 0 & -\alpha_{n-2} \\ 0 & 0 & \cdots & 1 & -\alpha_{n-1} \end{pmatrix}_{n \times n}
@@ -351,7 +357,7 @@ The general solution to the homogeneous linear difference equation $ \sum_{j=0}^
 </ul>
 </p>
 
-## Convergence Theorem (Consistency + Zero-Stability $$ \iff $$ Convergence.)
+<h2>Convergence Theorem (Consistency + Zero-Stability $ \iff $ Convergence)</h2>
 
 **Convergence of linear multistep methods** A $$ k $$-step linear multi-step method is convergent on $$ [t_0, T] $$ if for sufficiently smooth IVP $$ y' = f(t, y) $$ with the exact solution $$ y(t) $$, and for any family of starting values $$ y_j(h), j = 0, \ldots, k-1 $$ satisfying $$ \lim_{h \to 0} | y(t_j) - y_j(h) | = 0, \; j = 0, \ldots, k-1 $$ and the numerical solution $$ \{ y_n(h) \}_{n=0}^{N(h)} $$ produced by the LMM satisfies $$ \lim_{h \to 0} \max_{0 \le n \le N(h)} | e_n | = 0 $$ with $$ e_n := y(t_n) - y_n(h) $$.
 
