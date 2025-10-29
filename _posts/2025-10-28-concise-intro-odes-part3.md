@@ -417,17 +417,17 @@ $$
 
 </p>
 
-Let $$ E := \max_{0\le n\le N}|e_n| $$, $$ h\sum_{m=k}^N |r_m| \leq \widetilde{L}(T - t_0)E $$.
+<p>
+Let $ E := \max_{0\le n\le N}|e_n| $$, $$ h\sum_{m=k}^N |r_m| \leq \widetilde{L}(T - t_0)E $. Collecting terms,
 
-Collecting terms,
+$$
+\begin{align*}
+E &\le C_0\left(C_s h^p + C_{\tau}(T - t_0)h^p + \widetilde{L}(T - t_0)E \right) \\
+E &\le \frac{C_0}{1 - C_0\widetilde{L}(T - t_0)}\left(C_s + C_{\tau}(T - t_0) \right) h^p = \mathcal{O}(h^p)
+\end{align*}
+$$
 
-$$
-E \leq C_0\left(C_s h^p + C_{\tau}(T - t_0)h^p + \widetilde{L}(T - t_0)E \right)
-$$
- 
-$$
-E \le \frac{C_0}{1 - C_0\widetilde{L}(T - t_0)}\left(C_s + C_{\tau}(T - t_0) \right) h^p = \mathcal{O}(h^p)
-$$
+</p>
  
 If $$ 1 - C_0\widetilde{L}(T - t_0) > 0 $$, we are done. If not, we use a standard patching trick: splitting the time interval $$ [t_0, T] $$ into $$ M $$ short subintervals of length $$ \Delta < T - t_0 $$, chosen such that $$ C_0\widetilde{L}\Delta \le \frac{1}{2} $$. One the first subinterval, the error bound derived above holds true, implying the local maximum error is of order $$ \mathcal{O}(h^p) $$. Therefore, the endpoints of the previous subinterval can be used as starting values of the next subinterval, leading to the same error estimate by applying the above derivation. Iterating over a finite number of subintervals yields an overall bound $$ \max_{0 \le n \le N} |e_n| \le Ch^p $$.
 
