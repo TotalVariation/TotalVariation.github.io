@@ -713,15 +713,16 @@ $$
 It is straightforward to check consistency conditions are satisfied and the $ \ell = 2 $ condition holds; the LTE leading term is $ -\frac{1}{12}h^3 y^{(3)}(t_n) $. Hence, the AM2 method is of order $ \mathcal{O}(h^2) $.
 </p>
 
-AM3 (2-step, order 3)
+<p>AM3 (2-step, order 3)</p>
  
-Interpolate $$ f $$ through $$ t_{n+1}, t_n, t_{n-1} $$:
+<p>
+Interpolate $ f $ through $ t_{n+1}, t_n, t_{n-1} $:
   
 $$
 P_2(s) = f_{n-1} \frac{(s - t_n)(s - t_{n+1})}{(t_{n-1} - t_n)(t_{n-1} - t_{n+1})} + f_n \frac{(s - t_{n-1})(s - t_{n+1})}{(t_n - t_{n-1})(t_n - t_{n+1})} + f_{n+1} \frac{(s - t_{n-1})(s - t_n)}{(t_{n+1} - t_{n-1})(t_{n+1} - t_n)}
 $$
  
-Integrate on $$ [t_n, t_{n+1}] $$ (set $$ \tau = s - t_n \in [0, h] $$):
+Integrate on $ [t_n, t_{n+1}] $ (set $ \tau = s - t_n \in [0, h] $):
  
 $$
 \begin{align*}
@@ -735,8 +736,12 @@ Shift index
 $$
 y_{n+2} = y_{n+1} + \frac{h}{12} \left(5f_{n+2} + 8f_{n+1} - f_n \right)
 $$
+
+</p>
  
-It is straightforward to check consistency conditions are satisfied and the $$ \ell = 2, 3 $$ conditions hold; the LTE leading term is $$ -\frac{1}{24}h^4 y^{(4)}(t_n) $$. Hence, the AM3 method (2-step) is of order $$ \mathcal{O}(h^3) $$. 
+<p>
+It is straightforward to check consistency conditions are satisfied and the $ \ell = 2, 3 $ conditions hold; the LTE leading term is $ -\frac{1}{24}h^4 y^{(4)}(t_n) $. Hence, the AM3 method (2-step) is of order $ \mathcal{O}(h^3) $. 
+</p>
 
 3. Backward Differentiation Formulas
  
