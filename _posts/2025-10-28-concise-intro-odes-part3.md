@@ -751,19 +751,23 @@ This type of linear multistep method uses a polynomial $ P_k(t) $ of degree $ k 
  
 <p>BDF2</p>
  
-The degree 2 Lagrange interpolating polynomial through $$ (t_{n-1}, y_{n-1}), (t_n, y_n), (t_{n+1}, y_{n+1}) $$ is 
+<p>
+The degree 2 Lagrange interpolating polynomial through $ (t_{n-1}, y_{n-1}), (t_n, y_n), (t_{n+1}, y_{n+1}) $ is
  
 $$
 P_2(t) = y_{n-1} \frac{(t - t_n)(t - t_{n+1})}{(t_{n-1} - t_n)(t_{n-1} - t_{n+1})} + y_n \frac{(t - t_{n-1})(t - t_{n+1})}{(t_n - t_{n-1})(t_n - t_{n+1})} + y_{n+1} \frac{(t - t_{n-1})(t - t_n)}{(t_{n+1}- t_{n-1})(t_{n+1}- t_n)}
 $$
- 
-Let $$ \theta = \frac{t - t_{n-1}}{h} $$.
+
+</p>
+
+<p>
+Let $ \theta = \frac{t - t_{n-1}}{h} $.
  
 $$
 P_2(t) = y_{n-1} \frac{(\theta - 1)(\theta - 2)}{2} + y_n \theta(2 - \theta) + y_{n+1} \frac{\theta (\theta - 1)}{2}
 $$
  
-Differentiate (note $$ \frac{d\theta}{dt} = \frac{1}{h} $$) and evaluate at $$ t_{n+1} $$ (i.e., $$ \theta = 2 $$):
+Differentiate (note $ \frac{d\theta}{dt} = \frac{1}{h} $) and evaluate at $ t_{n+1} $ (i.e., $ \theta = 2 $):
  
 $$
 \begin{align*}
@@ -772,27 +776,35 @@ $$
 \end{align*}
 $$
  
-Enforce $$ P_k'(t_{n+1}) = f(t_{n+1}, y_{n+1}) $$ and shift index to obtain
+Enforce $ P_k'(t_{n+1}) = f(t_{n+1}, y_{n+1}) $ and shift index to obtain
  
 $$
 \frac{3}{2} y_{n+2} - 2y_{n+1} + \frac{1}{2}y_n = h f_{n+2}
 $$
- 
-It is straightforward to check consistency conditions are satisfied and the $$ \ell = 2 $$ condition holds; the LTE leading term is $$ -\frac{1}{3}h^3 y^{(3)}(t_n) $$. Hence, the BDF2 method is of order $$ \mathcal{O}(h^2) $$.
 
-## Concluding Remarks
+</p>
 
-Voil\`{a}! This concludes an article devoted to presenting a detailed mathematical proof of the Dahlquist Equivalence Theorem for Linear Multistep Methods (LMMs), which states that Convergence $$ \iff $$ Consistency + Zero-Stability. The key takeaway is that the global error of LMMs can be decomposed into two distinct components:
+<p>
+It is straightforward to check consistency conditions are satisfied and the $ \ell = 2 $ condition holds; the LTE leading term is $ -\frac{1}{3}h^3 y^{(3)}(t_n) $. Hence, the BDF2 method is of order $ \mathcal{O}(h^2) $.
+</p>
+
+<h2>Concluding Remarks</h2>
+
+<p>
+Voila&#768;! This concludes an article devoted to presenting a detailed mathematical proof of the Dahlquist Equivalence Theorem for Linear Multistep Methods (LMMs), which states that <strong>Convergence $ \iff $ Consistency + Zero-Stability</strong>. The key takeaway is that the global error of LMMs can be decomposed into two distinct components:
 
 $$
 \max_{0\le n\le N} |e_n| \le C_1 \cdot \underbrace{\max_{0 \le j \le k-1} | e_j |}_{\text{initial error}} + C_2 \cdot \underbrace{\max_{ k \le m \le N} |\tau_m |}_{\substack{\text{the sum of LTE} \\ \text{controlled by} \\ \text{zero-stability}}}.
 $$
 
 Moreover, the mathematical proof fundamentally relies on tools from matrix analysis, particularly the equivalence between the root condition and the boundedness of matrix powers.
+</p>
 
-Should this article serve as a source of motivation, I highly recommend Matrix Analysis and Applied Linear Algebra <d-cite key="meyer2023matrix"></d-cite> by Carl D. Meyer, a book I repeatedly consulted while writing this post, which beautifully illustrates both the utility and elegance of the subject. One of Meyer’s guiding principles in composing the book is to reveal portions of the scaffolding, narratives, examples and summaries to enhance readability. This stands in contrast to the somewhat condescending view attributed to Carl Friedrich Gauss, who once remarked that ``architects of great cathedrals do not obscure the beauty of their work by leaving the scaffolding in place after the construction has been completed." In this sense, mathematically proficient large language models (LLMs) offer an unprecedented opportunity for learners like myself—not only to admire the beauty of the “cathedral”, but also to explore the underlying scaffolding of its construction.
+<p>
+Should this article serve as a source of motivation, I highly recommend Matrix Analysis and Applied Linear Algebra <d-cite key="meyer2023matrix"></d-cite> by Carl D. Meyer, a book I repeatedly consulted while writing this post, which beautifully illustrates both the utility and elegance of the subject. One of Meyer’s guiding principles in composing the book is to reveal portions of the scaffolding, narratives, examples and summaries to enhance readability. This stands in contrast to the somewhat condescending view attributed to Carl Friedrich Gauss, who once remarked that "architects of great cathedrals do not obscure the beauty of their work by leaving the scaffolding in place after the construction has been completed." In this sense, mathematically proficient large language models (LLMs) offer an unprecedented opportunity for learners like myself—not only to admire the beauty of the "cathedral", but also to explore the underlying scaffolding of its construction.
+</p>
 
-## Acknowledgement
+<h2>Acknowledgement</h2>
 
 This blog was developed from a self-contained, step-by-step tutorial generated by OpenAI ChatGPT, which also assisted in refining the phrasing and expressions, as well as in suggesting suitable titles.
 
