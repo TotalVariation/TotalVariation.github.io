@@ -120,16 +120,6 @@ In contrast to more general treatments <d-footnote>We warmly recommend the <a hr
 
 <h2> Picard-Lindelo&#776;f Theorem </h2>
 
-<p>
-Consider the initial value problem (IVP) of the form :
-
-$$
-\frac{dy}{dt} = f(t,y), y(t_0) = y_0
-$$
-
-where $ f(t, y) $ is a function defined in some region of the $ (t, y) $-plane containing the initial point $ (t_0, y_0) $. If $ f(t, y) $ is continuous in $ t $ and Lipschitz continuous in $ y $ in a rectangular region $ R = \{ (t, y) : |t - t_0| \le a, |y - y_0| \le b \} $, where $ a $ and $ b $ are positive constants. Then, there exists a unique solution $ y(t) $ to the IVP, defined on some interval $ [t_0 - h, t_0 + h] $ for some $ h > 0 $.
-</p>
-
 <div class="theorem-box">
     <div class="theorem-header">
         <span class="theorem-type">Picard-Lindelo&#776;f Theorem</span>
@@ -316,7 +306,7 @@ $$
 The uniqueness of the solution can be proved by Gro&#776;nwall's Lemma. Let $ u \in \mathcal{C}([0, T]) $. If there exist two constants $ \alpha, \beta \in \mathbb{R}, \beta \geq 0 $, such that $ u(t) \leq \alpha + \beta \int_0^t u(s) ds, \; t \in [0, T] $, then $ u(t) \leq \alpha e^{\beta t} $ for all $ t \in [0, T] $.
 </p>
 
-<strong>Proof:</strong>
+<p><strong>Proof:</strong></p>
 
 <p>
 Let $ v(t) := \alpha + \beta \int_0^t u(s) ds $. Then $ u \le v $ and $ v^{\prime}(t) = \beta u(t) \leq \beta v(t) $. Solve $ v^{\prime}(t) \le \beta v(t) $ to get $ u(t) \le v(t) \leq \alpha e^{\beta t} $.
@@ -376,7 +366,7 @@ The infinite series $ \sum_{k=1}^{\infty} \frac{t^{2k}}{k!} $ converges to $ \Ph
     </div>
 </div>
 
-<h2> Cauchy-Peano Existence Theorem </h2>
+<h2>Cauchy-Peano Existence Theorem</h2>
 
 <p>
 For the initial value problem
@@ -390,6 +380,28 @@ $$
 
 where $ f : [0, T] \times \mathbb{R}^d \to \mathbb{R}^d $ is continuous. Then there exists a solution $ \mathbf{x}(t) \in \mathcal{C}^1([t_0, t_0 + h]; \mathbb{R}^d) $ that satisfies both the differential equation and the initial condition.
 </p>
+
+<div class="theorem-box">
+    <div class="theorem-header">
+        <span class="theorem-type">Cauchy-Peano Existence Theorem</span>
+    </div>
+    <div class="theorem-content">
+        <p>
+        For the initial value problem
+
+        $$
+        \begin{cases}
+	        \mathbf{x}^{\prime}(t) = f(t, \mathbf{x}(t)), \quad t \in [0, T], \\
+	        \mathbf{x}(t_0) = \mathbf{x}_0 \in \mathbb{R}^d
+        \end{cases}
+        $$
+
+        where $ f : [0, T] \times \mathbb{R}^d \to \mathbb{R}^d $ is continuous. Then there exists a solution $ \mathbf{x}(t) \in \mathcal{C}^1([t_0, t_0 + h]; \mathbb{R}^d) $ that satisfies both the differential equation and the initial condition.
+</p>
+    </div>
+</div>
+
+<p><strong>Proof:</strong></p>
 
 <p>
 <em>Step 1:</em> Define a compact set $ R = [t_0, t_0 + h] \cap [0, T] \times \overline{B}(\mathbf{x}_0, r) $, where $ h \le \frac{r}{M} $ and $ M = \sup_{ (t, \mathbf{x}) \in \mathbb{R}^d} \| f(t, \mathbf{x}) \| < \infty $, to ensure $ \| \mathbf{x}(t) - \mathbf{x}_0 \| \le \| \int_0^t f(s, \mathbf{x}(s)) ds \| \le r $.
