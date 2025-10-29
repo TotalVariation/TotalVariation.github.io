@@ -250,6 +250,8 @@ $$
 
 </p>
 
+<p>
+
 $$
 \begin{align*}
 \det (x\mathbf{I} - \mathbf{C}) &= \det(x\mathbf{I} - \mathbf{N} + \mathbf{c}\mathbf{e}^T_n) \\
@@ -260,7 +262,10 @@ $$
 \end{align*}
 $$
 
-Set $$ \mathcal{B} = \{ \mathbf{e}_1, \mathbf{e}_2, \ldots, \mathbf{e}_n \} $$, and let $$ v_i(x) = x^k - \sum_{j=0}^{k-1} \alpha_j x^j $$ be the minimum polynomial of $$ \mathbf{e}_i $$ w.r.t. $$ \mathbf{C} $$, i.e., $$ v(\mathbf{A})\mathbf{e}_i = \mathbf{0} $$. Observe that $$ \mathbf{C}\mathbf{e}_j = \mathbf{e}_{j+1} $$ for $$ j = 1, \ldots, n-1 $$, so
+</p>
+
+<p>
+Set $ \mathcal{B} = \{ \mathbf{e}_1, \mathbf{e}_2, \ldots, \mathbf{e}_n \} $, and let $ v_i(x) = x^k - \sum_{j=0}^{k-1} \alpha_j x^j $ be the minimum polynomial of $ \mathbf{e}_i $ w.r.t. $ \mathbf{C} $, i.e., $ v(\mathbf{A})\mathbf{e}_i = \mathbf{0} $. Observe that $ \mathbf{C}\mathbf{e}_j = \mathbf{e}_{j+1} $ for $ j = 1, \ldots, n-1 $, so
 
 $$
 \{ \mathbf{e}_1, \mathbf{C}\mathbf{e}_1, \mathbf{C}^2 \mathbf{e}_1, \ldots, \mathbf{C}^{n-1} \mathbf{e}_1 \} = \{ \mathbf{e}_1, \mathbf{e}_2, \mathbf{e}_3, \ldots, \mathbf{e}_n \}
@@ -272,7 +277,11 @@ $$
 \mathbf{C}^n \mathbf{e}_1 = \mathbf{C} \mathbf{e}_n = \mathbf{C}_{\star n}  = - \sum_{j=0}^{n-1} \alpha_j \mathbf{e}_{j+1} = - \sum_{j=0}^{n-1} \alpha_j \mathbf{C}^j \mathbf{e}_j \implies v_1(x) = p(x)
 $$
 
-Since $$ v_1(x) $$ divides the least common multiple polynomial of all $$ v_i(x) $$'s, which is known to be the minimum polynomial $$ m(x) $$ of $$ \mathbf{C} $$, we conclude that $$ p(x) $$ divides $$ m(x) $$. Given $$ m(x) $$ always divides $$ p(x) $$, so $$ m(x) = p(x) $$. 
+</p>
+
+<p>
+Since $ v_1(x) $ divides the least common multiple polynomial of all $ v_i(x) $'s, which is known to be the minimum polynomial $ m(x) $ of $ \mathbf{C} $, we conclude that $ p(x) $ divides $ m(x) $. Given $ m(x) $ always divides $ p(x) $, so $ m(x) = p(x) $. 
+</p>
 {% enddetails %}
 
 Proof of the sufficiency half:
