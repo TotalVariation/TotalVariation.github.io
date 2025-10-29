@@ -372,6 +372,7 @@ $$
 
 </p>
  
+<p>
 <strong>Order 3 conditions:</strong>
  
 We need one higher order in the stage expansion.
@@ -380,7 +381,7 @@ $$
 k_i = f + c_i h f_t + h f_y \sum_j a_{ij} k_j + \frac{1}{2}(c_i h)^2 f_{tt} + c_i h f_{ty} \left( h \sum_j a_{ij} k_j  \right) + \frac{1}{2} \left( h \sum_j a_{ij} k_j \right) f_{yy} \left( h \sum_{\ell} a_{i \ell} k_{\ell} \right) + \mathcal{O}(h^3)
 $$
  
-Now substitute $$ k_j = f + h \left( c_j f_t + c_j f_y f \right) +  \mathcal{O}(h^2) $$ into those sums,
+Now substitute $ k_j = f + h \left( c_j f_t + c_j f_y f \right) +  \mathcal{O}(h^2) $ into those sums,
  
 $$ 
 \sum_j a_{ij} k_j = c_i f + h \sum_j a_{ij}\left( c_j f_t + c_j f_y f \right) +  \mathcal{O}(h^2) 
@@ -401,7 +402,7 @@ $$
 \end{align*}
 $$
 
-Now substitute into the update $$ y_{n+1} = y + h \sum_i b_i k_i $$ to obtain,
+Now substitute into the update $ y_{n+1} = y + h \sum_i b_i k_i $ to obtain,
 
 $$
 \begin{align*}
@@ -420,19 +421,12 @@ $$
 we get:
  
 $$
-\sum_i b_i = 1
-$$
- 
-$$
-\sum_i b_i c_i = \frac{1}{2}
-$$
- 
-$$
-\sum_i b_i c_i^2 = \frac{1}{3}
-$$
- 
-$$
-\sum_{i,j} b_i a_{ij} c_j = \frac{1}{6}
+\begin{align*}
+\sum_i b_i &= 1 \\
+\sum_i b_i c_i &= \frac{1}{2} \\
+\sum_i b_i c_i^2 &= \frac{1}{3} \\
+\sum_{i,j} b_i a_{ij} c_j &= \frac{1}{6}
+\end{align*}
 $$
  
 So up to order 3, the independent order conditions are
@@ -442,6 +436,8 @@ $$
  	\sum_i b_i = 1, \sum_i b_i c_i = \frac{1}{2}, \sum_i b_i c_i^2 = \frac{1}{3}, \sum_{i,j} b_i a_{ij} c_j = \frac{1}{6}
 \end{align*}
 $$
+
+</p>
 
 **Order 4 conditions**:
  
