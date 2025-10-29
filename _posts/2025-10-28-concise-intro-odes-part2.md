@@ -141,23 +141,26 @@ $$
 
 </p>
 
-By the Lipschitz condition on $ \Phi $, i.e., $$ |\Phi(t_n, y(t_n), h) - \Phi(t_n, y_n, h)| \leq L_{\Phi} |y(t_n) - y_n| = L_{\Phi} |e_n| $$,
-
-we get,
-
-$$
-|e_{n+1}| \leq (1 + hL_{\Phi} ) |e_n| + |\tau|
-$$
+<p>
+By the Lipschitz condition on $ \Phi $, i.e., $ |\Phi(t_n, y(t_n), h) - \Phi(t_n, y_n, h)| \leq L_{\Phi} |y(t_n) - y_n| = L_{\Phi} |e_n| $, we get,
 
 $$
-|e_{n}| \leq (1 + h L_{\Phi} )^n |e_0| + |\tau| \sum_{k=0}^{n-1} (1 + hL_{\Phi})^k
+\begin{align*}
+|e_{n+1}| &\le (1 + hL_{\Phi} ) |e_n| + |\tau| \\
+|e_{n}| &\le (1 + h L_{\Phi} )^n |e_0| + |\tau| \sum_{k=0}^{n-1} (1 + hL_{\Phi})^k
+\end{align*}
 $$
 
-If $$ |e_0| = y_0 - y(t_0) = 0 $$, we get
+</p>
+
+<p>
+If $ |e_0| = y_0 - y(t_0) = 0 $, we get
 
 $$
 |e_n| \leq |\tau| \cdot \frac{(1 + h L_{\Phi})^n - 1}{h L_{\Phi}} = \frac{|\tau|}{hL_{\Phi}} \left[ (1 + h L_{\Phi})^n - 1 \right]
 $$
+
+</p>
 
 Since $$ 1 + x \leq e^x $$ and $$ n h = t_n - t_0 \leq T - t_0 $$,  we have $$ (1 + h L_{\Phi})^n \leq e^{n h L_{\Phi}} \leq e^{L_{\Phi} (T - t_0)} $$, thus yielding the final expression: 
 
