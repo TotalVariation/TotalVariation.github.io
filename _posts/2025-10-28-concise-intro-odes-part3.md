@@ -314,12 +314,16 @@ The block with $ |\lambda| = 1 $ is $ \left[ 1 \right]_{1 \times 1} $. Thus, $ \
 </p>
 {% enddetails %}
 
-For the perturbed recurrence $$ \sum_{j=0}^k \alpha_j w_{n+j} = \delta_{n+k}, \; n \geq 0 $$, reformulate it as the matrix-vector form:
+<p>
+For the perturbed recurrence $ \sum_{j=0}^k \alpha_j w_{n+j} = \delta_{n+k}, \; n \geq 0 $, reformulate it as the matrix-vector form:
  
 $$
 \mathbf{w}_{n+1} = \mathbf{C} \mathbf{w}_n + \mathbf{e}_k \delta_{n+k}, \; \text{with} \; \mathbf{w}_{n} = \left(w_{n}, \cdots , w_{n+k-2} , w_{n+k-1} \right)^T, \; \mathbf{e}_k = \left(0, 0, \ldots, 1 \right)^T.
 $$
- 
+
+</p>
+
+<p>
 Unroll:
  
 $$
@@ -330,7 +334,9 @@ $$
 \| \mathbf{w}_n \|_{\infty} \leq M \| \mathbf{w}_0 \|_{\infty} + M \sum_{m=0}^{n-1} | \delta_{m+k} | \leq M \left( \|\mathbf{w}_0\|_{\infty} + \sum_{j=k}^{n-1+k} | \delta_j | \right) \le M \left( \max_{0 \le j \le k-1} |w_j| + \max_{k \le m \le N} |\delta_m| \right).
 $$
 
-Proof of the necessity half:
+</p>
+
+<p><strong>Proof of the necessity half:</strong></p>
  
 The general solution to the homogeneous linear difference equation $$ \sum_{j=0}^k \alpha_j w_{n+j} = 0 $$ can be expressed as $$ w_n = \sum_{j=1}^s \sum_{\ell = 0}^{m_j - 1} c_{j, \ell}n^{\ell}\zeta_j^n $$, where $$ \zeta_j $$ are distinct complex roots of the characteristic polynomial $$ p(\zeta) = a_k \prod_{j=1}^s (\zeta - \zeta_j)^{m_j} $$, and $$ m_j $$ are their respective multiplicities satisfying $$ \sum_{j=1}^s m_j = k $$.
  
