@@ -533,13 +533,19 @@ $$
 
 </p>
 
-Pick $$ \eta(h) = | \zeta_0 |^{-N(h)} $$. Then $$ \eta(h) \to 0 \; \text{as} \; h \to 0 $$, ensuring the starting perturbation $$ \mathbf{w}_0 \to 0 \; \text{as} \; h \to 0 $$, and thus it is an admissible family of starting perturbations under our convergence definition. But the propagated solution at the step $$ n = N(h) $$ is
+<p>
+Pick $ \eta(h) = | \zeta_0 |^{-N(h)} $. Then $ \eta(h) \to 0 \; \text{as} \; h \to 0 $, ensuring the starting perturbation $ \mathbf{w}_0 \to 0 \; \text{as} \; h \to 0 $, and thus it is an admissible family of starting perturbations under our convergence definition. But the propagated solution at the step $ n = N(h) $ is
 
 $$
 \mathbf{w}_{N(h)} = \eta(h) \zeta_0^{N(h)} \mathbf{v} = \left( \frac{\zeta_0}{|\zeta_0|} \right)^{N(h)} \mathbf{v}
 $$
 
-Since $$ \| \mathbf{w}_{N(h)} \| = \| v \| $$, the propagated perturbation does not tend to zero, contradicting convergence (which requires that any starting perturbation tending to zero produces a final error tending to zero). Therefore, there is no root with $$ | \zeta_0 | \ge 1 $$.
+</p>
+
+<p>
+Since $ \| \mathbf{w}_{N(h)} \| = \| v \| $, the propagated perturbation does not tend to zero, contradicting convergence (which requires that any starting perturbation tending to zero produces a final error tending to zero). Therefore, there is no root with $ | \zeta_0 | \ge 1 $.
+
+</p>
 
 Case B: $$ |\zeta_0| = 1 $$ and algebraic multiplicity $$ m \ge 2 $$.
 
