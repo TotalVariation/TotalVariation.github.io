@@ -82,127 +82,161 @@ _styles: >
     Animated Trajectories of Linear Multistep Methods on Lotka-Volterra Equations
 </div>
 
-This post is part of my ongoing series of learning notes on Ordinary Differential Equations (ODEs). In this instalment, I will present detailed mathematical proofs of the Dahlquist Equivalence Theorem for Linear Multistep Methods (LMMs), which establishes that Convergence $$ \iff $$ Consistency + Zero-Stability.
+<p>
+This post is part of my ongoing series of learning notes on Ordinary Differential Equations (ODEs). In this instalment, I will present detailed mathematical proofs of the Dahlquist Equivalence Theorem for Linear Multistep Methods (LMMs), which establishes that Convergence $ \iff $ Consistency + Zero-Stability.
+</p>
 
+<p>
 Throughout this blog, we focus on the initial value problems (IVPs) for one-dimensional ODEs for notational simplicity
 
 $$
 y'(t) = f(t, y(t)), \; y(t_0) = y_0, \; t \in [t_0, T]
 $$
 
-with $$ f $$ a sufficiently smooth (as specified when needed) scalar function.
+with $ f $ a sufficiently smooth (as specified when needed) scalar function.
+</p>
 
-## Consistency and Zero-Stability
+<h2> Consistency and Zero-Stability </h2>
 
-A $$ k $$-step linear multistep method (LMM) has the form 
+<p>
+A $ k $-step linear multistep method (LMM) has the form 
 
 $$
 \sum_{j=0}^k \alpha_j y_{n+j} = h \sum_{j=0}^k \beta_j f_{n+j}, \alpha_k = 1, n \geq 0.
 $$
 
-Define the generating polynomials $$ \rho(\zeta) = \sum_{j=0}^k \alpha_j \zeta^j $$, $$ \sigma(\zeta) = \sum_{j=0}^k \beta_j \zeta^j $$.
+</p>
 
-**Consistency**
+<p>Define the generating polynomials $ \rho(\zeta) = \sum_{j=0}^k \alpha_j \zeta^j $, $ \sigma(\zeta) = \sum_{j=0}^k \beta_j \zeta^j $.</p>
 
-Define the local truncation error (LTE) of an LMM by substituting the exact solution $$ y(t) $$ into the scheme:
+<p><strong>Consistency</strong></p>
+
+<p>
+Define the local truncation error (LTE) of an LMM by substituting the exact solution $ y(t) $ into the scheme:
+
 $$
 \tau_{n+k} := \sum_{j=0}^k \alpha_j y(t_{n+j}) - h \sum_{j=0}^k \beta_j y'(t_{n+j})
 $$
 
-The method has order $$ p $$ if $$ \tau_{n+k} = \mathcal{O}(h^{p+1}) $$ for smooth $$ y(t) $$.
+The method has order $ p $ if $ \tau_{n+k} = \mathcal{O}(h^{p+1}) $ for smooth $ y(t) $.
+</p>
 
-Taylor expand about $$ t_n $$:
-
-$$
-y(t_{n+j}) = y(t_n) + jh \cdot y'(t_n) + \frac{(jh)^2}{2!} y''(t_n) + \cdots + \frac{(jh)^p}{p!}y^{(p)}(t_n) + \mathcal{O} (h^{p+1})
-$$
+<p>
+Taylor expand about $ t_n $:
 
 $$
-y'(t_{n+j}) =  y'(t_n) + jh \cdot y''(t_n) + \frac{(jh)^2}{2!} y'''(t_n) + \cdots + \frac{(jh)^{p-1}}{(p-1)!}y^{(p)}(t_n) + \mathcal{O} (h^{p+1})
+\begin{align*}
+y(t_{n+j}) &= y(t_n) + jh \cdot y'(t_n) + \frac{(jh)^2}{2!} y''(t_n) + \cdots + \frac{(jh)^p}{p!}y^{(p)}(t_n) + \mathcal{O} (h^{p+1}) \\
+y'(t_{n+j}) &=  y'(t_n) + jh \cdot y''(t_n) + \frac{(jh)^2}{2!} y'''(t_n) + \cdots + \frac{(jh)^{p-1}}{(p-1)!}y^{(p)}(t_n) + \mathcal{O} (h^{p+1})
+\end{align*}
 $$
 
-Insert into $$ \tau_{n+k} $$, collect powers of $$ h $$, and require the coefficients of $$ y^{(\ell)}(t_n) $$ to vanish for $$ \ell = 0, 1, \ldots, p $$.
+</p>
+
+<p>
+Insert into $ \tau_{n+k} $, collect powers of $ h $, and require the coefficients of $ y^{(\ell)}(t_n) $ to vanish for $ \ell = 0, 1, \ldots, p $.
 
 $$
 \tau_{n+k} = C_0 y(t_n) + C_1 h y'(t_n) + \cdots + C_p h^p y^{(p)}(t_n) + \mathcal{O}(h^{p+1})
 $$
 
 $$
-C_0: \sum_{j=0}^k \alpha_j = \rho(1) = 0.
+\begin{align*}
+C_0 &: \sum_{j=0}^k \alpha_j = \rho(1) = 0. \\
+C_1 &: \sum_{j=0}^k j \alpha_j = \sum_{j=0}^k \beta_j, \iff \rho'(1) = \sigma(1).  
+\end{align*}
 $$
 
-$$
-C_1: \sum_{j=0}^k j \alpha_j = \sum_{j=0}^k \beta_j, \iff \rho'(1) = \sigma(1).  
-$$
+</p>
 
-In general, the coefficient of $$ h^{\ell}y^{(\ell)}(t_n) $$ for $$ \ell \geq 1 $$ is
+<p>
+In general, the coefficient of $ h^{\ell}y^{(\ell)}(t_n) $ for $ \ell \geq 1 $ is
 
 $$
 \frac{1}{\ell !} \sum_{j=0}^k \alpha_j j^{\ell} - \frac{1}{(\ell - 1) !} \sum_{j=0}^k \beta_j j^{\ell - 1}.
 $$
 
-For order $$ p $$, these must vanish for $$ \ell = 1, 2, \ldots, p $$:
+For order $ p $, these must vanish for $ \ell = 1, 2, \ldots, p $:
 
 $$
 \sum_{j=0}^k \alpha_j j^{\ell} = \ell \sum_{j=0}^k \beta_j j^{\ell - 1}, \; \ell = 0, 1, \ldots, p,
 $$
 
-An LMM is consistent if $$ C_0 = C_1 = 0 $$, i.e., $$ \rho(1) = 0 $$ and $$ \rho'(1) = \sigma(1) $$, which means $$ \frac{1}{h} \tau_{n+k} = \mathcal{O}(h) $$.
+An LMM is consistent if $ C_0 = C_1 = 0 $, i.e., $ \rho(1) = 0 $ and $ \rho'(1) = \sigma(1) $, which means $ \frac{1}{h} \tau_{n+k} = \mathcal{O}(h) $.
 
-**Zero-stability**
+</p>
 
+<p><strong>Zero-Stability</strong></p>
+
+<p>
 Consider the homogeneous recurrence with a perturbation:
 
 $$
 \sum_{j=0}^k \alpha_j w_{n+j} = \delta_{n+k}, \; n \geq 0,
 $$
 
-with given starting values $$ w_0, w_1, \ldots, w_{k-1} $$.
+with given starting values $ w_0, w_1, \ldots, w_{k-1} $.
+</p>
 
-The LMM is zero-stable if there exists a constant $$ C $$ independent of $$ h $$ such that 
+<p>
+The LMM is zero-stable if there exists a constant $ C $ independent of $ h $ such that 
 
 $$
 \max_{0 \leq n \leq N} |w_n| \leq C \left(\max_{0 \leq j \leq k-1} |w_j| + \max_{k \leq m \leq N} |\delta_m|  \right)
 $$
 
-**The root condition** 
+</p>
+
+<p><strong>The root condition</strong></p> 
 
 <p>
 Let $ \rho(\zeta) = \sum_{j=0}^k \alpha_j \zeta^j $. The root condition is: All roots of $ \rho $ satisfy $ |\zeta| \le 1 $, and any root with $ |\zeta| = 1 $ is simple (i.e., algebraic multiplicity is equal to 1).
 </p>
 
-**Theorem** An LMM is zero-stable $$ \iff $$ its $$ \rho(\zeta) $$ satisfies the root condition.
+<p><strong>Theorem</strong> An LMM is zero-stable $ \iff $ its $ \rho(\zeta) $ satisfies the root condition.</p>
 
-Assume the root condition holds. Consider the homogeneous recurrence $$ \sum_{j=0}^k \alpha_j w_{n+j} = 0 \quad \alpha_k = 1 $$.
+<p>Assume the root condition holds. Consider the homogeneous recurrence $ \sum_{j=0}^k \alpha_j w_{n+j} = 0, \; \alpha_k = 1 $.</p>
 
+<p>
 Introduce the companion matrix
 
 $$
 \mathbf{C} = \begin{pmatrix} 0 & 1 & \cdots & 0 & 0 \\ 0 & 0 & 1 & \cdots & 0 \\ \vdots & \vdots & \ddots & \ddots &\vdots \\ 0 & 0 & \cdots & 0 & 1 \\ - \alpha_0 & - \alpha_1 & \cdots & - \alpha_{k-2} & -\alpha_{k-1} \end{pmatrix}_{k \times k}
 $$
 
-and $$ \mathbf{w}_n = \begin{pmatrix} w_{n} \\ \vdots \\ w_{n+k-2} \\ w_{n+k-1}  \end{pmatrix} $$
+and 
+
+$$
+\mathbf{w}_n = \begin{pmatrix} w_{n} \\ \vdots \\ w_{n+k-2} \\ w_{n+k-1}  \end{pmatrix}
+$$
 
 $$
 \mathbf{w}_{n+1} = \mathbf{C} \mathbf{w}_n
 $$
 
-The eigenvalues of $$ \mathbf{C} $$ are exactly the roots of $$ \rho $$.
+The eigenvalues of $ \mathbf{C} $ are exactly the roots of $ \rho $.
+</p>
 
-Companion Matrix of a Polynomial
+<p><strong>Companion Matrix of a Polynomial</strong></p>
 
+<p>
 For each monic polynomial $$ p(x) = x^n + \alpha_{n-1}x^{n-1} + \cdots + \alpha_1 x + \alpha_0 $$, the companion matrix $$ p(x) $$ is defined to be
 
 $$
 \mathbf{C} = \begin{pmatrix} 0 & 0 & \cdots & 0 & -\alpha_0 \\ 1 & 0 & \cdots & 0 & -\alpha_1 \\ \vdots & \ddots & \ddots & &\vdots \\ 0 & \cdots & 1 & 0 & -\alpha_{n-2} \\ 0 & 0 & \cdots & 1 & -\alpha_{n-1} \end{pmatrix}_{n \times n}
 $$
 
-The polynomial $$ p(x) $$ is both the characteristic and minimum polynomial for $$ \mathbf{C} $$ (i.e., $$ \mathbf{C} $$ is nonderogatory), which implies $$ \text{geo multi}(\lambda_j) = 1 $$ for each $$ \lambda_j $$, or, equivalently, $$ \text{alg mult}(\lambda_j) = \text{index}(\lambda_j) $$ for each $$ \lambda_j \in \sigma(\mathbf{C}) $$. 
+</p>
+
+<p>
+The polynomial $ p(x) $ is both the characteristic and minimum polynomial for $ \mathbf{C} $ (i.e., $ \mathbf{C} $ is nonderogatory), which implies $ \text{geo multi}(\lambda_j) = 1 $ for each $ \lambda_j $, or, equivalently, $ \text{alg mult}(\lambda_j) = \text{index}(\lambda_j) $ for each $ \lambda_j \in \sigma(\mathbf{C}) $. 
+</p>
 
 {% details Click here to know more %}
-Proof <d-footnote>The proof is borrowed from the book Matrix Analysis and Applied Linear Algebra <d-cite key="meyer2023matrix"></d-cite>. Please refer to the 7.11 for more details.</d-footnote>:
+<p><strong>Proof</strong><d-footnote>The proof is borrowed from the book Matrix Analysis and Applied Linear Algebra <d-cite key="meyer2023matrix"></d-cite>. Please refer to the 7.11 for more details.</d-footnote>:</p>
 
-Write $$ \mathbf{C} = \mathbf{N} - \mathbf{c}\mathbf{e}^T_n $$, where 
+<p>
+Write $ \mathbf{C} = \mathbf{N} - \mathbf{c}\mathbf{e}^T_n $, where 
 
 $$
 \mathbf{N} = \begin{pmatrix} 0 & & & \\ 1 & \ddots & & \\ & \ddots & \ddots & \\ & & 1 & 0  \end{pmatrix}
@@ -213,6 +247,8 @@ and
 $$
 \mathbf{c} = \begin{pmatrix} \alpha_0 \\ \alpha_1 \\ \vdots \\ \alpha_{n-1}  \end{pmatrix}
 $$
+
+</p>
 
 $$
 \begin{align*}
