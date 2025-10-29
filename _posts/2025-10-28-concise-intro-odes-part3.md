@@ -284,13 +284,16 @@ Since $ v_1(x) $ divides the least common multiple polynomial of all $ v_i(x) $'
 </p>
 {% enddetails %}
 
-Proof of the sufficiency half:
+<p><strong>Proof of the sufficiency half:</strong></p>
 
-By the root condition, every eigenvalue $$ \lambda $$ satisfies $$ |\lambda| \leq 1 $$, with the Jordan block corresponding to $$ | \lambda | = 1 $$ being of size $$ 1 \times 1 $$ as $$ \text{alg mult}(\lambda) = \text{index}(\lambda) $$ for each $$ \lambda \in \mathbf{C} $$. Therefore, $$ \mathbf{C} $$ is power-bounded:
+<p>
+By the root condition, every eigenvalue $ \lambda $ satisfies $ |\lambda| \le 1 $, with the Jordan block corresponding to $ | \lambda | = 1 $ being of size $ 1 \times 1 $ as $ \text{alg mult}(\lambda) = \text{index}(\lambda) $ for each $ \lambda \in \mathbf{C} $. Therefore, $ \mathbf{C} $ is power-bounded:
 
 $$
 \exists M \; \text{s.t.}\; \| \mathbf{C} \| \leq M \; \forall n \geq 0
 $$
+
+</p>
 
 {% details Click here to know more %}
 Sketch of proof:
