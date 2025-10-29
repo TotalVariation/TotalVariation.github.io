@@ -475,17 +475,24 @@ $$
 Since $ e_n(h) \to 0 $ (by convergence), $ \lim_{h \to 0} | \tau_{n+k}(h) | = 0 \; \forall n \ge 0 $.
 </p>
  
-Finally, applying this to the test function $$ y(t) = 1 $$ and $$ y(t) = t $$ gives the usual algebraic conditions. Specifically,
+<p>
+Finally, applying this to the test function $ y(t) = 1 $ and $ y(t) = t $ gives the usual algebraic conditions. Specifically,
  
-If $$ y(t) = 1 $$, then $$ y'(t) = 0 $$ and $$ \tau = \sum_{j=0}^k \alpha_j = \rho(1) $$. Since $$ \tau \to 0 $$, we get $$ \rho(1) = 0 $$.
- 
-If $$ y(t) = t $$, then $$ y(t_{n+j}) = t_n + jh, y'(t_{n+j}) = 1 $$. Then
+<ul>
+<li>
+If $ y(t) = 1 $, then $ y'(t) = 0 $ and $ \tau = \sum_{j=0}^k \alpha_j = \rho(1) $. Since $ \tau \to 0 $, we get $ \rho(1) = 0 $.
+</li>
+<li>
+If $ y(t) = t $, then $ y(t_{n+j}) = t_n + jh, y'(t_{n+j}) = 1 $. Then
  
 $$
 \tau = t_n \sum_j \alpha_j + h\left( \sum_j j \alpha_j - \sum_j \beta_j \right)
 $$
 
-Using $$ \sum_j \alpha_j = 0 $$, we conclude that $$ \sum_j j \alpha_j = \sum_j \beta_j $$, i.e., $$ \rho'(1) = \sigma(1) $$.
+Using $ \sum_j \alpha_j = 0 $, we conclude that $ \sum_j j \alpha_j = \sum_j \beta_j $, i.e., $ \rho'(1) = \sigma(1) $.
+</li>
+</ul>
+</p>
 
 2. Convergence $$ \implies $$ Zero-Stability
 
