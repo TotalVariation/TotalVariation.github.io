@@ -265,27 +265,28 @@ $$
 The $ k_i $ are slopes evaluated at intermediate points. If $ \mathbf{A} $ is strictly lower triangular ($ a_{ij} = 0 $ for $ j \ge i $), the method is explicit. Otherwise, it is implicit.
 </p>
  
-To derive RK methods of order $$ p $$, the numerical solution must match the exact Taylor expansion up to $$ O(h^{p+1}) $$ (i.e., ensuring the LTE is $$ O(h^{p+1}) $$). Expand $$ y_{n+1} $$ and each $$ k_i $$ in Taylor series, then equate coefficients. This yields order conditions on $$ \mathbf{b}, \mathbf{c}, A $$.
- 
-We will use one-dimensional ODEs for simplicity, but the methods extend naturally to systems of ODEs, i.e., $$ y(t) \in \mathbb{R}^d, f : \mathbb{R} \times \mathbb{R}^d \to \mathbb{R}^d $$ with higher-order derivatives generalised to multilinear maps (e.g., second order derivatives correspond to bilinear maps).
+<p>
+To derive RK methods of order $ p $, the numerical solution must match the exact Taylor expansion up to $ O(h^{p+1}) $ (i.e., ensuring the LTE is $ O(h^{p+1}) $). Expand $ y_{n+1} $ and each $ k_i $ in Taylor series, then equate coefficients. This yields order conditions on $ \mathbf{b}, \mathbf{c}, A $.
+</p> 
 
-Taylor expansion of the exact solution
+<p>
+We will use one-dimensional ODEs for simplicity, but the methods extend naturally to systems of ODEs, i.e., $ y(t) \in \mathbb{R}^d, f : \mathbb{R} \times \mathbb{R}^d \to \mathbb{R}^d $ with higher-order derivatives generalised to multilinear maps (e.g., second order derivatives correspond to bilinear maps).
+</p>
+
+<p><strong>Taylor expansion of the exact solution</strong></p>
  
-Fix $$ t = t_n $$. Denote $$ f = f(t, y(t)), f_t = \frac{\partial f}{\partial t}, f_y = \frac{\partial f}{\partial y} $$. Differentiating the ODE $$ y' = f $$ yields
- 
-$$
-y'' = \frac{d}{dt} f(t,y) = f_t + f_y y' = f_t + f_y f
-$$
- 
-$$
-y^{(3)} = \frac{d}{dt} (f_t + f_y f) = f_{tt} + f_{ty}y' + \frac{d}{dt}(f_y f)
-$$
+<p>
+Fix $ t = t_n $. Denote $ f = f(t, y(t)), f_t = \frac{\partial f}{\partial t}, f_y = \frac{\partial f}{\partial y} $. Differentiating the ODE $ y' = f $ yields
  
 $$
-\frac{d}{dt}(f_y f) = (f_{yt} + f_{yy}y')f + f_y(f_t + f_y y')
+\begin{align*}
+y'' &= \frac{d}{dt} f(t,y) = f_t + f_y y' = f_t + f_y f \\
+y^{(3)} &= \frac{d}{dt} (f_t + f_y f) = f_{tt} + f_{ty}y' + \frac{d}{dt}(f_y f) \\
+\frac{d}{dt}(f_y f) &= (f_{yt} + f_{yy}y')f + f_y(f_t + f_y y')
+\end{align*}
 $$
  
-Substitute $$ y' = f $$ to obtain
+Substitute $ y' = f $ to obtain
  
 $$
 y^{(3)} = f_{tt} + 2f_{ty}f + f_{yy}ff + f_y f_t + f_y f_y f
@@ -296,6 +297,8 @@ Thus the Taylor expansion of the exact solution is
 $$
 y(t + h) = y + hf + \frac{h^2}{2}(f_t + f_y f) + \frac{h^3}{6} (f_{tt} + 2f_{ty}f + f_{yy}ff + f_y f_t + f_y f_y f) + \mathcal{O}(h^4)
 $$
+
+</p>
  
 If $$ f : \mathbb{R} \times \mathbb{R}^d \to \mathbb{R}^d $$, then $$ f_y \in \mathbb{R}^{d \times d} $$ is the Jacobian matrix. Correspondingly, $$ f_y f $$ denotes matrix-vector multiplication, and $$ f_{yy} f f := f_{yy}[f, f] $$ denotes the bilinear map <d-footnote>We encourage readers seeking a deep understanding of this concept to consult the chapter 12 of the book Matrix Calculus (for Machine Learning and Beyond). <d-cite key="bright2025matrix"></d-cite> </d-footnote> acting on vectors, where $$ f_{yy} \in \mathcal{L}(\mathbb{R}^d, \mathcal{L}(\mathbb{R}^d, \mathbb{R}^d)) $$, $$ f_{yy} \cdot e_i = H_{f_i} $$ with $$ H_{f_i} $$ defined as per the Hessian matrix of a scalar-valued function.
 
