@@ -60,6 +60,45 @@ _styles: >
     text-align: center;
     font-size: 16px;
   }
+
+  .theorem-box {
+    /* Box Model */
+    border: 4px solid ForestGreen; /* A distinct green border */
+    border-radius: 8px;       /* Rounded corners for a softer look */
+    margin: 20px 0;           /* Space above and below the box */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden;         /* Important for containing the floated header */
+    max-width: 800px;         /* Optional: Limits the width on large screens */
+  }
+
+  .theorem-header {
+    /* Header Style */
+    background-color: ForestGreen; /* Green background for the title area */
+    color: white;             /* White text */
+    padding: 8px 15px;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .theorem-content {
+    /* Content Style */
+    background-color: #f8f9fa; /* Light grey/off-white background for content */
+    padding: 15px;
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
+
+  .theorem-content p {
+    margin: 0 0 10px 0; /* Adjust spacing for paragraphs inside the box */
+  }
+
+  /* Styling for the theorem type/title within the header */
+  .theorem-type {
+    /* Ensures the title text is styled correctly */
+    font-family: 'Georgia', serif;
+  }
+
 ---
 
 <div class="row mt-3">
@@ -90,6 +129,23 @@ $$
 
 where $ f(t, y) $ is a function defined in some region of the $ (t, y) $-plane containing the initial point $ (t_0, y_0) $. If $ f(t, y) $ is continuous in $ t $ and Lipschitz continuous in $ y $ in a rectangular region $ R = \{ (t, y) : |t - t_0| \le a, |y - y_0| \le b \} $, where $ a $ and $ b $ are positive constants. Then, there exists a unique solution $ y(t) $ to the IVP, defined on some interval $ [t_0 - h, t_0 + h] $ for some $ h > 0 $.
 </p>
+
+<div class="theorem-box">
+    <div class="theorem-header">
+        <span class="theorem-type">Picard-Lindelo&#776;f Theorem</span>
+    </div>
+    <div class="theorem-content">
+        <p>
+        Consider the initial value problem (IVP) of the form :
+
+        $$
+        \frac{dy}{dt} = f(t,y), y(t_0) = y_0
+        $$
+
+        where $ f(t, y) $ is a function defined in some region of the $ (t, y) $-plane containing the initial point $ (t_0, y_0) $. If $ f(t, y) $ is continuous in $ t $ and Lipschitz continuous in $ y $ in a rectangular region $ R = \{ (t, y) : |t - t_0| \le a, |y - y_0| \le b \} $, where $ a $ and $ b $ are positive constants. Then, there exists a unique solution $ y(t) $ to the IVP, defined on some interval $ [t_0 - h, t_0 + h] $ for some $ h > 0 $.
+        </p>
+    </div>
+</div>
 
 <p>
 <strong>Lipschitz Continuity</strong>
