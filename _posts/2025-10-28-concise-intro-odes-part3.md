@@ -635,15 +635,16 @@ $$
 Approximate $ f(s, y(s)) $ by the Lagrange interpolating polynomials.
 </p>
  
-AB2 (order 2)
+<p>AB2 (order 2)</p>
  
-Interpolate $$ f $$ through $$ t_n, t_{n-1} $$:
+<p>
+Interpolate $ f $ through $ t_n, t_{n-1} $:
  
 $$
 P_1(s) = f_n \cdot \frac{s - t_{n-1}}{t_n - t_{n-1}} + f_{n-1} \cdot \frac{s - t_n}{t_{n-1} - t_n} = f_n \cdot \frac{s - t_{n-1}}{h} - f_{n-1} \cdot \frac{s - t_n}{h}
 $$
  
-Integrate on $$ [t_n, t_{n+1}] $$ (set $$ \tau = s - t_n \in [0, h] $$):
+Integrate on $ [t_n, t_{n+1}] $ (set $ \tau = s - t_n \in [0, h] $):
  
 $$
 \int_{t_n}^{t_{n+1}} P_1(s)ds = \int_0^h \left( f_n \frac{\tau + h}{h} - f_{n-1} \frac{\tau}{h} \right) d\tau = h\left(\frac{3}{2} f_n - \frac{1}{2} f_{n-1} \right)
@@ -661,7 +662,8 @@ $$
 y_{n+2} - y_{n+1} = h\left( \frac{3}{2} f_{n+1} - \frac{1}{2} f_n \right)
 $$
  
-with coefficients $$ (\alpha_0, \alpha_1, \alpha_2) = (0, -1, 1) $$ and $$ (\beta_0, \beta_1, \beta_2) = (-\frac{1}{2}, \frac{3}{2}, 0) $$.
+with coefficients $ (\alpha_0, \alpha_1, \alpha_2) = (0, -1, 1) $ and $ (\beta_0, \beta_1, \beta_2) = (-\frac{1}{2}, \frac{3}{2}, 0) $.
+</p>
  
 It is straightforward to check the consistency and order conditions:
  
