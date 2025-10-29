@@ -60,17 +60,42 @@ _styles: >
     text-align: center;
     font-size: 16px;
   }
-  .theorem {
-    display: block;
-    font-style: italic;
+  .theorem-box {
+    /* Box Model */
+    border: 4px solid ForestGreen; /* A distinct green border */
+    border-radius: 8px;       /* Rounded corners for a softer look */
+    margin: 20px 0;           /* Space above and below the box */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden;         /* Important for containing the floated header */
+    max-width: 800px;         /* Optional: Limits the width on large screens */
   }
-  .theorem:before {
-    content: "Theorem. ";
+
+  .theorem-header {
+    /* Header Style */
+    background-color: ForestGreen; /* Green background for the title area */
+    color: white;             /* White text */
+    padding: 8px 15px;
+    font-size: 1.3em;
     font-weight: bold;
-    font-style: normal;
+    text-transform: uppercase;
   }
-  .theorem[text]:before {
-    content: "Theorem (" attr(text) ") ";
+
+  .theorem-content {
+    /* Content Style */
+    background-color: #f8f9fa; /* Light grey/off-white background for content */
+    padding: 15px;
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
+
+  .theorem-content p {
+    margin: 0 0 10px 0; /* Adjust spacing for paragraphs inside the box */
+  }
+
+  /* Styling for the theorem type/title within the header */
+  .theorem-type {
+    /* Ensures the title text is styled correctly */
+    font-family: 'Georgia', serif;
   }
 ---
 
@@ -195,6 +220,24 @@ Let $ \rho(\zeta) = \sum_{j=0}^k \alpha_j \zeta^j $. The root condition is: All 
 </p>
 
 <p><strong>Theorem</strong> An LMM is zero-stable $ \iff $ its $ \rho(\zeta) $ satisfies the root condition.</p>
+
+<div class="theorem-box">
+    <div class="theorem-header">
+        <span class="theorem-type">The Root Condition</span>
+    </div>
+    <div class="theorem-content">
+        <p>Let $ \rho(\zeta) = \sum_{j=0}^k \alpha_j \zeta^j $. The root condition is: All roots of $ \rho $ satisfy $ |\zeta| \le 1 $, and any root with $ |\zeta| = 1 $ is simple (i.e., algebraic multiplicity is equal to 1).</p>
+    </div>
+</div>
+
+<div class="theorem-box">
+    <div class="theorem-header">
+        <span class="theorem-type">Theorem</span>
+    </div>
+    <div class="theorem-content">
+        <p>An LMM is zero-stable $ \iff $ its $ \rho(\zeta) $ satisfies the root condition.</p>
+    </div>
+</div>
 
 <p>Assume the root condition holds. Consider the homogeneous recurrence $ \sum_{j=0}^k \alpha_j w_{n+j} = 0, \; \alpha_k = 1 $.</p>
 
