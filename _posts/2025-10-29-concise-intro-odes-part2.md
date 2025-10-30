@@ -307,7 +307,7 @@ The $ k_i $ are slopes evaluated at intermediate points. If $ \mathbf{A} $ is st
 </p>
  
 <p>
-To derive RK methods of order $ p $, the numerical solution must match the exact Taylor expansion up to $ O(h^{p+1}) $ (i.e., ensuring the LTE is $ O(h^{p+1}) $). Expand $ y_{n+1} $ and each $ k_i $ in Taylor series, then equate coefficients. This yields order conditions on $ \mathbf{b}, \mathbf{c}, A $.
+To derive RK methods of order $ p $, the numerical solution must match the exact Taylor expansion up to $ O(h^{p+1}) $ (i.e., ensuring the LTE is $ O(h^{p+1}) $). Expand $ y_{n+1} $ and each $ k_i $ in Taylor series, then equate coefficients. This yields order conditions on $ \mathbf{b}, \mathbf{c}, \mathbf{A} $.
 </p> 
 
 <p>
