@@ -21,11 +21,15 @@ giscus_comments: true
   <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/fab-lentz-mRMQwK513hY-unsplash_800x600.jpg" class="img-fluid rounded z-depth-1" %}</swiper-slide>
 </swiper-container>
 
+## A Personal Account of Harassment
+
+I embarked on my PhD journey in September 2021 at the Artificial Intelligence Research Centre (AIRC), Ulster University (UU), Belfast, UK, as a recipient of a fully-funded international studentship from the Department for the Economy (DfE). **I faced relentless harassment from the very beginning of my studies, including chronic forced sleep deprivation, multiple attempts to inflict physical harm, severe invasions of my privacy (e.g., streaming my private life online using hidden or thermal cameras spanning multiple locations), and a toxic relationship with the main PhD supervisor. Despite filing multiple formal reports to various levels of UU, these circumstances ultimately forced me to leave the program prematurely. After two harrowing years, I formally discontinued my PhD on November 30, 2023. Even after my official departure, the gross harassment, with suspicious links to the former supervisor, did not cease; instead, it escalated and extended to my relatives, my parents, and close friends, taking forms such as secretly recording my private conversations, gaining unauthorised access to my personal data (e.g., personal electronic devices, hard drives, cloud storage, digital footprints), fabricating emails as well as voice and video recordings to frame me, stalking, intimidating, and even manipulating and brainwashing my parents (covertly contacting my parents behind my back started roughly in 2022). In 2024, these orchestrated campaigns of harassment and defamation, again with suspicious links to that supervisor, intensified further, e.g., my private life recorded by hidden or thermal cameras was circulated online again and my real-time GPS locations were made publicly available, ultimately compelling me to withdraw from another PhD program to which I had been admitted.** I’m grateful, however, for the sincere support I received from those faculty at UU, who consistently prioritized students’ interests and committed to integrity. <sup><a href="#fn1" id="ref1" aria-describedby="fn1">[1]</a></sup>
+
+<hr>
+
 ## PhD Work at AIRC UU
 
-I embarked on my PhD journey in September 2021 at the Artificial Intelligence Research Centre (AIRC), Ulster University (UU), Belfast, UK, as a recipient of a fully-funded international studentship from the Department for the Economy (DfE). **I faced relentless harassment from the very beginning of my studies, including chronic forced sleep deprivation, multiple attempts to inflict physical harm, severe invasions of my privacy (e.g., streaming my private life online using hidden or thermal cameras spanning multiple locations), and a toxic relationship with the main PhD supervisor. Despite filing multiple formal reports to various levels of UU, these circumstances ultimately forced me to leave the program prematurely. After two harrowing years, I formally discontinued my PhD on November 30, 2023. Even after my official departure, the gross harassment, with suspicious links to the former supervisor, did not cease; instead, it escalated and extended to my relatives, my parents, and close friends, taking forms such as secretly recording my private conversations, gaining unauthorised access to my personal data (e.g., personal electronic devices, hard drives, cloud storage, digital footprints), fabricating emails as well as voice and video recordings to frame me, stalking, intimidating, and even manipulating and brainwashing my parents (covertly contacting my parents behind my back started roughly in 2022). In 2024, these orchestrated campaigns of harassment and defamation, again with suspicious links to that supervisor, intensified further, ultimately compelling me to withdraw from another PhD program to which I had been admitted.** I’m grateful, however, for the sincere support I received from those faculty at UU, who consistently prioritized students’ interests and committed to integrity.
-
-In this blog post, I wanted to share some of the research I conducted at AIRC, particularly in the areas of Deep Generative Models and Satellite Image Time Series (SITS) analysis. I hope these findings may serve as reference for fellow researchers in the field. More importantly, I hope to help you identify manipulative behaviour in academic supervision, a key negative indicator of professional ethics, thus safeguarding your well-being and career development.
+In the remainder of this blog post, I wanted to share some of the research I conducted at AIRC, particularly in the areas of Deep Generative Models and Satellite Image Time Series (SITS) analysis. I hope these findings may serve as reference for fellow researchers in the field. More importantly, I hope to help you identify manipulative behaviour in academic supervision, a key negative indicator of professional ethics, thus safeguarding your well-being and career development.
 
 ---
 
@@ -85,7 +89,7 @@ Cutting students off from potential support networks to ensure control and depen
     Photo by <a href="https://unsplash.com/@thedakotacorbin?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Dakota Corbin</a> on <a href="https://unsplash.com/photos/woman-walking-beside-wall-with-the-best-gift-is-you-graffiti-xh4mG4cqHGg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 </div>
 
-These dark psychology tactics are often employed by individuals who exhibit personality traits of Machiavellianism, narcissism, or psychopathy. Given the power dynamics in academia and the risk of retaliation, confronting your supervisor or addressing the issue openly is generally not advisable. The best protective measure is to recognize manipulation as early as possible, seek professional help from trusted colleagues, faculty members, or specialized committees for academic misconduct, and plan a safe exit if necessary.
+These dark psychology tactics are often employed by individuals who exhibit personality traits of <del>Machiavellianism</del>, narcissism, or psychopathy. Given the power dynamics in academia and the risk of retaliation, confronting your supervisor or addressing the issue openly is generally not advisable. The best protective measure is to recognize manipulation as early as possible, seek professional help from trusted colleagues, faculty members, or specialized committees for academic misconduct, and plan a safe exit if necessary.
 
 Please bear in mind that **It's crucial to prioritize your physical and mental well-being above all else.** While there are manipulative individuals in academia, many upright and supportive staff members can offer help. **Don't lose faith in humanity, and always seek out those who uphold moral principles and research integrity.**
 
@@ -106,4 +110,21 @@ When you find joy in your work, excellence follows naturally, and the sense of f
 </div>
 <div class="caption">
     Image Source: <a href="https://themotivationmentalist.wordpress.com/motivational-quotes-and-images-compilation/steve-jobs-motivational-quotes/">Motivation Mentalist</a>
+</div>
+
+<hr>
+
+<div id="footnotes">
+    <ol>
+        <li id="fn1">
+           <p> This section documents the harassment and related incidents I have personally experienced. It is based on information available to me, including my direct experiences, communications I received, and patterns I observed over time. Because I do not have access to the full scope of events behind the scenes, some aspects described here reflect reasonable concerns and interpretations formed from the information accessible to me, rather than conclusions established through formal investigation. </p>
+
+<p> Where I refer to possible links between certain incidents and specific individuals, those references are based on circumstances that raised serious concerns from my perspective. They should not be interpreted as definitive findings of responsibility in the absence of independently verified evidence. </p>
+
+<p> I also wish to make clear that my intention in publishing this account is to raise awareness about the experience of harassment and institutional vulnerability, not to cause undue harm to any university as an institution. Universities are complex organizations composed of many individuals, and my experience should not be generalized to the entirety of any institution from which I withdrew. My decision to leave those programs was driven by concerns for personal safety and well-being under the specific circumstances I encountered. </p>
+
+<p> I remain open to correction should additional verifiable information emerge. </p>
+<a href="#ref1" aria-label="Back to reference">↩</a>
+</li>
+    </ol>
 </div>
