@@ -29,7 +29,7 @@ I embarked on my PhD journey in September 2021 at the Artificial Intelligence Re
 
 ## PhD Work at AIRC UU
 
-In the remainder of this blog post, I wanted to share some of the research I conducted at AIRC, particularly in the areas of Deep Generative Models and Satellite Image Time Series (SITS) analysis. I hope these findings may serve as reference for fellow researchers in the field. More importantly, I hope to help you identify manipulative behaviour in academic supervision, a key negative indicator of professional ethics, thus safeguarding your well-being and career development.
+In this section, I wanted to share some of the research I conducted at AIRC, particularly in the areas of Deep Generative Models and Satellite Image Time Series (SITS) analysis. I hope these findings may serve as reference for fellow researchers in the field.
 
 ---
 
@@ -52,6 +52,8 @@ In the remainder of this blog post, I wanted to share some of the research I con
 <div class="caption">
     Photo by <a href="https://quotefancy.com/quote/772108/Benjamin-Franklin-An-ounce-of-prevention-is-worth-a-pound-of-cure">quotefancy</a>
 </div>
+
+In the remainder of this blog post, I hope to help you identify manipulative behaviour in academic supervision, a key negative indicator of professional ethics, thus safeguarding your well-being and career development.
 
 Supervisors hold significant influence over the career development of students and junior researchers. In today's academic community, being a professor does not necessarily imply positive correlation with professional ethics. Being manipulative is, however, a strong negative indicator, especially in supervisory roles where there is an inherent power imbalance. When supervisors manipulate those under them, they exploit this power to their advantage, often at the expense of the mentees’ well-being or professional growth. 
 
@@ -114,7 +116,7 @@ When you find joy in your work, excellence follows naturally, and the sense of f
 
 <hr>
 
-<div id="footnotes">
+<div id="footnotes" style="color: Gray; font-size: x-small">
     <ol>
         <li id="fn1">
            <p> This section documents the harassment and related incidents I have personally experienced. It is based on information available to me, including my direct experiences, communications I received, and patterns I observed over time. Because I do not have access to the full scope of events behind the scenes, some aspects described here reflect reasonable concerns and interpretations formed from the information accessible to me, rather than conclusions established through formal investigation. </p>
